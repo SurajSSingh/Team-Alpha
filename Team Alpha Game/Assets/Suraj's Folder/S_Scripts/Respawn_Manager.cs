@@ -53,7 +53,7 @@ public class Respawn_Manager : MonoBehaviour
         checkpoint.y += 2;
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         rb.transform.position = checkpoint;
         rb.velocity = Vector3.zero;
