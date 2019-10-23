@@ -22,10 +22,13 @@ public class Player_Controller : MonoBehaviour
     private bool onGround = false;
     private bool onWall = false;
 
+    public bool inSession = false;
+    public bool playerJump = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        inSession = true;
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.drag = rbDrag;
         rb.mass = rbMass;
@@ -40,10 +43,12 @@ public class Player_Controller : MonoBehaviour
             // Debug.Log("Spacebar pushed");
             movement = new Vector2(movement.x, jumpForce);
         }
-        Debug.Log(movement);
         // rb.position += movement;
         rb.AddForce(movement);
-
+        if (onGround)
+            playerJump = false;
+        else
+            playerJump = true;
     }
 
     // Used to change on ground value
