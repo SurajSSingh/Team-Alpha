@@ -49,6 +49,11 @@ public class Player_Controller : MonoBehaviour
             playerJump = false;
         else
             playerJump = true;
+
+        var vel = rb.velocity;
+        float speed = vel.magnitude;
+        Debug.Log(speed);
+        PlayerManager.instance.updateHealth(speed);
     }
 
     // Used to change on ground value
