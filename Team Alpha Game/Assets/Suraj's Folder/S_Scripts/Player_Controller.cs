@@ -52,7 +52,7 @@ public class Player_Controller : MonoBehaviour
 
         var vel = rb.velocity;
         float speed = vel.magnitude;
-        Debug.Log(speed);
+        //Debug.Log(speed);
         PlayerManager.instance.updateHealth(speed);
     }
 

@@ -30,25 +30,37 @@ public class PlayerManager : MonoBehaviour
 
     public void updateHealth(float speed)
     {
-        if (speed < 1.0)
+        if (speed < 0.1)
         {
-            currHealth -= 10;
-            playerHealth.Invoke(currHealth);
+            if (currHealth >= 0)
+            {
+                currHealth -= 10;
+                playerHealth.Invoke(currHealth);
+            }
         }
-        else if (speed < 5)
+        else if (speed < 2)
         {
-            currHealth -= 5;
-            playerHealth.Invoke(currHealth);
+            if (currHealth >= 0)
+            {
+                currHealth -= 5;
+                playerHealth.Invoke(currHealth);
+            }
         }
-        else if (speed > 8)
+        else if (speed > 4)
         {
-            currHealth += 5;
-            playerHealth.Invoke(currHealth);
+            if (currHealth <= 100)
+            {
+                currHealth += 5;
+                playerHealth.Invoke(currHealth);
+            }
         }
         else if (speed > 10)
         {
-            currHealth += 10;
-            playerHealth.Invoke(currHealth);
+            if (currHealth <= 100)
+            {
+                currHealth += 10;
+                playerHealth.Invoke(currHealth);
+            }
         }
     }
 }
