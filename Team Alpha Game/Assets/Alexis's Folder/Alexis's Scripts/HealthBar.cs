@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     GameObject playerManagerComponent;
     Image healthBarComponent;
-    float maxHealth = 100f;
+    float maxHealth = 1000f;
 
 
     // Start is called before the first frame update

@@ -9,9 +9,11 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
-    public float currHealth = 100f;
+    public float currHealth = 1000f;
 
     public FloatUnityEvent playerHealth = new FloatUnityEvent();
+
+    public GameObject respawner;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (speed > 4)
         {
-            if (currHealth <= 100)
+            if (currHealth <= 1000)
             {
                 currHealth += 5;
                 playerHealth.Invoke(currHealth);
@@ -56,11 +58,17 @@ public class PlayerManager : MonoBehaviour
         }
         else if (speed > 10)
         {
-            if (currHealth <= 100)
+            if (currHealth <= 1000)
             {
                 currHealth += 10;
                 playerHealth.Invoke(currHealth);
             }
+        }
+
+        if (currHealth <= 0)
+        {
+            respawner.GetComponent<Respawn_Manager>().Respawn();
+            currHealth = 1000;
         }
     }
 }
