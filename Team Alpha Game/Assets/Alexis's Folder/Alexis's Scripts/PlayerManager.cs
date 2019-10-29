@@ -15,6 +15,10 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject respawner;
 
+    public int lives = 3;
+
+    private bool checkingSpeed = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,43 +36,57 @@ public class PlayerManager : MonoBehaviour
 
     public void updateHealth(float speed)
     {
-        if (speed < 0.1)
+        if (lives > 0 && checkingSpeed)
         {
-            if (currHealth >= 0)
+            if (speed < 0.1)
             {
-                currHealth -= 10;
-                playerHealth.Invoke(currHealth);
+                if (currHealth >= 0)
+                {
+                    currHealth -= 10;
+                    playerHealth.Invoke(currHealth);
+                }
+            }
+            else if (speed < 2)
+            {
+                if (currHealth >= 0)
+                {
+                    currHealth -= 5;
+                    playerHealth.Invoke(currHealth);
+                }
+            }
+            else if (speed > 4)
+            {
+                if (currHealth <= 1000)
+                {
+                    currHealth += 5;
+                    playerHealth.Invoke(currHealth);
+                }
+            }
+            else if (speed > 10)
+            {
+                if (currHealth <= 1000)
+                {
+                    currHealth += 10;
+                    playerHealth.Invoke(currHealth);
+                }
+            }
+
+            if (currHealth <= 0)
+            {
+                respawner.GetComponent<Respawn_Manager>().Respawn();
+                lives -= 1;
+                currHealth = 1000;
             }
         }
-        else if (speed < 2)
+        else if (lives <= 0)
         {
-            if (currHealth >= 0)
-            {
-                currHealth -= 5;
-                playerHealth.Invoke(currHealth);
-            }
-        }
-        else if (speed > 4)
-        {
-            if (currHealth <= 1000)
-            {
-                currHealth += 5;
-                playerHealth.Invoke(currHealth);
-            }
-        }
-        else if (speed > 10)
-        {
-            if (currHealth <= 1000)
-            {
-                currHealth += 10;
-                playerHealth.Invoke(currHealth);
-            }
+            ScreenManager.instance.GameLose();
         }
 
-        if (currHealth <= 0)
-        {
-            respawner.GetComponent<Respawn_Manager>().Respawn();
-            currHealth = 1000;
-        }
+    }
+
+    public void StopChecking()
+    {
+        checkingSpeed = false;
     }
 }
