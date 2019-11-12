@@ -1563,7 +1563,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102650257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
@@ -2188,7 +2188,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -2208,14 +2208,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76fdf182a5143679df0caeb8b93dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  jumpForce: 40
+  moveSpeed: 10
+  jumpForce: 250
   rb: {fileID: 634322469}
-  rbDrag: 0
-  rbMass: 0.1
+  rbDrag: 0.5
+  rbMass: 0.5
   rbGravity: 1
+  sign: 0
   inSession: 0
   playerJump: 0
+  fastDescent: 1.05
+  terminalVel: -5
 --- !u!1 &794874933
 GameObject:
   m_ObjectHideFlags: 0

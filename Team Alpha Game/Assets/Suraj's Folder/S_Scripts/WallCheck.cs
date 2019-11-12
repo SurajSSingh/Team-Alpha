@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundCheck : MonoBehaviour
+public class WallCheck : MonoBehaviour
 {
     private GameObject Player;
     // Start is called before the first frame update
@@ -11,15 +11,16 @@ public class GroundCheck : MonoBehaviour
         Player = gameObject.transform.parent.gameObject;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground")){
-            Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
+            //Debug.Log(other.transform.position-Player.transform.position);
+            Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,Mathf.Sign((other.transform.position-Player.transform.position).x));
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
+        Player.GetComponent<Player_Controller>().isPlayerWallTouch(false,0.0f);
     }
 }
