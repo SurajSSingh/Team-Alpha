@@ -48,7 +48,7 @@ public class Respawn_Manager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(checkpoint);
+        //Debug.Log(checkpoint);
         checkpoint = other.gameObject.transform.position;
         checkpoint.y += 2;
     }
