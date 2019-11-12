@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class FloatUnityEvent : UnityEvent<float> { };
 
@@ -31,7 +32,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Start Screen");
+        }
     }
 
     public void updateHealth(float speed)
