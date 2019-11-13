@@ -8,7 +8,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 10.0f;
     [SerializeField]
-    private float jumpForce = 250.0f;
+    private float jumpForce = 350.0f;
     [SerializeField]
     private Rigidbody2D rb;
 
@@ -29,8 +29,8 @@ public class Player_Controller : MonoBehaviour
     public bool inSession = false;
     public bool playerJump = false;
 
-    public float fastDescent = 1.2f;
-    public float terminalVel = -5.0f;
+    public float fastDescent = 1.3f;
+    public float terminalVel = -6.0f;
 
     public float wallSign = 0.0f;
     public float wallJumpForce = 250.0f;

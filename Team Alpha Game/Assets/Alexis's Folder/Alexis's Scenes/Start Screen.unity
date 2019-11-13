@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000021458, y: 79}
-  m_SizeDelta: {x: 625.8, y: 106.7}
+  m_AnchoredPosition: {x: -0.0000021458, y: 40.824997}
+  m_SizeDelta: {x: 625.8, y: 197.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26220368
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -188,11 +188,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use AD to move left or right.
+  m_Text: 'Use A/Left arrow key to move left.
 
-    Use Space to jump
+    Use D/Right arrow key to move right.
 
-    You can return to the menu by pressing esc'
+    Use SPACE to jump
+
+    You can return to this menu by pressing ESC
+
+    Pay attention to your health at the top left corner.
+
+    Get to the end of the level to win.'
 --- !u!222 &26220369
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -369,7 +375,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4295726, g: 0.5849056, b: 0.41660732, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -848,8 +854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: 185.57}
-  m_SizeDelta: {x: 369.1, y: 78.7}
+  m_AnchoredPosition: {x: 0.000030518, y: 179}
+  m_SizeDelta: {x: 800, y: 78.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1512883832
 MonoBehaviour:
@@ -871,18 +877,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 60
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Team Alpha Play Test
+  m_Text: 'Team Alpha Prototype #3'
 --- !u!222 &1512883833
 CanvasRenderer:
   m_ObjectHideFlags: 0
