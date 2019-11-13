@@ -17,7 +17,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]
     private float rbMass = 0.5f;
     [SerializeField]
-    private float rbGravity = 1.0f;
+    private float rbGravity = 2.0f;
 
     private bool onGround = false;
     
@@ -37,6 +37,11 @@ public class Player_Controller : MonoBehaviour
     private bool wantToJump = false;
     private float quicksandMultiplier = 1.0f;
 
+    private int maxWallJumps = 3;
+    private int wallJumpsDone = 0;
+
+    private float maxJumpWait = 0.3f;
+    private float jumpWaitTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +57,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)){
             wantToJump = true;
+            jumpWaitTime += Time.deltaTime;
         }
     }
     void FixedUpdate()
@@ -64,14 +70,28 @@ public class Player_Controller : MonoBehaviour
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMultiplier,0.0f);
-        if (wantToJump && onGround){
+        if (wantToJump)
+            jumpWaitTime += Time.deltaTime;
+
+        if (wantToJump && onGround && jumpWaitTime < maxJumpWait){
             // Debug.Log("Spacebar pushed");
             wantToJump = false;
+            jumpWaitTime = 0.0f;
             movement = new Vector2(movement.x*quicksandMultiplier, jumpForce);
         }
-        if (wantToJump && onWall){
+        else if (wallJumpsDone < maxWallJumps && wantToJump && onWall && jumpWaitTime < maxJumpWait){
             wantToJump = false;
-            movement = new Vector2(wallSign*wallJumpForce, jumpForce);
+            wallJumpsDone += 1;
+            jumpWaitTime = 0.0f;
+            movement = new Vector2(wallSign*wallJumpForce, jumpForce/wallJumpsDone);
+        }
+        else if (!wantToJump && onGround){
+            wallJumpsDone = 0;
+        }
+
+        if (jumpWaitTime >= maxJumpWait && wantToJump){
+            jumpWaitTime = 0.0f;
+            wantToJump = false;
         }
         // rb.position += movement;
         rb.AddForce(movement);
