@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallCheck : MonoBehaviour
 {
     private GameObject Player;
+    public float oppositeDirection = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +14,9 @@ public class WallCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Ground")){
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Quicksand")){
             //Debug.Log(other.transform.position-Player.transform.position);
-            Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,Mathf.Sign((other.transform.position-Player.transform.position).x));
+            Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,oppositeDirection);
         }
     }
 

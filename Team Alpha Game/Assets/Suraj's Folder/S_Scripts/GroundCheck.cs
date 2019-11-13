@@ -16,10 +16,15 @@ public class GroundCheck : MonoBehaviour
         if (other.gameObject.CompareTag("Ground")){
             Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
         }
+        if (other.gameObject.CompareTag("Quicksand")){
+            Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
+            Player.GetComponent<Player_Controller>().quicksandTouch(0.5f);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
+        Player.GetComponent<Player_Controller>().quicksandTouch(1.0f);
     }
 }

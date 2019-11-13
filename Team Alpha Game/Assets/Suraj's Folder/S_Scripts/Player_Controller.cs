@@ -34,6 +34,8 @@ public class Player_Controller : MonoBehaviour
 
     public float wallSign = 0.0f;
     public float wallJumpForce = 250.0f;
+    private bool wantToJump = false;
+    private float quicksandMultiplier = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,12 @@ public class Player_Controller : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)){
+            wantToJump = true;
+        }
+    }
     void FixedUpdate()
     {
         if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
@@ -55,12 +63,14 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x,rb.velocity.y*fastDescent);
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed,0.0f);
-        if (Input.GetKeyDown(KeyCode.Space) && onGround){
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMultiplier,0.0f);
+        if (wantToJump && onGround){
             // Debug.Log("Spacebar pushed");
-            movement = new Vector2(movement.x, jumpForce);
+            wantToJump = false;
+            movement = new Vector2(movement.x*quicksandMultiplier, jumpForce);
         }
-        if ((Input.GetKeyDown(KeyCode.Space) && onWall)){
+        if (wantToJump && onWall){
+            wantToJump = false;
             movement = new Vector2(wallSign*wallJumpForce, jumpForce);
         }
         // rb.position += movement;
@@ -87,4 +97,9 @@ public class Player_Controller : MonoBehaviour
         wallSign = sign;
         onWall = wallTouching;
     } 
+
+    public void quicksandTouch(float multipler)
+    {
+        quicksandMultiplier = multipler;
+    }
 }
