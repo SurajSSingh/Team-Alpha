@@ -37,11 +37,12 @@ public class Player_Controller : MonoBehaviour
     private bool wantToJump = false;
     private float quicksandMultiplier = 1.0f;
 
-    private int maxWallJumps = 3;
-    private int wallJumpsDone = 0;
+    // private bool wantToJump = false;
+    private bool onQuicksand = false;
 
-    private float maxJumpWait = 0.3f;
-    private float jumpWaitTime = 0.0f;
+    private int wallJumpCount = 0;
+    private int wallJumpMax = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,14 +53,21 @@ public class Player_Controller : MonoBehaviour
         rb.gravityScale = rbGravity;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)){
             wantToJump = true;
-            jumpWaitTime += Time.deltaTime;
         }
     }
+
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space)){
+    //         wantToJump = true;
+    //         jumpWaitTime += Time.deltaTime;
+    //     }
+    // }
     void FixedUpdate()
     {
         if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
@@ -69,29 +77,20 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x,rb.velocity.y*fastDescent);
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMultiplier,0.0f);
-        if (wantToJump)
-            jumpWaitTime += Time.deltaTime;
-
-        if (wantToJump && onGround && jumpWaitTime < maxJumpWait){
+        float quicksandMult = onQuicksand? 0.5f:1.0f;
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMult,0.0f);
+        if (wantToJump && onGround){
             // Debug.Log("Spacebar pushed");
             wantToJump = false;
-            jumpWaitTime = 0.0f;
-            movement = new Vector2(movement.x*quicksandMultiplier, jumpForce);
+            movement = new Vector2(movement.x, jumpForce*quicksandMult);
         }
-        else if (wallJumpsDone < maxWallJumps && wantToJump && onWall && jumpWaitTime < maxJumpWait){
+        else if (wallJumpCount < wallJumpMax && wantToJump && onWall){
             wantToJump = false;
-            wallJumpsDone += 1;
-            jumpWaitTime = 0.0f;
-            movement = new Vector2(wallSign*wallJumpForce, jumpForce/wallJumpsDone);
+            wallJumpCount += 1;
+            movement = new Vector2(wallSign*wallJumpForce*quicksandMult, jumpForce/wallJumpCount);
         }
-        else if (!wantToJump && onGround){
-            wallJumpsDone = 0;
-        }
-
-        if (jumpWaitTime >= maxJumpWait && wantToJump){
-            jumpWaitTime = 0.0f;
-            wantToJump = false;
+        else if (onGround && !wantToJump){
+            wallJumpCount = 0;
         }
         // rb.position += movement;
         rb.AddForce(movement);
@@ -118,8 +117,10 @@ public class Player_Controller : MonoBehaviour
         onWall = wallTouching;
     } 
 
-    public void quicksandTouch(float multipler)
+    public void isOnQuicksand(bool touchSand)
     {
-        quicksandMultiplier = multipler;
-    }
+        onQuicksand = touchSand;
+    } 
+
+
 }
