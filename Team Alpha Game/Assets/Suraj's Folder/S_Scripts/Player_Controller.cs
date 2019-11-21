@@ -35,6 +35,12 @@ public class Player_Controller : MonoBehaviour
     public float wallSign = 0.0f;
     public float wallJumpForce = 250.0f;
 
+    private bool wantToJump = false;
+    private bool onQuicksand = false;
+
+    private int wallJumpCount = 0;
+    private int wallJumpMax = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +49,13 @@ public class Player_Controller : MonoBehaviour
         rb.drag = rbDrag;
         rb.mass = rbMass;
         rb.gravityScale = rbGravity;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)){
+            wantToJump = true;
+        }
     }
 
     // Update is called once per frame
@@ -55,13 +68,20 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x,rb.velocity.y*fastDescent);
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed,0.0f);
-        if (Input.GetKeyDown(KeyCode.Space) && onGround){
+        float quicksandMult = onQuicksand? 0.5f:1.0f;
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMult,0.0f);
+        if (wantToJump && onGround){
             // Debug.Log("Spacebar pushed");
-            movement = new Vector2(movement.x, jumpForce);
+            wantToJump = false;
+            movement = new Vector2(movement.x, jumpForce*quicksandMult);
         }
-        if ((Input.GetKeyDown(KeyCode.Space) && onWall)){
-            movement = new Vector2(wallSign*wallJumpForce, jumpForce);
+        else if (wallJumpCount < wallJumpMax && wantToJump && onWall){
+            wantToJump = false;
+            wallJumpCount += 1;
+            movement = new Vector2(wallSign*wallJumpForce*quicksandMult, jumpForce/wallJumpCount);
+        }
+        else if (onGround && !wantToJump){
+            wallJumpCount = 0;
         }
         // rb.position += movement;
         rb.AddForce(movement);
@@ -87,4 +107,11 @@ public class Player_Controller : MonoBehaviour
         wallSign = sign;
         onWall = wallTouching;
     } 
+
+    public void isOnQuicksand(bool touchSand)
+    {
+        onQuicksand = touchSand;
+    } 
+
+
 }

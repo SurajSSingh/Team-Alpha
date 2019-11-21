@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class WallCheck : MonoBehaviour
 {
     private GameObject Player;
+    public float oppositeDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +16,7 @@ public class WallCheck : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground")){
-            //Debug.Log(other.transform.position-Player.transform.position);
-            Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,Mathf.Sign((other.transform.position-Player.transform.position).x));
+            Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,oppositeDirection);
         }
     }
 
