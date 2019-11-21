@@ -11,8 +11,5 @@ public class QuitGame : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-=======
-
->>>>>>> Stashed changes
     }
 }

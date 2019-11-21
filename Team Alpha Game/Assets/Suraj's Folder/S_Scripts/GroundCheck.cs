@@ -24,13 +24,13 @@ public class GroundCheck : MonoBehaviour
             Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
         }
         if (other.gameObject.CompareTag("Quicksand")){
-            Player.GetComponent<Player_Controller>().isOnQuicksand(true);
+            // Player.GetComponent<Player_Controller>().isOnQuicksand(true);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
-        Player.GetComponent<Player_Controller>().isOnQuicksand(false);
+        // Player.GetComponent<Player_Controller>().isOnQuicksand(false);
     }
 }
