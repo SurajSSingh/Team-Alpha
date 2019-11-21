@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour
 {
     public void PlayGame()
-    { 
-        SceneManager.LoadScene("PlaytestLevel");
+    {
+        SceneManager.LoadScene(1);
     }
 }

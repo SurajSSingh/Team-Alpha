@@ -32,10 +32,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Start Screen");
-        }
+       
     }
 
     public void updateHealth(float speed)

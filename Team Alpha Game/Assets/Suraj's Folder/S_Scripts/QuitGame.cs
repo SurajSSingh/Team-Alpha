@@ -7,7 +7,7 @@ public class QuitGame : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             SceneManager.LoadScene(0);
         }
