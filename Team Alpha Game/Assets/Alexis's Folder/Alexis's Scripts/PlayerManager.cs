@@ -43,21 +43,54 @@ public class PlayerManager : MonoBehaviour
             {
                 if (currHealth >= 0)
                 {
-                    currHealth -= 10;
-                    playerHealth.Invoke(currHealth);
+                    if (currHealth <= 100){
+                        currHealth -= 2;
+                        playerHealth.Invoke(currHealth);
+                    }
+                    else if (currHealth <= 200){
+                            currHealth -= 5;
+                            playerHealth.Invoke(currHealth);
+                        }
+                    else{
+                        currHealth -= 10;
+                        playerHealth.Invoke(currHealth);
+                    }
                 }
             }
             else if (speed < 2)
             {
-                if (currHealth >= 0)
-                {
+                if (currHealth <= 100){
+                        currHealth -= 1;
+                        playerHealth.Invoke(currHealth);
+                    }
+                else if (currHealth <= 200){
+                        currHealth -= 2;
+                        playerHealth.Invoke(currHealth);
+                    }
+                else{
                     currHealth -= 5;
                     playerHealth.Invoke(currHealth);
                 }
             }
-            else if (speed > 4)
+            else if (speed > 6)
             {
-                if (currHealth <= 1000)
+                if (currHealth <= 400)
+                {
+                    currHealth += 4;
+                    playerHealth.Invoke(currHealth);
+                } else if (currHealth <= 1000)
+                {
+                    currHealth += 2;
+                    playerHealth.Invoke(currHealth);
+                } 
+            }
+            else if (speed > 8)
+            {
+                if (currHealth <= 600)
+                {
+                    currHealth += 10;
+                    playerHealth.Invoke(currHealth);
+                } else if (currHealth <= 1000)
                 {
                     currHealth += 5;
                     playerHealth.Invoke(currHealth);
@@ -65,7 +98,11 @@ public class PlayerManager : MonoBehaviour
             }
             else if (speed > 10)
             {
-                if (currHealth <= 1000)
+                if (currHealth <= 800)
+                {
+                    currHealth += 20;
+                    playerHealth.Invoke(currHealth);
+                } else if (currHealth <= 1000)
                 {
                     currHealth += 10;
                     playerHealth.Invoke(currHealth);

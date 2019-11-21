@@ -44,6 +44,8 @@ public class Player_Controller : MonoBehaviour
     public float wallJumpForce = 250.0f;
 
     private bool playerOnQuicksand = false;
+    private bool wantToJump = false;
+    private float timeTillJumpExpire = 0.75f;
 
     // Start is called before the first frame update
     void Start()
@@ -73,12 +75,25 @@ public class Player_Controller : MonoBehaviour
         {
             velocity.y = velocity.y / 1.05f;
         }
-        if ((Input.GetKeyDown(KeyCode.Space) && onGround && !playerOnQuicksand)){
+        if (Input.GetKeyDown(KeyCode.Space)){
+            wantToJump = true;
+        }
+        if ( wantToJump && onGround && !playerOnQuicksand){
             velocity.y = jumpVelocity;
+            wantToJump = false;
         }
         if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign)
         {
             velocity.x = velocity.x / 2;
+            if (onWall && !playerOnQuicksand){
+                velocity.y = jumpVelocity*3/4;
+            }
+        }
+        if (wantToJump && timeTillJumpExpire <= 0.0f){
+            wantToJump = false;
+            timeTillJumpExpire = 0.75f;
+        } else if (wantToJump){
+            timeTillJumpExpire -= Time.deltaTime;
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
     //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
@@ -142,6 +157,7 @@ public class Player_Controller : MonoBehaviour
     // Used to change on ground value
     public void isPlayerGrounded(bool grounded)
     {
+
         onGround = grounded;
     } 
 
