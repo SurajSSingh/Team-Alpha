@@ -23,7 +23,7 @@ public class Player_Controller : MonoBehaviour
     private float gravity;
 
     private bool onGround = false;
-    
+
     private bool onWall = false;
 
     [SerializeField]
@@ -61,13 +61,6 @@ public class Player_Controller : MonoBehaviour
         //rb.gravityScale = rbGravity;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)){
-            wantToJump = true;
-        }
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -84,30 +77,12 @@ public class Player_Controller : MonoBehaviour
         {
             velocity.y = velocity.y / 1.05f;
         }
-<<<<<<< HEAD
-        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        float quicksandMult = onQuicksand? 0.5f:1.0f;
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed*quicksandMult,0.0f);
-        if (wantToJump && onGround){
-            // Debug.Log("Spacebar pushed");
-            wantToJump = false;
-            movement = new Vector2(movement.x, jumpForce*quicksandMult);
-        }
-        else if (wallJumpCount < wallJumpMax && wantToJump && onWall){
-            wantToJump = false;
-            wallJumpCount += 1;
-            movement = new Vector2(wallSign*wallJumpForce*quicksandMult, jumpForce/wallJumpCount);
-        }
-        else if (onGround && !wantToJump){
-            wallJumpCount = 0;
-=======
         if ((Input.GetKeyDown(KeyCode.Space) && onGround)){
             velocity.y = jumpVelocity;
         }
         if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign)
         {
             velocity.x = velocity.x / 2;
->>>>>>> Min-Testing
         }
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
     //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
@@ -166,28 +141,86 @@ public class Player_Controller : MonoBehaviour
                 }
             }
         }
+=======
+        if ((Input.GetKeyDown(KeyCode.Space) && onGround)){
+            velocity.y = jumpVelocity;
+        }
+        if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign)
+        {
+            velocity.x = velocity.x / 2;
+        }
+        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+    //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
+    //        rb.velocity = new Vector2(rb.velocity.x/2,rb.velocity.y);
+    //    }
+    //    if (Mathf.Sign(rb.velocity.y) < 0.0f && rb.velocity.y > terminalVel){
+    //        rb.velocity = new Vector2(rb.velocity.x,rb.velocity.y*fastDescent);
+    //    }
+    //    sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+    //    Vector2 movement = new Vector2(Input.GetAxis("Horizontal")*moveSpeed,0.0f);
+    //    if (Input.GetKeyDown(KeyCode.Space) && onGround){
+    //        // Debug.Log("Spacebar pushed");
+    //        movement = new Vector2(movement.x, jumpForce);
+    //    }
+    //    if ((Input.GetKeyDown(KeyCode.Space) && onWall)){
+    //        movement = new Vector2(wallSign*wallJumpForce, jumpForce);
+    //    }
+    //    // rb.position += movement;
+    //    rb.AddForce(movement);
+    //    if (onGround)
+    //        playerJump = false;
+    //   else
+    //        playerJump = true;
+    //
+    //    var vel = rb.velocity;
+    //    float speed = vel.magnitude;
+    //    //Debug.Log(speed);
+        PlayerManager.instance.updateHealth(velocity.magnitude);
+        transform.Translate(velocity * Time.deltaTime);
+    }
+
+    private void DescendSlope(ref Vector3 velocity)
+    {
+        float directionX = Mathf.Sign(velocity.x);
+        Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
+        Vector2 rayOrigin = (directionX == -1) ? new Vector2(bounds.max.x, bounds.min.y) : new Vector2(bounds.min.x, bounds.min.y);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
+        if (hit)
+        {
+            float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+            Debug.Log(slopeAngle);
+            if (slopeAngle != 0 && slopeAngle <= maxDescendAngle)
+            {
+                Debug.Log("ok?");
+                if (Mathf.Sign(hit.normal.x) == directionX)
+                {
+                    Debug.Log("OK");
+                    if (hit.distance - 0.15 <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x))
+                    {
+                        Debug.Log("...");
+                        float moveDistance = Mathf.Abs(velocity.x);
+                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+                        velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
+                        velocity.y -= descendVelocityY;
+                    }
+                }
+            }
+        }
+>>>>>>> Conflict_Branch
     }
 
     // Used to change on ground value
     public void isPlayerGrounded(bool grounded)
     {
         onGround = grounded;
-    } 
+    }
 
     public void isPlayerWallTouch(bool wallTouching, float sign)
     {
         wallSign = sign;
         onWall = wallTouching;
-<<<<<<< HEAD
-    } 
-
-    public void isOnQuicksand(bool touchSand)
-    {
-        onQuicksand = touchSand;
-    } 
-
-
+    }
 =======
     }
->>>>>>> Min-Testing
+>>>>>>> Conflict_Branch
 }

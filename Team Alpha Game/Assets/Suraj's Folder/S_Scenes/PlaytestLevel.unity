@@ -121,7 +121,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &54748455
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +201,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54748455}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &87190023
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d48e972b78794c8482e60923dc88b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   oppositeDirection: 1
+=======
+>>>>>>> Conflict_Branch
 --- !u!61 &87190027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -314,7 +323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d48e972b78794c8482e60923dc88b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   oppositeDirection: -1
+=======
+>>>>>>> Conflict_Branch
 --- !u!61 &193705353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -485,10 +497,14 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9dbea7e13b80e4cda9f5dde7537772bd, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Color: {r: 0, g: 1, b: 0.1319797, a: 0.2509804}
 =======
   m_Color: {r: 0, g: 1, b: 0.1319797, a: 0.5019608}
 >>>>>>> Alexis-TESTING
+=======
+  m_Color: {r: 0, g: 1, b: 0.1319797, a: 0.5019608}
+>>>>>>> Conflict_Branch
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -511,10 +527,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 7
 =======
   m_RootOrder: 8
 >>>>>>> Alexis-TESTING
+=======
+  m_RootOrder: 8
+>>>>>>> Conflict_Branch
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337099557
 GameObject:
@@ -593,12 +613,17 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
 =======
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.504717, g: 0.8026711, b: 1, a: 0}
 >>>>>>> Alexis-TESTING
+=======
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.504717, g: 0.8026711, b: 1, a: 0}
+>>>>>>> Conflict_Branch
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -614,6 +639,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 5000
 <<<<<<< HEAD
+<<<<<<< HEAD
   field of view: 40
   orthographic: 1
   orthographic size: 10
@@ -622,6 +648,11 @@ Camera:
   orthographic: 1
   orthographic size: 7
 >>>>>>> Alexis-TESTING
+=======
+  field of view: 30
+  orthographic: 1
+  orthographic size: 7
+>>>>>>> Conflict_Branch
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -646,17 +677,24 @@ Transform:
   m_GameObject: {fileID: 337099557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
 =======
   m_LocalPosition: {x: -6.75, y: 25.9, z: -9.129999}
 >>>>>>> Alexis-TESTING
+=======
+  m_LocalPosition: {x: -6.75, y: 25.9, z: -9.129999}
+>>>>>>> Conflict_Branch
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &355974760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1046,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496623089}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &528745455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,10 +1102,14 @@ Transform:
   m_GameObject: {fileID: 528745455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -6.75, y: 9.47, z: -9.129999}
 =======
   m_LocalPosition: {x: -6.75, y: 25.9, z: -9.129999}
 >>>>>>> Alexis-TESTING
+=======
+  m_LocalPosition: {x: -6.75, y: 25.9, z: -9.129999}
+>>>>>>> Conflict_Branch
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1703603911}
@@ -1175,6 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+<<<<<<< HEAD
   jumpForce: 350
   rb: {fileID: 976503155}
   rbDrag: 0.5
@@ -1185,6 +1231,20 @@ MonoBehaviour:
   playerJump: 0
   fastDescent: 1.2
   terminalVel: -5
+=======
+  rb: {fileID: 976503155}
+  maxDescendAngle: 120
+  rbDrag: 0.5
+  rbMass: 1
+  gravity: 0
+  sign: 0
+  velocity: {x: 0, y: 0, z: 0}
+  inSession: 0
+  playerJump: 0
+  jumpHeight: 10
+  timeToJumpApex: 1
+  jumpVelocity: 0
+>>>>>>> Conflict_Branch
   wallSign: 0
   wallJumpForce: 250
 --- !u!58 &976503154
@@ -1264,10 +1324,14 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a8fcf642b61c3488e9bc1986ccaf6a75, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 =======
   m_Color: {r: 0.062611245, g: 0.6320754, b: 0.18556368, a: 1}
 >>>>>>> Alexis-TESTING
+=======
+  m_Color: {r: 0.062611245, g: 0.6320754, b: 0.18556368, a: 1}
+>>>>>>> Conflict_Branch
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1286,10 +1350,14 @@ Transform:
   m_GameObject: {fileID: 976503152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -6.75, y: 9.47, z: 0.87}
 =======
   m_LocalPosition: {x: -6.75, y: 25.9, z: 0.87}
 >>>>>>> Alexis-TESTING
+=======
+  m_LocalPosition: {x: -6.75, y: 25.9, z: 0.87}
+>>>>>>> Conflict_Branch
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1715793277}
@@ -1297,10 +1365,14 @@ Transform:
   - {fileID: 193705351}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 8
 =======
   m_RootOrder: 9
 >>>>>>> Alexis-TESTING
+=======
+  m_RootOrder: 9
+>>>>>>> Conflict_Branch
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143706721
 GameObject:
@@ -1369,7 +1441,10 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &1320039000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1538,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320039000}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &1358156267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,10 +1699,14 @@ TilemapRenderer:
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ChunkCullingBounds: {x: 0.04347825, y: 0.04347825, z: 0}
 =======
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+>>>>>>> Conflict_Branch
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -1928,12 +2010,17 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Origin: {x: -13, y: -10, z: 0}
   m_Size: {x: 97, y: 22, z: 1}
 =======
   m_Origin: {x: -13, y: -16, z: 0}
   m_Size: {x: 97, y: 28, z: 1}
 >>>>>>> Alexis-TESTING
+=======
+  m_Origin: {x: -13, y: -16, z: 0}
+  m_Size: {x: 97, y: 28, z: 1}
+>>>>>>> Conflict_Branch
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1954,10 +2041,14 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1590392381
 =======
 --- !u!1 &1563692091
 >>>>>>> Alexis-TESTING
+=======
+--- !u!1 &1563692091
+>>>>>>> Conflict_Branch
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1965,6 +2056,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 1590392382}
   - component: {fileID: 1590392387}
@@ -1975,6 +2067,8 @@ GameObject:
   m_Name: Platforms
   m_TagString: Ground
 =======
+=======
+>>>>>>> Conflict_Branch
   - component: {fileID: 1563692092}
   - component: {fileID: 1563692095}
   - component: {fileID: 1563692094}
@@ -1982,11 +2076,15 @@ GameObject:
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!4 &1590392382
 Transform:
@@ -1994,19 +2092,28 @@ Transform:
 --- !u!224 &1563692092
 RectTransform:
 >>>>>>> Alexis-TESTING
+=======
+--- !u!224 &1563692092
+RectTransform:
+>>>>>>> Conflict_Branch
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1590392381}
 =======
   m_GameObject: {fileID: 1563692091}
 >>>>>>> Alexis-TESTING
+=======
+  m_GameObject: {fileID: 1563692091}
+>>>>>>> Conflict_Branch
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Father: {fileID: 206841758}
   m_RootOrder: 2
@@ -2015,6 +2122,8 @@ RectTransform:
 Rigidbody2D:
   serializedVersion: 4
 =======
+=======
+>>>>>>> Conflict_Branch
   m_Father: {fileID: 430479543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2025,15 +2134,21 @@ Rigidbody2D:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1563692093
 MonoBehaviour:
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1590392381}
   m_BodyType: 2
 =======
+=======
+>>>>>>> Conflict_Branch
   m_GameObject: {fileID: 1563692091}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2165,12 +2280,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+<<<<<<< HEAD
       - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
+=======
+      - m_Target: {fileID: 1836424367}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+>>>>>>> Conflict_Branch
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2255,7 +2379,10 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590392381}
   m_BodyType: 2
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2340,10 +2467,14 @@ Tilemap:
   m_Enabled: 1
   m_Tiles:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: 3, y: -7, z: 0}
 =======
   - first: {x: 31, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2352,11 +2483,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 4, y: -7, z: 0}
 =======
   - first: {x: 32, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 32, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2365,11 +2500,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 5, y: -7, z: 0}
 =======
   - first: {x: 33, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 33, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2378,11 +2517,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 6, y: -7, z: 0}
 =======
   - first: {x: 34, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 34, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2391,11 +2534,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 7, y: -7, z: 0}
 =======
   - first: {x: 35, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 35, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2404,11 +2551,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: -7, z: 0}
 =======
   - first: {x: 36, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 36, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2417,11 +2568,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: -6, z: 0}
 =======
   - first: {x: 37, y: -16, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: -16, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2430,11 +2585,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: -5, z: 0}
 =======
   - first: {x: 31, y: -15, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -15, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2443,11 +2602,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -2, y: -4, z: 0}
 =======
   - first: {x: 37, y: -15, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: -15, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2456,11 +2619,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -1, y: -4, z: 0}
 =======
   - first: {x: 31, y: -14, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -14, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2469,11 +2636,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 0, y: -4, z: 0}
 =======
   - first: {x: 37, y: -14, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: -14, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2482,11 +2653,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 1, y: -4, z: 0}
 =======
   - first: {x: 31, y: -13, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -13, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2495,11 +2670,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 2, y: -4, z: 0}
 =======
   - first: {x: 37, y: -13, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: -13, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2508,11 +2687,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 3, y: -4, z: 0}
 =======
   - first: {x: 31, y: -12, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -12, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2521,11 +2704,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -2, y: -3, z: 0}
 =======
   - first: {x: 37, y: -12, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: -12, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2534,11 +2721,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -2, y: -2, z: 0}
 =======
   - first: {x: 38, y: -12, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 38, y: -12, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2547,11 +2738,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: -2, z: 0}
 =======
   - first: {x: 31, y: -11, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -11, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2560,11 +2755,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 18, y: -2, z: 0}
 =======
   - first: {x: 39, y: -11, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 39, y: -11, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2573,11 +2772,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 27, y: -2, z: 0}
 =======
   - first: {x: 31, y: -10, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -10, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2586,11 +2789,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -2, y: -1, z: 0}
 =======
   - first: {x: 40, y: -10, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 40, y: -10, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2599,11 +2806,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: -1, z: 0}
 =======
   - first: {x: 31, y: -9, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -9, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2612,11 +2823,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 18, y: -1, z: 0}
 =======
   - first: {x: 41, y: -9, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 41, y: -9, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2625,11 +2840,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 27, y: -1, z: 0}
 =======
   - first: {x: 31, y: -8, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -8, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2638,11 +2857,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: -2, y: 0, z: 0}
 =======
   - first: {x: 42, y: -8, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 42, y: -8, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2651,11 +2874,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 4, y: 0, z: 0}
 =======
   - first: {x: 3, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 3, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2664,11 +2891,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 5, y: 0, z: 0}
 =======
   - first: {x: 4, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 4, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2677,11 +2908,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 6, y: 0, z: 0}
 =======
   - first: {x: 5, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 5, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2690,11 +2925,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 7, y: 0, z: 0}
 =======
   - first: {x: 6, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 6, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2703,11 +2942,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: 0, z: 0}
 =======
   - first: {x: 7, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 7, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2716,11 +2959,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 9, y: 0, z: 0}
 =======
   - first: {x: 8, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 8, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2729,11 +2976,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 10, y: 0, z: 0}
 =======
   - first: {x: 31, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2742,11 +2993,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 11, y: 0, z: 0}
 =======
   - first: {x: 43, y: -7, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 43, y: -7, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2755,11 +3010,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 12, y: 0, z: 0}
 =======
   - first: {x: 8, y: -6, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 8, y: -6, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2768,11 +3027,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 13, y: 0, z: 0}
 =======
   - first: {x: 31, y: -6, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -6, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2781,11 +3044,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 14, y: 0, z: 0}
 =======
   - first: {x: 44, y: -6, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 44, y: -6, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2794,11 +3061,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 15, y: 0, z: 0}
 =======
   - first: {x: 8, y: -5, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 8, y: -5, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2807,11 +3078,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 16, y: 0, z: 0}
 =======
   - first: {x: 31, y: -5, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -5, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2820,11 +3095,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 17, y: 0, z: 0}
 =======
   - first: {x: 45, y: -5, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 45, y: -5, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2833,11 +3112,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 18, y: 0, z: 0}
 =======
   - first: {x: -2, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: -2, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2846,11 +3129,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 27, y: 0, z: 0}
 =======
   - first: {x: -1, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: -1, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2859,11 +3146,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 28, y: 0, z: 0}
 =======
   - first: {x: 0, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 0, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2872,11 +3163,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 29, y: 0, z: 0}
 =======
   - first: {x: 1, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 1, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2885,11 +3180,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 30, y: 0, z: 0}
 =======
   - first: {x: 2, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 2, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2898,11 +3197,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 31, y: 0, z: 0}
 =======
   - first: {x: 3, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 3, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2911,11 +3214,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 32, y: 0, z: 0}
 =======
   - first: {x: 31, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2924,11 +3231,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 33, y: 0, z: 0}
 =======
   - first: {x: 46, y: -4, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 46, y: -4, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2937,11 +3248,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 34, y: 0, z: 0}
 =======
   - first: {x: -2, y: -3, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: -2, y: -3, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2950,11 +3265,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 35, y: 0, z: 0}
 =======
   - first: {x: 31, y: -3, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: -3, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -2964,8 +3283,11 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: 36, y: 0, z: 0}
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 47, y: -3, z: 0}
     second:
       m_TileIndex: 0
@@ -3084,7 +3406,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -2, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3093,11 +3418,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 37, y: 0, z: 0}
 =======
   - first: {x: 4, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 4, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3106,11 +3435,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 38, y: 0, z: 0}
 =======
   - first: {x: 5, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 5, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3119,11 +3452,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 39, y: 0, z: 0}
 =======
   - first: {x: 6, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 6, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3132,11 +3469,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 40, y: 0, z: 0}
 =======
   - first: {x: 7, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 7, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3145,11 +3486,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 41, y: 0, z: 0}
 =======
   - first: {x: 8, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 8, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3158,11 +3503,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 42, y: 0, z: 0}
 =======
   - first: {x: 9, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 9, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3171,11 +3520,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 43, y: 0, z: 0}
 =======
   - first: {x: 10, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 10, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3184,11 +3537,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 44, y: 0, z: 0}
 =======
   - first: {x: 11, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 11, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3197,11 +3554,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 45, y: 0, z: 0}
 =======
   - first: {x: 12, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 12, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3211,8 +3572,11 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: 46, y: 0, z: 0}
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 13, y: 0, z: 0}
     second:
       m_TileIndex: 0
@@ -3277,7 +3641,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 28, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3286,11 +3653,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 47, y: 0, z: 0}
 =======
   - first: {x: 29, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 29, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3299,11 +3670,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 48, y: 0, z: 0}
 =======
   - first: {x: 30, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 30, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -3313,10 +3688,14 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: 49, y: 0, z: 0}
 =======
   - first: {x: 31, y: 0, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 31, y: 0, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -4235,7 +4614,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 16, z: 0}
     second:
       m_TileIndex: 0
@@ -4245,7 +4627,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 28, y: 16, z: 0}
     second:
       m_TileIndex: 0
@@ -4454,7 +4839,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 19, z: 0}
     second:
       m_TileIndex: 0
@@ -4464,7 +4852,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 20, y: 19, z: 0}
     second:
       m_TileIndex: 0
@@ -4556,7 +4947,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 20, z: 0}
     second:
       m_TileIndex: 0
@@ -4566,7 +4960,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 20, y: 20, z: 0}
     second:
       m_TileIndex: 0
@@ -4586,7 +4983,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 36, y: 20, z: 0}
     second:
       m_TileIndex: 0
@@ -4596,7 +4996,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 65, y: 20, z: 0}
     second:
       m_TileIndex: 0
@@ -4634,7 +5037,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 36, y: 21, z: 0}
     second:
       m_TileIndex: 0
@@ -4644,7 +5050,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 65, y: 21, z: 0}
     second:
       m_TileIndex: 0
@@ -4754,7 +5163,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 36, y: 22, z: 0}
     second:
       m_TileIndex: 0
@@ -4764,7 +5176,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 20, y: 23, z: 0}
     second:
       m_TileIndex: 0
@@ -4784,7 +5199,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 24, z: 0}
     second:
       m_TileIndex: 0
@@ -4794,7 +5212,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 20, y: 24, z: 0}
     second:
       m_TileIndex: 0
@@ -4814,7 +5235,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 25, z: 0}
     second:
       m_TileIndex: 0
@@ -4824,7 +5248,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 20, y: 25, z: 0}
     second:
       m_TileIndex: 0
@@ -4979,6 +5406,7 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 235
@@ -4989,6 +5417,8 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 235
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -4, y: 26, z: 0}
     second:
       m_TileIndex: 0
@@ -5011,7 +5441,10 @@ Tilemap:
     m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 264
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     m_Data:
       e00: 1
       e01: 0
@@ -5031,6 +5464,7 @@ Tilemap:
       e33: 1
   m_TileColorArray:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 235
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
@@ -5038,13 +5472,18 @@ Tilemap:
   m_Origin: {x: -4, y: -9, z: 0}
   m_Size: {x: 79, y: 35, z: 1}
 =======
+=======
+>>>>>>> Conflict_Branch
   - m_RefCount: 264
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: -16, z: 0}
   m_Size: {x: 79, y: 43, z: 1}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -5267,12 +5706,17 @@ MonoBehaviour:
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_BiasX: 0
   m_BiasY: 0
 =======
   m_BiasX: 0.099999994
   m_BiasY: -0.099999994
 >>>>>>> Alexis-TESTING
+=======
+  m_BiasX: 0.099999994
+  m_BiasY: -0.099999994
+>>>>>>> Conflict_Branch
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8
@@ -5355,7 +5799,10 @@ BoxCollider2D:
   m_Size: {x: 0.7, y: 0.3}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &1836424362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,7 +5916,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 54748455}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
 --- !u!1 &1889720274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,6 +5979,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1889720278}
     m_ColliderPaths:
+<<<<<<< HEAD
 <<<<<<< HEAD
     - - X: 312212520
         Y: 229737388
@@ -6856,6 +7307,1018 @@ CompositeCollider2D:
       - {x: 46.170666, y: -12.050679}
       - {x: 46.181343, y: -12.061344}
 >>>>>>> Alexis-TESTING
+=======
+    - - X: 402026212
+        Y: 219386672
+      - X: 402107032
+        Y: 219466672
+      - X: 402320246
+        Y: 219467000
+      - X: 402453344
+        Y: 219600476
+      - X: 402454119
+        Y: 219812412
+      - X: 402487587
+        Y: 219812483
+      - X: 402612580
+        Y: 219937748
+      - X: 402613237
+        Y: 219999900
+      - X: 410000100
+        Y: 220000394
+      - X: 409999171
+        Y: 230000100
+      - X: 403820952
+        Y: 230000130
+      - X: 402613055
+        Y: 230266718
+      - X: 402346328
+        Y: 230293615
+      - X: 402292984
+        Y: 230346697
+      - X: 402053096
+        Y: 230400016
+      - X: 401839722
+        Y: 230399688
+      - X: 401733230
+        Y: 230293000
+      - X: 401706656
+        Y: 230159989
+      - X: 401705787
+        Y: 230000100
+      - X: 399999900
+        Y: 229999606
+      - X: 400000829
+        Y: 219999900
+      - X: 401706740
+        Y: 219999030
+      - X: 401706984
+        Y: 219493082
+      - X: 401813804
+        Y: 219386672
+    - - X: 372026212
+        Y: 179386672
+      - X: 372107032
+        Y: 179466672
+      - X: 372320246
+        Y: 179467000
+      - X: 372453344
+        Y: 179600476
+      - X: 372454133
+        Y: 179812412
+      - X: 372487593
+        Y: 179812491
+      - X: 372612580
+        Y: 179937760
+      - X: 372613266
+        Y: 179999900
+      - X: 380000100
+        Y: 180000394
+      - X: 379999171
+        Y: 190000100
+      - X: 373820952
+        Y: 190000130
+      - X: 372613055
+        Y: 190266718
+      - X: 372346328
+        Y: 190293615
+      - X: 372292984
+        Y: 190346697
+      - X: 372053096
+        Y: 190400016
+      - X: 371839722
+        Y: 190399688
+      - X: 371733230
+        Y: 190293000
+      - X: 371706656
+        Y: 190159989
+      - X: 371705787
+        Y: 190000100
+      - X: 369999900
+        Y: 189999606
+      - X: 370000829
+        Y: 179999900
+      - X: 371706740
+        Y: 179999030
+      - X: 371706984
+        Y: 179493082
+      - X: 371813804
+        Y: 179386672
+    - - X: 672026210
+        Y: 139386656
+      - X: 672106998
+        Y: 139466672
+      - X: 672320246
+        Y: 139467000
+      - X: 672453312
+        Y: 139600492
+      - X: 672453991
+        Y: 139812396
+      - X: 672487551
+        Y: 139812419
+      - X: 672612644
+        Y: 139937676
+      - X: 672613121
+        Y: 139999900
+      - X: 680000100
+        Y: 140000394
+      - X: 679999171
+        Y: 150000100
+      - X: 673820926
+        Y: 150000130
+      - X: 672613023
+        Y: 150266718
+      - X: 672346296
+        Y: 150293615
+      - X: 672292984
+        Y: 150346713
+      - X: 672053066
+        Y: 150400000
+      - X: 671839754
+        Y: 150399672
+      - X: 671733230
+        Y: 150293000
+      - X: 671706688
+        Y: 150159988
+      - X: 671705819
+        Y: 150000100
+      - X: 669999900
+        Y: 149999606
+      - X: 670000829
+        Y: 139999900
+      - X: 671706772
+        Y: 139999030
+      - X: 671707016
+        Y: 139493082
+      - X: 671813868
+        Y: 139386656
+    - - X: 772026211
+        Y: 119386664
+      - X: 772106999
+        Y: 119466664
+      - X: 772320246
+        Y: 119466992
+      - X: 772453312
+        Y: 119600492
+      - X: 772454022
+        Y: 119812396
+      - X: 772487557
+        Y: 119812427
+      - X: 772612644
+        Y: 119937692
+      - X: 772613181
+        Y: 119999900
+      - X: 780000100
+        Y: 120000394
+      - X: 779999171
+        Y: 130000100
+      - X: 773820897
+        Y: 130000130
+      - X: 772613014
+        Y: 130266712
+      - X: 772346296
+        Y: 130293615
+      - X: 772292984
+        Y: 130346713
+      - X: 772053066
+        Y: 130400000
+      - X: 771839754
+        Y: 130399672
+      - X: 771733230
+        Y: 130293000
+      - X: 771706688
+        Y: 130159988
+      - X: 771705819
+        Y: 130000100
+      - X: 769999900
+        Y: 129999606
+      - X: 770000829
+        Y: 119999900
+      - X: 771706772
+        Y: 119999030
+      - X: 771707016
+        Y: 119493082
+      - X: 771813868
+        Y: 119386664
+    - - X: 322026212
+        Y: 109386664
+      - X: 322107032
+        Y: 109466664
+      - X: 322320278
+        Y: 109466992
+      - X: 322453312
+        Y: 109600492
+      - X: 322454116
+        Y: 109812396
+      - X: 322487599
+        Y: 109812483
+      - X: 322612580
+        Y: 109937764
+      - X: 322613295
+        Y: 109999900
+      - X: 330000100
+        Y: 110000394
+      - X: 329999171
+        Y: 120000100
+      - X: 323820923
+        Y: 120000130
+      - X: 322613046
+        Y: 120266712
+      - X: 322346328
+        Y: 120293615
+      - X: 322292984
+        Y: 120346713
+      - X: 322053097
+        Y: 120400000
+      - X: 321839722
+        Y: 120399672
+      - X: 321733230
+        Y: 120293000
+      - X: 321706656
+        Y: 120159989
+      - X: 321705787
+        Y: 120000100
+      - X: 319999900
+        Y: 119999606
+      - X: 320000829
+        Y: 109999900
+      - X: 321706740
+        Y: 109999030
+      - X: 321706984
+        Y: 109493082
+      - X: 321813836
+        Y: 109386664
+    - - X: 702026211
+        Y: 89386664
+      - X: 702106999
+        Y: 89466664
+      - X: 702320246
+        Y: 89466992
+      - X: 702453312
+        Y: 89600492
+      - X: 702454009
+        Y: 89812396
+      - X: 702487563
+        Y: 89812435
+      - X: 702612644
+        Y: 89937680
+      - X: 702613151
+        Y: 89999900
+      - X: 710000100
+        Y: 90000394
+      - X: 709999171
+        Y: 100000100
+      - X: 703820897
+        Y: 100000130
+      - X: 702613014
+        Y: 100266712
+      - X: 702346296
+        Y: 100293615
+      - X: 702292984
+        Y: 100346713
+      - X: 702053066
+        Y: 100400000
+      - X: 701839754
+        Y: 100399672
+      - X: 701733230
+        Y: 100293000
+      - X: 701706688
+        Y: 100159988
+      - X: 701705819
+        Y: 100000100
+      - X: 699999900
+        Y: 99999606
+      - X: 700000829
+        Y: 89999900
+      - X: 701706772
+        Y: 89999030
+      - X: 701707016
+        Y: 89493082
+      - X: 701813868
+        Y: 89386664
+    - - X: 372026212
+        Y: 59386668
+      - X: 372107032
+        Y: 59466668
+      - X: 372320246
+        Y: 59466996
+      - X: 372453344
+        Y: 59600492
+      - X: 372454162
+        Y: 59812400
+      - X: 372487605
+        Y: 59812495
+      - X: 372612580
+        Y: 59937780
+      - X: 372613324
+        Y: 59999900
+      - X: 380000100
+        Y: 60000394
+      - X: 379999171
+        Y: 70000100
+      - X: 373820923
+        Y: 70000130
+      - X: 372613046
+        Y: 70266712
+      - X: 372346328
+        Y: 70293615
+      - X: 372292984
+        Y: 70346705
+      - X: 372053097
+        Y: 70400000
+      - X: 371839722
+        Y: 70399672
+      - X: 371733230
+        Y: 70293000
+      - X: 371706656
+        Y: 70159989
+      - X: 371705787
+        Y: 70000100
+      - X: 369999900
+        Y: 69999606
+      - X: 370000829
+        Y: 59999900
+      - X: 371706740
+        Y: 59999030
+      - X: 371706984
+        Y: 59493086
+      - X: 371813804
+        Y: 59386668
+    - - X: 762026211
+        Y: 39386668
+      - X: 762106999
+        Y: 39466668
+      - X: 762320246
+        Y: 39466996
+      - X: 762453312
+        Y: 39600492
+      - X: 762454041
+        Y: 39812400
+      - X: 762487569
+        Y: 39812447
+      - X: 762612644
+        Y: 39937708
+      - X: 762613211
+        Y: 39999900
+      - X: 770000100
+        Y: 40000394
+      - X: 769999171
+        Y: 50000100
+      - X: 763820912
+        Y: 50000130
+      - X: 762613014
+        Y: 50266716
+      - X: 762346296
+        Y: 50293619
+      - X: 762292984
+        Y: 50346705
+      - X: 762053065
+        Y: 50400000
+      - X: 761839754
+        Y: 50399672
+      - X: 761733230
+        Y: 50293004
+      - X: 761706688
+        Y: 50159984
+      - X: 761705819
+        Y: 50000100
+      - X: 759999900
+        Y: 49999606
+      - X: 760000829
+        Y: 39999900
+      - X: 761706772
+        Y: 39999030
+      - X: 761707016
+        Y: 39493086
+      - X: 761813868
+        Y: 39386668
+    - - X: 172026198
+        Y: 29386668
+      - X: 172107050
+        Y: 29466668
+      - X: 172320246
+        Y: 29466996
+      - X: 172453328
+        Y: 29600492
+      - X: 172454170
+        Y: 29812400
+      - X: 172487633
+        Y: 29812511
+      - X: 172612596
+        Y: 29937804
+      - X: 172613397
+        Y: 29999900
+      - X: 180000100
+        Y: 30000394
+      - X: 179999171
+        Y: 40000100
+      - X: 173820928
+        Y: 40000130
+      - X: 172613030
+        Y: 40266716
+      - X: 172346344
+        Y: 40293619
+      - X: 172293016
+        Y: 40346705
+      - X: 172053097
+        Y: 40400000
+      - X: 171839754
+        Y: 40399672
+      - X: 171733252
+        Y: 40293001
+      - X: 171706656
+        Y: 40159985
+      - X: 171705787
+        Y: 40000100
+      - X: 169999900
+        Y: 39999606
+      - X: 170000829
+        Y: 29999900
+      - X: 171706740
+        Y: 29999030
+      - X: 171706984
+        Y: 29493086
+      - X: 171813820
+        Y: 29386668
+    - - X: 362026212
+        Y: -613333
+      - X: 362107032
+        Y: -533333
+      - X: 362320246
+        Y: -533005
+      - X: 362453344
+        Y: -399508
+      - X: 362454175
+        Y: -187600
+      - X: 362487611
+        Y: -187497
+      - X: 362612580
+        Y: -62207
+      - X: 362613353
+        Y: -100
+      - X: 370000100
+        Y: 394
+      - X: 369999171
+        Y: 10000100
+      - X: 363820930
+        Y: 10000130
+      - X: 362613037
+        Y: 10266716
+      - X: 362346328
+        Y: 10293621
+      - X: 362292984
+        Y: 10346708
+      - X: 362053097
+        Y: 10400000
+      - X: 361839722
+        Y: 10399672
+      - X: 361733230
+        Y: 10293006
+      - X: 361706656
+        Y: 10159989
+      - X: 361705787
+        Y: 10000100
+      - X: 359999900
+        Y: 9999606
+      - X: 360000829
+        Y: -100
+      - X: 361706740
+        Y: -970
+      - X: 361706984
+        Y: -506912
+      - X: 361813804
+        Y: -613333
+    - - X: 632026214
+        Y: -613333
+      - X: 632107066
+        Y: -533333
+      - X: 632320246
+        Y: -533005
+      - X: 632453376
+        Y: -399508
+      - X: 632454121
+        Y: -187600
+      - X: 632487575
+        Y: -187545
+      - X: 632612580
+        Y: -62279
+      - X: 632613177
+        Y: -100
+      - X: 640000100
+        Y: 394
+      - X: 639999171
+        Y: 10000100
+      - X: 633820905
+        Y: 10000130
+      - X: 632613005
+        Y: 10266716
+      - X: 632346296
+        Y: 10293621
+      - X: 632292984
+        Y: 10346708
+      - X: 632053066
+        Y: 10400000
+      - X: 631839754
+        Y: 10399672
+      - X: 631733230
+        Y: 10293006
+      - X: 631706688
+        Y: 10159988
+      - X: 631705819
+        Y: 10000100
+      - X: 629999900
+        Y: 9999606
+      - X: 630000829
+        Y: -100
+      - X: 631706772
+        Y: -970
+      - X: 631707016
+        Y: -506912
+      - X: 631813804
+        Y: -613333
+    - - X: 122026190
+        Y: -40613332
+      - X: 122107042
+        Y: -40533332
+      - X: 122320246
+        Y: -40533004
+      - X: 122453336
+        Y: -40399508
+      - X: 122454190
+        Y: -40187600
+      - X: 122487631
+        Y: -40187481
+      - X: 122612596
+        Y: -40062184
+      - X: 122613425
+        Y: -40000100
+      - X: 130000100
+        Y: -39999606
+      - X: 129999171
+        Y: -29999900
+      - X: 123820929
+        Y: -29999870
+      - X: 122613029
+        Y: -29733284
+      - X: 122346344
+        Y: -29706379
+      - X: 122293000
+        Y: -29653293
+      - X: 122053089
+        Y: -29600000
+      - X: 121839754
+        Y: -29600328
+      - X: 121733246
+        Y: -29706995
+      - X: 121706664
+        Y: -29840011
+      - X: 121705795
+        Y: -29999900
+      - X: 119999900
+        Y: -30000394
+      - X: 120000829
+        Y: -40000100
+      - X: 121706748
+        Y: -40000970
+      - X: 121706992
+        Y: -40506914
+      - X: 121813828
+        Y: -40613332
+    - - X: 22026194
+        Y: -100613336
+      - X: 22107044
+        Y: -100533336
+      - X: 22320244
+        Y: -100533008
+      - X: 22453332
+        Y: -100399508
+      - X: 22454199
+        Y: -100187604
+      - X: 22487641
+        Y: -100187477
+      - X: 22612600
+        Y: -100062176
+      - X: 22613457
+        Y: -100000100
+      - X: 30000100
+        Y: -99999606
+      - X: 29999171
+        Y: -89999900
+      - X: 23820919
+        Y: -89999870
+      - X: 22613036
+        Y: -89733288
+      - X: 22346340
+        Y: -89706385
+      - X: 22293006
+        Y: -89653287
+      - X: 22053086
+        Y: -89600000
+      - X: 21839754
+        Y: -89600328
+      - X: 21733250
+        Y: -89707000
+      - X: 21706666
+        Y: -89840011
+      - X: 21705797
+        Y: -89999900
+      - X: 19999900
+        Y: -90000394
+      - X: 20000829
+        Y: -100000100
+      - X: 21706750
+        Y: -100000970
+      - X: 21706994
+        Y: -100506918
+      - X: 21813826
+        Y: -100613336
+    - - X: 462026255
+        Y: -120613436
+      - X: 462107055
+        Y: -120533436
+      - X: 462320291
+        Y: -120533109
+      - X: 462453444
+        Y: -120399552
+      - X: 462454203
+        Y: -120187604
+      - X: 462487581
+        Y: -120187541
+      - X: 462612580
+        Y: -120062272
+      - X: 462613207
+        Y: -120000100
+      - X: 470000100
+        Y: -119999606
+      - X: 469999171
+        Y: -109999900
+      - X: 463821389
+        Y: -109999870
+      - X: 462613081
+        Y: -109733193
+      - X: 462346390
+        Y: -109706303
+      - X: 462293036
+        Y: -109653194
+      - X: 462053115
+        Y: -109599900
+      - X: 461839677
+        Y: -109600227
+      - X: 461733139
+        Y: -109706950
+      - X: 461706556
+        Y: -109840009
+      - X: 461705687
+        Y: -109999900
+      - X: 459999900
+        Y: -110000394
+      - X: 460000829
+        Y: -120000100
+      - X: 461706639
+        Y: -120000970
+      - X: 461706883
+        Y: -120506963
+      - X: 461813760
+        Y: -120613436
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 40.20262, y: 21.938667}
+      - {x: 40.210705, y: 21.946667}
+      - {x: 40.232025, y: 21.946701}
+      - {x: 40.245335, y: 21.960049}
+      - {x: 40.245415, y: 21.981241}
+      - {x: 40.24876, y: 21.98125}
+      - {x: 40.261257, y: 21.993776}
+      - {x: 40.26133, y: 21.99999}
+      - {x: 41.00001, y: 22.000042}
+      - {x: 40.999912, y: 23.00001}
+      - {x: 40.382095, y: 23.000013}
+      - {x: 40.261307, y: 23.026672}
+      - {x: 40.23463, y: 23.029362}
+      - {x: 40.2293, y: 23.03467}
+      - {x: 40.20531, y: 23.040003}
+      - {x: 40.18397, y: 23.039968}
+      - {x: 40.17332, y: 23.029299}
+      - {x: 40.170666, y: 23.015999}
+      - {x: 40.170578, y: 23.00001}
+      - {x: 39.999992, y: 22.999958}
+      - {x: 40.000088, y: 21.99999}
+      - {x: 40.170677, y: 21.9999}
+      - {x: 40.1707, y: 21.949308}
+      - {x: 40.18138, y: 21.938667}
+    - - {x: 37.20262, y: 17.938667}
+      - {x: 37.210705, y: 17.946667}
+      - {x: 37.232025, y: 17.946701}
+      - {x: 37.245335, y: 17.960049}
+      - {x: 37.24542, y: 17.981241}
+      - {x: 37.24876, y: 17.98125}
+      - {x: 37.261257, y: 17.993778}
+      - {x: 37.26133, y: 17.99999}
+      - {x: 38.00001, y: 18.000042}
+      - {x: 37.999912, y: 19.00001}
+      - {x: 37.382095, y: 19.000013}
+      - {x: 37.261307, y: 19.026672}
+      - {x: 37.23463, y: 19.029362}
+      - {x: 37.2293, y: 19.03467}
+      - {x: 37.20531, y: 19.04}
+      - {x: 37.18397, y: 19.039968}
+      - {x: 37.17332, y: 19.029299}
+      - {x: 37.170666, y: 19.015999}
+      - {x: 37.170578, y: 19.00001}
+      - {x: 36.999992, y: 18.999958}
+      - {x: 37.000088, y: 17.99999}
+      - {x: 37.170677, y: 17.9999}
+      - {x: 37.1707, y: 17.949306}
+      - {x: 37.18138, y: 17.938667}
+    - - {x: 67.20262, y: 13.938665}
+      - {x: 67.2107, y: 13.946668}
+      - {x: 67.232025, y: 13.946701}
+      - {x: 67.24533, y: 13.960052}
+      - {x: 67.2454, y: 13.98124}
+      - {x: 67.24876, y: 13.981243}
+      - {x: 67.26127, y: 13.99377}
+      - {x: 67.261314, y: 13.99999}
+      - {x: 68.000015, y: 14.000042}
+      - {x: 67.999916, y: 15.00001}
+      - {x: 67.382095, y: 15.000013}
+      - {x: 67.2613, y: 15.026672}
+      - {x: 67.234634, y: 15.029362}
+      - {x: 67.2293, y: 15.034672}
+      - {x: 67.20531, y: 15.04}
+      - {x: 67.183975, y: 15.039967}
+      - {x: 67.173325, y: 15.0293}
+      - {x: 67.17067, y: 15.015999}
+      - {x: 67.17058, y: 15.00001}
+      - {x: 66.999985, y: 14.999959}
+      - {x: 67.000084, y: 13.99999}
+      - {x: 67.17068, y: 13.999901}
+      - {x: 67.1707, y: 13.949307}
+      - {x: 67.18139, y: 13.938665}
+    - - {x: 77.20262, y: 11.938666}
+      - {x: 77.2107, y: 11.946667}
+      - {x: 77.232025, y: 11.9467}
+      - {x: 77.24533, y: 11.960051}
+      - {x: 77.24541, y: 11.98124}
+      - {x: 77.24876, y: 11.981243}
+      - {x: 77.26127, y: 11.993771}
+      - {x: 77.26132, y: 11.99999}
+      - {x: 78.000015, y: 12.000043}
+      - {x: 77.999916, y: 13.00001}
+      - {x: 77.38209, y: 13.000013}
+      - {x: 77.2613, y: 13.026671}
+      - {x: 77.234634, y: 13.029363}
+      - {x: 77.2293, y: 13.034672}
+      - {x: 77.20531, y: 13.04}
+      - {x: 77.183975, y: 13.039967}
+      - {x: 77.173325, y: 13.0293}
+      - {x: 77.17067, y: 13.015999}
+      - {x: 77.17058, y: 13.00001}
+      - {x: 76.999985, y: 12.999958}
+      - {x: 77.000084, y: 11.99999}
+      - {x: 77.17068, y: 11.9999}
+      - {x: 77.1707, y: 11.949307}
+      - {x: 77.18139, y: 11.938666}
+    - - {x: 32.20262, y: 10.938666}
+      - {x: 32.210705, y: 10.946667}
+      - {x: 32.23203, y: 10.9467}
+      - {x: 32.24533, y: 10.960051}
+      - {x: 32.245415, y: 10.98124}
+      - {x: 32.24876, y: 10.981249}
+      - {x: 32.261257, y: 10.993777}
+      - {x: 32.261333, y: 10.99999}
+      - {x: 33.00001, y: 11.000043}
+      - {x: 32.999912, y: 12.00001}
+      - {x: 32.38209, y: 12.000013}
+      - {x: 32.261303, y: 12.026671}
+      - {x: 32.23463, y: 12.029363}
+      - {x: 32.2293, y: 12.034672}
+      - {x: 32.20531, y: 12.04}
+      - {x: 32.18397, y: 12.039967}
+      - {x: 32.17332, y: 12.0293}
+      - {x: 32.170666, y: 12.016}
+      - {x: 32.170578, y: 12.00001}
+      - {x: 31.99999, y: 11.999958}
+      - {x: 32.000088, y: 10.99999}
+      - {x: 32.170677, y: 10.9999}
+      - {x: 32.1707, y: 10.949307}
+      - {x: 32.181385, y: 10.938666}
+    - - {x: 70.20262, y: 8.938666}
+      - {x: 70.2107, y: 8.946667}
+      - {x: 70.232025, y: 8.9467}
+      - {x: 70.24533, y: 8.960051}
+      - {x: 70.2454, y: 8.98124}
+      - {x: 70.24876, y: 8.981244}
+      - {x: 70.26127, y: 8.99377}
+      - {x: 70.26132, y: 8.99999}
+      - {x: 71.000015, y: 9.000043}
+      - {x: 70.999916, y: 10.00001}
+      - {x: 70.38209, y: 10.000013}
+      - {x: 70.2613, y: 10.026671}
+      - {x: 70.234634, y: 10.029363}
+      - {x: 70.2293, y: 10.034672}
+      - {x: 70.20531, y: 10.04}
+      - {x: 70.183975, y: 10.039967}
+      - {x: 70.173325, y: 10.0293}
+      - {x: 70.17067, y: 10.015999}
+      - {x: 70.17058, y: 10.00001}
+      - {x: 69.999985, y: 9.999958}
+      - {x: 70.000084, y: 8.99999}
+      - {x: 70.17068, y: 8.9999}
+      - {x: 70.1707, y: 8.949307}
+      - {x: 70.18139, y: 8.938666}
+    - - {x: 37.20262, y: 5.938667}
+      - {x: 37.210705, y: 5.9466667}
+      - {x: 37.232025, y: 5.9467006}
+      - {x: 37.245335, y: 5.9600506}
+      - {x: 37.24542, y: 5.9812403}
+      - {x: 37.24876, y: 5.9812503}
+      - {x: 37.261257, y: 5.993779}
+      - {x: 37.261333, y: 5.99999}
+      - {x: 38.00001, y: 6.0000424}
+      - {x: 37.999912, y: 7.0000095}
+      - {x: 37.38209, y: 7.000013}
+      - {x: 37.261303, y: 7.0266714}
+      - {x: 37.23463, y: 7.0293627}
+      - {x: 37.2293, y: 7.0346704}
+      - {x: 37.20531, y: 7.04}
+      - {x: 37.18397, y: 7.0399666}
+      - {x: 37.17332, y: 7.0292993}
+      - {x: 37.170666, y: 7.0159993}
+      - {x: 37.170578, y: 7.0000095}
+      - {x: 36.999992, y: 6.9999576}
+      - {x: 37.000088, y: 5.99999}
+      - {x: 37.170677, y: 5.9999}
+      - {x: 37.1707, y: 5.949308}
+      - {x: 37.18138, y: 5.938667}
+    - - {x: 76.20262, y: 3.9386668}
+      - {x: 76.2107, y: 3.946667}
+      - {x: 76.232025, y: 3.9467003}
+      - {x: 76.24533, y: 3.9600503}
+      - {x: 76.24541, y: 3.98124}
+      - {x: 76.24876, y: 3.9812458}
+      - {x: 76.26127, y: 3.993772}
+      - {x: 76.26132, y: 3.99999}
+      - {x: 77.000015, y: 4.0000424}
+      - {x: 76.999916, y: 5.00001}
+      - {x: 76.382095, y: 5.0000134}
+      - {x: 76.2613, y: 5.026672}
+      - {x: 76.234634, y: 5.0293627}
+      - {x: 76.2293, y: 5.0346704}
+      - {x: 76.20531, y: 5.04}
+      - {x: 76.183975, y: 5.0399666}
+      - {x: 76.173325, y: 5.0292997}
+      - {x: 76.17067, y: 5.0159984}
+      - {x: 76.17058, y: 5.00001}
+      - {x: 75.999985, y: 4.9999576}
+      - {x: 76.000084, y: 3.99999}
+      - {x: 76.17068, y: 3.9999}
+      - {x: 76.1707, y: 3.9493082}
+      - {x: 76.18139, y: 3.9386668}
+    - - {x: 17.20262, y: 2.9386668}
+      - {x: 17.210707, y: 2.9466667}
+      - {x: 17.232025, y: 2.9467003}
+      - {x: 17.245333, y: 2.9600503}
+      - {x: 17.245419, y: 2.98124}
+      - {x: 17.248764, y: 2.981252}
+      - {x: 17.26126, y: 2.9937816}
+      - {x: 17.261343, y: 2.99999}
+      - {x: 18.00001, y: 3.0000424}
+      - {x: 17.999914, y: 4.00001}
+      - {x: 17.382093, y: 4.0000134}
+      - {x: 17.261303, y: 4.026672}
+      - {x: 17.234634, y: 4.0293627}
+      - {x: 17.229301, y: 4.0346704}
+      - {x: 17.205309, y: 4.04}
+      - {x: 17.183975, y: 4.0399666}
+      - {x: 17.173325, y: 4.0292993}
+      - {x: 17.170666, y: 4.0159984}
+      - {x: 17.170576, y: 4.00001}
+      - {x: 16.99999, y: 3.9999576}
+      - {x: 17.000086, y: 2.99999}
+      - {x: 17.170673, y: 2.9999}
+      - {x: 17.1707, y: 2.949308}
+      - {x: 17.181383, y: 2.9386668}
+    - - {x: 36.20262, y: -0.061333302}
+      - {x: 36.210705, y: -0.0533333}
+      - {x: 36.232025, y: -0.0532997}
+      - {x: 36.245335, y: -0.0399496}
+      - {x: 36.245422, y: -0.01876}
+      - {x: 36.24876, y: -0.0187489}
+      - {x: 36.261257, y: -0.0062195}
+      - {x: 36.261337, y: -0.00001}
+      - {x: 37.00001, y: 0.000042300002}
+      - {x: 36.999912, y: 1.00001}
+      - {x: 36.38209, y: 1.0000131}
+      - {x: 36.261303, y: 1.0266718}
+      - {x: 36.23463, y: 1.0293628}
+      - {x: 36.2293, y: 1.034671}
+      - {x: 36.20531, y: 1.04}
+      - {x: 36.18397, y: 1.0399665}
+      - {x: 36.17332, y: 1.0292999}
+      - {x: 36.170666, y: 1.015999}
+      - {x: 36.170578, y: 1.00001}
+      - {x: 35.999992, y: 0.99995774}
+      - {x: 36.000088, y: -0.00001}
+      - {x: 36.170677, y: -0.000099900004}
+      - {x: 36.1707, y: -0.050691802}
+      - {x: 36.18138, y: -0.061333302}
+    - - {x: 63.202618, y: -0.061333302}
+      - {x: 63.21071, y: -0.0533333}
+      - {x: 63.232025, y: -0.0532997}
+      - {x: 63.24534, y: -0.0399496}
+      - {x: 63.245415, y: -0.01876}
+      - {x: 63.248756, y: -0.0187537}
+      - {x: 63.26126, y: -0.0062267003}
+      - {x: 63.26132, y: -0.00001}
+      - {x: 64.000015, y: 0.000042300002}
+      - {x: 63.999916, y: 1.00001}
+      - {x: 63.382095, y: 1.0000131}
+      - {x: 63.2613, y: 1.0266718}
+      - {x: 63.23463, y: 1.0293628}
+      - {x: 63.2293, y: 1.034671}
+      - {x: 63.205307, y: 1.04}
+      - {x: 63.183975, y: 1.0399665}
+      - {x: 63.173325, y: 1.0292999}
+      - {x: 63.17067, y: 1.0159988}
+      - {x: 63.17058, y: 1.00001}
+      - {x: 62.99999, y: 0.99995774}
+      - {x: 63.000084, y: -0.00001}
+      - {x: 63.170677, y: -0.000099900004}
+      - {x: 63.1707, y: -0.050691802}
+      - {x: 63.181385, y: -0.061333302}
+    - - {x: 12.202618, y: -4.061333}
+      - {x: 12.210706, y: -4.0533333}
+      - {x: 12.232026, y: -4.0532994}
+      - {x: 12.245334, y: -4.0399494}
+      - {x: 12.245421, y: -4.01876}
+      - {x: 12.248764, y: -4.0187473}
+      - {x: 12.261259, y: -4.0062175}
+      - {x: 12.261346, y: -4.00001}
+      - {x: 13.00001, y: -3.9999576}
+      - {x: 12.999914, y: -2.99999}
+      - {x: 12.382092, y: -2.999987}
+      - {x: 12.261302, y: -2.9733284}
+      - {x: 12.234633, y: -2.9706373}
+      - {x: 12.2293, y: -2.9653292}
+      - {x: 12.205308, y: -2.96}
+      - {x: 12.183974, y: -2.9600337}
+      - {x: 12.173325, y: -2.9707005}
+      - {x: 12.170667, y: -2.9840012}
+      - {x: 12.170577, y: -2.99999}
+      - {x: 11.99999, y: -3.0000424}
+      - {x: 12.000086, y: -4.00001}
+      - {x: 12.170675, y: -4.0001}
+      - {x: 12.1707, y: -4.050692}
+      - {x: 12.181384, y: -4.061333}
+    - - {x: 2.2026184, y: -10.061334}
+      - {x: 2.2107055, y: -10.053333}
+      - {x: 2.232025, y: -10.0533}
+      - {x: 2.2453332, y: -10.039949}
+      - {x: 2.2454228, y: -10.01876}
+      - {x: 2.2487648, y: -10.018747}
+      - {x: 2.26126, y: -10.006216}
+      - {x: 2.2613485, y: -10.00001}
+      - {x: 3.00001, y: -9.999958}
+      - {x: 2.9999142, y: -8.99999}
+      - {x: 2.3820915, y: -8.999988}
+      - {x: 2.2613025, y: -8.973329}
+      - {x: 2.2346332, y: -8.970637}
+      - {x: 2.2292998, y: -8.965329}
+      - {x: 2.205308, y: -8.96}
+      - {x: 2.1839747, y: -8.960033}
+      - {x: 2.1733248, y: -8.970701}
+      - {x: 2.1706667, y: -8.984001}
+      - {x: 2.1705768, y: -8.99999}
+      - {x: 1.99999, y: -9.000043}
+      - {x: 2.0000858, y: -10.00001}
+      - {x: 2.170675, y: -10.0001}
+      - {x: 2.1707003, y: -10.050693}
+      - {x: 2.1813838, y: -10.061334}
+    - - {x: 46.202625, y: -12.061344}
+      - {x: 46.21071, y: -12.053344}
+      - {x: 46.23203, y: -12.05331}
+      - {x: 46.245346, y: -12.039954}
+      - {x: 46.245426, y: -12.01876}
+      - {x: 46.24876, y: -12.018754}
+      - {x: 46.261257, y: -12.006226}
+      - {x: 46.261326, y: -12.00001}
+      - {x: 47.00001, y: -11.999958}
+      - {x: 46.999912, y: -10.99999}
+      - {x: 46.382137, y: -10.999988}
+      - {x: 46.261307, y: -10.973319}
+      - {x: 46.23464, y: -10.97063}
+      - {x: 46.2293, y: -10.96532}
+      - {x: 46.20531, y: -10.9599905}
+      - {x: 46.183968, y: -10.960023}
+      - {x: 46.173317, y: -10.970696}
+      - {x: 46.17066, y: -10.984001}
+      - {x: 46.170567, y: -10.99999}
+      - {x: 45.999992, y: -11.000043}
+      - {x: 46.000088, y: -12.00001}
+      - {x: 46.170662, y: -12.0001}
+      - {x: 46.17069, y: -12.050697}
+      - {x: 46.181377, y: -12.061344}
+>>>>>>> Conflict_Branch
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.000005
 --- !u!50 &1889720277
@@ -6935,10 +8398,14 @@ TilemapRenderer:
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ChunkCullingBounds: {x: 0, y: 0.03125, z: 0}
 =======
   m_ChunkCullingBounds: {x: 0, y: 0.06666666, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  m_ChunkCullingBounds: {x: 0, y: 0.03125, z: 0}
+>>>>>>> Conflict_Branch
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -6955,8 +8422,11 @@ Tilemap:
   m_Enabled: 1
   m_Tiles:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: -7, y: -9, z: 0}
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: 46, y: -12, z: 0}
     second:
       m_TileIndex: 1
@@ -7012,7 +8482,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 76, y: 4, z: 0}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7021,11 +8494,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 3, y: -3, z: 0}
 =======
   - first: {x: 37, y: 6, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: 6, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7034,11 +8511,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 27, y: 1, z: 0}
 =======
   - first: {x: 70, y: 9, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 70, y: 9, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7047,11 +8528,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 54, y: 1, z: 0}
 =======
   - first: {x: 32, y: 11, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 32, y: 11, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7060,11 +8545,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 8, y: 4, z: 0}
 =======
   - first: {x: 77, y: 12, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 77, y: 12, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7073,11 +8562,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 68, y: 7, z: 0}
 =======
   - first: {x: 67, y: 14, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 67, y: 14, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7086,11 +8579,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   - first: {x: 58, y: 15, z: 0}
 =======
   - first: {x: 37, y: 18, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 37, y: 18, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7100,10 +8597,14 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first: {x: 31, y: 23, z: 0}
 =======
   - first: {x: 40, y: 22, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  - first: {x: 40, y: 22, z: 0}
+>>>>>>> Conflict_Branch
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
@@ -7117,25 +8618,35 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 8
 =======
   - m_RefCount: 14
 >>>>>>> Alexis-TESTING
+=======
+  - m_RefCount: 14
+>>>>>>> Conflict_Branch
     m_Data: {fileID: 11400000, guid: 5844a5e2a09664966b227213155d4eeb, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 5b7c815f369894ce08738a6320be63e7, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 8
 =======
+=======
+>>>>>>> Conflict_Branch
   - m_RefCount: 14
     m_Data: {fileID: 21300000, guid: 5b7c815f369894ce08738a6320be63e7, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 14
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     m_Data:
       e00: 1
       e01: 0
@@ -7155,6 +8666,7 @@ Tilemap:
       e33: 1
   m_TileColorArray:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
@@ -7166,11 +8678,20 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0.9253584, g: 0.4081399, b: 0.49511412, a: 1}
+=======
+  - m_RefCount: 14
+    m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 0.71689093, g: 0.34323755, b: 0.4306727, a: 1}
+>>>>>>> Conflict_Branch
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -7, y: -14, z: 0}
   m_Size: {x: 85, y: 38, z: 1}
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7199,10 +8720,14 @@ Transform:
   m_GameObject: {fileID: 1889720274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
 =======
   m_LocalPosition: {x: -9, y: 1, z: 0}
 >>>>>>> Alexis-TESTING
+=======
+  m_LocalPosition: {x: -9, y: 1, z: 0}
+>>>>>>> Conflict_Branch
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206841758}
@@ -7866,7 +9391,10 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Conflict_Branch
   - first: {x: -13, y: 4, z: 0}
     second:
       m_TileIndex: 1
@@ -8074,31 +9602,44 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 59
 =======
   - m_RefCount: 82
 >>>>>>> Alexis-TESTING
+=======
+  - m_RefCount: 82
+>>>>>>> Conflict_Branch
     m_Data: {fileID: 11400000, guid: c58b9c5ca32fdcb4eaef3e91dff24be4, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   - m_RefCount: 59
     m_Data: {fileID: 21300000, guid: afc36d1281cbfe44a8f8fa7c0f8c855b, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 59
 =======
+=======
+>>>>>>> Conflict_Branch
   - m_RefCount: 82
     m_Data: {fileID: 21300000, guid: afc36d1281cbfe44a8f8fa7c0f8c855b, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 82
+<<<<<<< HEAD
 >>>>>>> Alexis-TESTING
+=======
+>>>>>>> Conflict_Branch
     m_Data:
       e00: 1
       e01: 0
@@ -8118,19 +9659,27 @@ Tilemap:
       e33: 1
   m_TileColorArray:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 59
 =======
   - m_RefCount: 82
 >>>>>>> Alexis-TESTING
+=======
+  - m_RefCount: 82
+>>>>>>> Conflict_Branch
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -13, y: -10, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 87, y: 22, z: 1}
 =======
   m_Size: {x: 87, y: 37, z: 1}
 >>>>>>> Alexis-TESTING
+=======
+  m_Size: {x: 87, y: 37, z: 1}
+>>>>>>> Conflict_Branch
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

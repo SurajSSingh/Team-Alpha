@@ -29,12 +29,15 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
+<<<<<<< HEAD
     // Update is called once per frame
     void Update()
     {
        
     }
 
+=======
+>>>>>>> Conflict_Branch
     public void updateHealth(float speed)
     {
         if (lives > 0 && checkingSpeed)

@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuitGame : MonoBehaviour
 {
     void Update()
     {
-<<<<<<< Updated upstream
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
 =======
-       
+
 >>>>>>> Stashed changes
     }
 }
