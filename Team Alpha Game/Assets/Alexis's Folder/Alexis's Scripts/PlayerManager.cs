@@ -29,15 +29,6 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Start Screen");
-        }
-    }
-
     public void updateHealth(float speed)
     {
         if (lives > 0 && checkingSpeed)
