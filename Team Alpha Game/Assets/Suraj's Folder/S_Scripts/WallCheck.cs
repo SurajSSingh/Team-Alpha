@@ -13,9 +13,9 @@ public class WallCheck : MonoBehaviour
         Player = gameObject.transform.parent.gameObject;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Ground")){
+        if (other.gameObject.CompareTag("Wall")){
             Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,oppositeDirection);
         }
     }

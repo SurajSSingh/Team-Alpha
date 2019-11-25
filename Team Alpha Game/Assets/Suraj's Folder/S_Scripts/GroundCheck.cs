@@ -10,14 +10,6 @@ public class GroundCheck : MonoBehaviour
     {
         Player = gameObject.transform.parent.gameObject;
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
-        }
-    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer == 11 || other.gameObject.layer == 12){

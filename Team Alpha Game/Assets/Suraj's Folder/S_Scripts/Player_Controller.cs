@@ -6,7 +6,7 @@ public class Player_Controller : MonoBehaviour
 {
     // Fields to play around with
     [SerializeField]
-    private float moveSpeed = 8.0f;
+    private float moveSpeed = 10.0f;
     //[SerializeField]
     //private float jumpForce = 250.0f;
     [SerializeField]
@@ -27,6 +27,7 @@ public class Player_Controller : MonoBehaviour
     private bool onWall = false;
 
     [SerializeField]
+    private float prevSign = 0.0f;
     private float sign = 0.0f;
 
     public Vector3 velocity;
@@ -47,6 +48,19 @@ public class Player_Controller : MonoBehaviour
     private bool wantToJump = false;
     private float timeTillJumpExpire = 0.75f;
 
+    private bool dashing = false;
+    private bool dashReady = true;
+    private float dashSpeed = 35.0f;
+    private float dashCooldown = 8.0f;
+    private float dashTimer = 0.2f;
+
+    private bool wallSliding = false;
+    private Vector2 wallClimb;
+    private Vector2 wallJump;
+    private float wallSlideSpeed = -1.5f;
+    private float wallStickTime = 0.1f;
+    private float wallStickTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +70,12 @@ public class Player_Controller : MonoBehaviour
         rb.mass = rbMass;
         gravity = 3.5f;
         jumpVelocity = 22.0f;
+        dashTimer = 0.0f;
+        dashCooldown = 4.0f;
+        wallClimb = new Vector2(10.0f, 16.0f);
+        wallJump = new Vector2(18.0f, 22.0f);
+        wallSlideSpeed = -1.5f;
+        wallStickTime = 0.1f;
         //rb.gravityScale = rbGravity;
     }
 
@@ -63,39 +83,87 @@ public class Player_Controller : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        velocity.x = input.x * moveSpeed;
-        velocity.y += gravity * Time.deltaTime;
+        dashCooldown -= Time.deltaTime;
+        if (dashCooldown <= 0.0f)
+        {
+            dashReady = true;
+        }
+        if (dashing)
+        {
+            Dash(input);
+        }
+        else
+        {
+            velocity.x = input.x * moveSpeed;
+            velocity.y -= gravity * Time.deltaTime;
+        }
         if (onGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             velocity.y = 0;
             DescendSlope(ref velocity);
         }
-        if (velocity.y > 0)
+        else if (velocity.y > 0)
         {
             velocity.y = velocity.y / 1.05f;
+        }
+        if (Input.GetKeyDown(KeyCode.Z) && dashReady)
+        {
+            dashReady = false;
+            dashing = true;
+            dashCooldown = 4.0f;
         }
         if (Input.GetKeyDown(KeyCode.Space)){
             wantToJump = true;
         }
-        if ( wantToJump && onGround && !playerOnQuicksand){
+        if (wantToJump && onGround && !playerOnQuicksand){
             velocity.y = jumpVelocity;
             wantToJump = false;
         }
-        if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign)
+        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+        if (onWall && !onGround && velocity.x != 0 && sign == prevSign)
         {
-            velocity.x = velocity.x / 2;
-            if (onWall && !playerOnQuicksand){
-                velocity.y = jumpVelocity*3/4;
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            wallSliding = true;
+            wallStickTimer = 0.15f;
+            velocity.x = sign;
+            if (velocity.y < wallSlideSpeed)
+                velocity.y = wallSlideSpeed;
+        }
+        if (wantToJump && wallSliding)
+        {
+            wantToJump = false;
+            if (sign == prevSign)
+            {
+                velocity.x = -sign * wallClimb.x;
+                velocity.y = wallClimb.y;
+                wallSliding = false;
+            }
+            else if (velocity.x != 0 && sign != prevSign)
+            {
+                if (wallStickTimer > 0.0f)
+                {
+                    wallStickTimer -= Time.deltaTime;
+                }
+                if (wallStickTimer <= 0.0f)
+                {
+                    velocity.x = -prevSign * wallJump.x;
+                    velocity.y = wallJump.y;
+                    wallSliding = false;
+                }
             }
         }
-        if (wantToJump && timeTillJumpExpire <= 0.0f){
+        wallSliding = false;
+        if (wantToJump && timeTillJumpExpire <= 0.0f)
+        {
             wantToJump = false;
             timeTillJumpExpire = 0.75f;
-        } else if (wantToJump){
+        }
+        else if (wantToJump)
+        {
             timeTillJumpExpire -= Time.deltaTime;
         }
-        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+        prevSign = sign;
     //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
     //        rb.velocity = new Vector2(rb.velocity.x/2,rb.velocity.y);
     //    }
@@ -125,28 +193,40 @@ public class Player_Controller : MonoBehaviour
         transform.Translate(velocity * Time.deltaTime);
     }
 
+    private void Dash(Vector2 input)
+    {
+        dashReady = false;
+        velocity = input * dashSpeed;
+        dashTimer -= Time.deltaTime;
+        if (dashTimer <= 0.0f)
+        {
+            dashing = false;
+            dashTimer = 0.2f;
+        }
+    }
     private void DescendSlope(ref Vector3 velocity)
     {
         float directionX = Mathf.Sign(velocity.x);
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
-        Vector2 rayOrigin = (directionX == -1) ? new Vector2(bounds.max.x, bounds.min.y) : new Vector2(bounds.min.x, bounds.min.y);
+        Vector2 botLeft = new Vector2(bounds.min.x, bounds.min.y);
+        Vector2 botRight = new Vector2(bounds.max.x, bounds.min.y);
+        Debug.Log(botLeft);
+        Debug.Log(botRight);
+        Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
         if (hit)
         {
             float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-            Debug.Log(slopeAngle);
             if (slopeAngle != 0 && slopeAngle <= maxDescendAngle)
             {
-                Debug.Log("ok?");
                 if (Mathf.Sign(hit.normal.x) == directionX)
                 {
-                    Debug.Log("OK");
                     if (hit.distance - 0.15 <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x))
                     {
-                        Debug.Log("...");
+
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
-                        velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
+                        velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
                         velocity.y -= descendVelocityY;
                     }
                 }
