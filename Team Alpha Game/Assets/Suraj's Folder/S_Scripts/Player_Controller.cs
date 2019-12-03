@@ -29,6 +29,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]
     private float prevSign = 0.0f;
     private float sign = 0.0f;
+    private float wallSign = 0.0f;
 
     public Vector3 velocity;
 
@@ -41,7 +42,6 @@ public class Player_Controller : MonoBehaviour
     public float timeToJumpApex = 1.0f;
     public float jumpVelocity;
 
-    public float wallSign = 0.0f;
     public float wallJumpForce = 250.0f;
 
     private bool playerOnQuicksand = false;
@@ -120,40 +120,48 @@ public class Player_Controller : MonoBehaviour
             velocity.y = jumpVelocity;
             wantToJump = false;
         }
+        wallSliding = false;
         sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        if (onWall && !onGround && velocity.x != 0 && sign == prevSign)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+        if (onWall && !onGround)
+        {   
             wallSliding = true;
-            wallStickTimer = 0.15f;
-            velocity.x = sign;
+            velocity.x = 0;
             if (velocity.y < wallSlideSpeed)
                 velocity.y = wallSlideSpeed;
+            if (wallStickTimer > 0.0f)
+            {
+                velocity.x = 0;
+                if (sign == wallSign)
+                {
+                    wallStickTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    wallStickTimer = 0.15f;
+                }
+            }
+            else
+            {
+                wallStickTimer = 0.15f;
+            }
+            rb.velocity = new Vector2(velocity.x, 0);
         }
-        if (wantToJump && wallSliding)
+        if (wallSliding && wantToJump)
         {
-            wantToJump = false;
-            if (sign == prevSign)
+            if (sign != wallSign)
             {
                 velocity.x = -sign * wallClimb.x;
                 velocity.y = wallClimb.y;
                 wallSliding = false;
+                wantToJump = false;
             }
-            else if (velocity.x != 0 && sign != prevSign)
+            if (sign == wallSign && wallStickTimer <= 0.0f)
             {
-                if (wallStickTimer > 0.0f)
-                {
-                    wallStickTimer -= Time.deltaTime;
-                }
-                if (wallStickTimer <= 0.0f)
-                {
-                    velocity.x = -prevSign * wallJump.x;
-                    velocity.y = wallJump.y;
-                    wallSliding = false;
-                }
+                velocity.x = wallSign * wallJump.x;
+                velocity.y = wallJump.y;
+                wantToJump = false;
             }
         }
-        wallSliding = false;
         if (wantToJump && timeTillJumpExpire <= 0.0f)
         {
             wantToJump = false;
@@ -208,8 +216,8 @@ public class Player_Controller : MonoBehaviour
     {
         float directionX = Mathf.Sign(velocity.x);
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
-        Vector2 botLeft = new Vector2(bounds.min.x, bounds.min.y);
-        Vector2 botRight = new Vector2(bounds.max.x, bounds.min.y);
+        Vector2 botLeft = new Vector2(bounds.min.x + velocity.x, bounds.min.y);
+        Vector2 botRight = new Vector2(bounds.max.x + velocity.x, bounds.min.y);
         Debug.Log(botLeft);
         Debug.Log(botRight);
         Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
