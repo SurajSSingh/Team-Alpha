@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Alexis's Folder/Alexis's Scenes/Start Screen.unity
     guid: 7f36466db4e5e064889ec5168445530c
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - enabled: 0
     path: Assets/Suraj's Folder/S_Scenes/SimpleTest Level.unity
@@ -17,4 +18,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Suraj's Folder/S_Scenes/PlaytestLevel.unity
     guid: 2b0b6ee9034e641feb36039a4d8518c5
+=======
+  - enabled: 0
+    path: Assets/Suraj's Folder/S_Scenes/SimpleTest Level.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Suraj's Folder/S_Scenes/NewPlaytestLevel.unity
+    guid: 0114fd835312744d5bad13af7409479d
+  - enabled: 1
+    path: Assets/Suraj's Folder/S_Scenes/Final Tutorial Level.unity
+    guid: 5cf0e08e75d35bd46bedc4021217e19f
+>>>>>>> master
   m_configObjects: {}

@@ -10,6 +10,7 @@ public class GroundCheck : MonoBehaviour
     {
         Player = gameObject.transform.parent.gameObject;
     }
+<<<<<<< HEAD
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +19,8 @@ public class GroundCheck : MonoBehaviour
             Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
         }
     }
+=======
+>>>>>>> master
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer == 11 || other.gameObject.layer == 12){
@@ -25,9 +28,13 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Quicksand")){
 <<<<<<< HEAD
+<<<<<<< HEAD
             Player.GetComponent<Player_Controller>().isOnQuicksand(true);
 =======
             // Player.GetComponent<Player_Controller>().isOnQuicksand(true);
+>>>>>>> master
+=======
+            Player.GetComponent<Player_Controller>().isOnQuicksand(true);
 >>>>>>> master
         }
     }
@@ -36,9 +43,13 @@ public class GroundCheck : MonoBehaviour
     {
         Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
         Player.GetComponent<Player_Controller>().isOnQuicksand(false);
 =======
         // Player.GetComponent<Player_Controller>().isOnQuicksand(false);
+>>>>>>> master
+=======
+        Player.GetComponent<Player_Controller>().isOnQuicksand(false);
 >>>>>>> master
     }
 }
