@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour
 {
     public void PlayGame()
-<<<<<<< HEAD
-    {
-=======
     { 
->>>>>>> master
         SceneManager.LoadScene(1);
     }
 }

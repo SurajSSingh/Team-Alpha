@@ -15,11 +15,7 @@ public class WallCheck : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-<<<<<<< HEAD
-        if (other.gameObject.CompareTag("Ground")){
-=======
         if (other.gameObject.CompareTag("Wall")){
->>>>>>> master
             Player.GetComponent<Player_Controller>().isPlayerWallTouch(true,oppositeDirection);
         }
     }
