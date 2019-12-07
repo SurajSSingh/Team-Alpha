@@ -27,7 +27,6 @@ public class Player_Controller : MonoBehaviour
     private bool onWall = false;
 
     [SerializeField]
-    private float prevSign = 0.0f;
     private float sign = 0.0f;
     private float wallSign = 0.0f;
 
@@ -57,9 +56,19 @@ public class Player_Controller : MonoBehaviour
     private bool wallSliding = false;
     private Vector2 wallClimb;
     private Vector2 wallJump;
-    private float wallSlideSpeed = -1.5f;
-    private float wallStickTime = 0.1f;
+    private float wallSlideSpeed;
+    private float wallStickTime;
     private float wallStickTimer;
+
+    private float stunTimer;
+    private float stunTime;
+    private float knockbackSpeed;
+    private float immuneTimer;
+    private float immuneTime;
+    private float enemyColSign = 0.0f;
+    private float reboundHeight;
+    private bool stunned = false;
+    private bool stepping = true;
 
     // Start is called before the first frame update
     void Start()
@@ -75,8 +84,12 @@ public class Player_Controller : MonoBehaviour
         wallClimb = new Vector2(10.0f, 16.0f);
         wallJump = new Vector2(18.0f, 22.0f);
         wallSlideSpeed = -1.5f;
-        wallStickTime = 0.1f;
-        //rb.gravityScale = rbGravity;
+        wallStickTime = 0.15f;
+        stunTime = 1.0f;
+        knockbackSpeed = 4.0f;
+        immuneTimer = 0.0f;
+        immuneTime = 2.0f;
+        reboundHeight = 20.0f;
     }
 
     // Update is called once per frame
@@ -84,94 +97,108 @@ public class Player_Controller : MonoBehaviour
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         dashCooldown -= Time.deltaTime;
-        if (dashCooldown <= 0.0f)
+        immuneTimer -= Time.deltaTime;
+        if (!stunned || immuneTimer <= 1.0f)
         {
-            dashReady = true;
-        }
-        if (dashing)
-        {
-            Dash(input);
-        }
-        else
-        {
-            velocity.x = input.x * moveSpeed;
-            velocity.y -= gravity * Time.deltaTime;
-        }
-        if (onGround)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            velocity.y = 0;
-            DescendSlope(ref velocity);
-        }
-        else if (velocity.y > 0)
-        {
-            velocity.y = velocity.y / 1.05f;
-        }
-        if (Input.GetKeyDown(KeyCode.Z) && dashReady)
-        {
-            dashReady = false;
-            dashing = true;
-            dashCooldown = 4.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.Space)){
-            wantToJump = true;
-        }
-        if (wantToJump && onGround && !playerOnQuicksand){
-            velocity.y = jumpVelocity;
-            wantToJump = false;
-        }
-        wallSliding = false;
-        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        if (onWall && !onGround)
-        {   
-            wallSliding = true;
-            velocity.x = 0;
-            if (velocity.y < wallSlideSpeed)
-                velocity.y = wallSlideSpeed;
-            if (wallStickTimer > 0.0f)
+            if (onGround)
             {
-                velocity.x = 0;
-                if (sign == wallSign)
-                {
-                    wallStickTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    wallStickTimer = 0.15f;
-                }
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                velocity.y = 0;
+                DescendSlope(ref velocity);
+            }
+            if (dashCooldown <= 0.0f)
+            {
+                dashReady = true;
+            }
+            if (dashing)
+            {
+                Dash(input);
+            }
+            if (stepping)
+            {
+                stepping = false;
+                velocity.y = reboundHeight;
             }
             else
             {
-                wallStickTimer = 0.15f;
+                velocity.x = input.x * moveSpeed;
+                velocity.y -= gravity * Time.deltaTime;
             }
-            rb.velocity = new Vector2(velocity.x, 0);
-        }
-        if (wallSliding && wantToJump)
-        {
-            if (sign != wallSign)
+            if (velocity.y > 0)
             {
-                velocity.x = -sign * wallClimb.x;
-                velocity.y = wallClimb.y;
-                wallSliding = false;
+                velocity.y = velocity.y / 1.05f;
+            }
+            if (Input.GetKeyDown(KeyCode.Z) && dashReady)
+            {
+                dashReady = false;
+                dashing = true;
+                dashCooldown = 4.0f;
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                wantToJump = true;
+            }
+            if (wantToJump && onGround && !playerOnQuicksand)
+            {
+                velocity.y = jumpVelocity;
                 wantToJump = false;
             }
-            if (sign == wallSign && wallStickTimer <= 0.0f)
+            wallSliding = false;
+            sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+            if (onWall && !onGround)
             {
-                velocity.x = wallSign * wallJump.x;
-                velocity.y = wallJump.y;
+                wallSliding = true;
+                velocity.x = 0;
+                if (velocity.y < wallSlideSpeed)
+                    velocity.y = wallSlideSpeed;
+                if (wallStickTimer > 0.0f)
+                {
+                    velocity.x = 0;
+                    if (sign == wallSign)
+                    {
+                        wallStickTimer -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        wallStickTimer = wallStickTime;
+                    }
+                }
+                else
+                {
+                    wallStickTimer = wallStickTime;
+                }
+                rb.velocity = new Vector2(velocity.x, 0);
+            }
+            if (wallSliding && wantToJump)
+            {
+                if (sign != wallSign)
+                {
+                    velocity.x = -sign * wallClimb.x;
+                    velocity.y = wallClimb.y;
+                    wallSliding = false;
+                    wantToJump = false;
+                }
+                if (sign == wallSign && wallStickTimer <= 0.0f)
+                {
+                    velocity.x = wallSign * wallJump.x;
+                    velocity.y = wallJump.y;
+                    wantToJump = false;
+                }
+            }
+            if (wantToJump && timeTillJumpExpire <= 0.0f)
+            {
                 wantToJump = false;
+                timeTillJumpExpire = 0.75f;
+            }
+            else if (wantToJump)
+            {
+                timeTillJumpExpire -= Time.deltaTime;
             }
         }
-        if (wantToJump && timeTillJumpExpire <= 0.0f)
+        else
         {
-            wantToJump = false;
-            timeTillJumpExpire = 0.75f;
+            Knockback();
         }
-        else if (wantToJump)
-        {
-            timeTillJumpExpire -= Time.deltaTime;
-        }
-        prevSign = sign;
     //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
     //        rb.velocity = new Vector2(rb.velocity.x/2,rb.velocity.y);
     //    }
@@ -242,12 +269,45 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
+    private void Knockback()
+    {
+        if (stunTimer <= 1.0f && stunTimer >= 0.5f)
+        {
+            velocity.x = enemyColSign * knockbackSpeed;
+            velocity.y = 1.0f;
+        }
+        else if (stunTimer <= 0.5f && stunTimer >= 0.0f)
+        {
+            velocity = Vector2.zero;
+        }
+        else
+        {
+            stunned = false;
+        }
+    }
+
     // Used to change on ground value
     public void isPlayerGrounded(bool grounded)
     {
 
         onGround = grounded;
     } 
+
+    public void isPlayerEnemyTouch(bool isAttacked, float sign)
+    {
+        if (immuneTimer <= 0.0f)
+        {
+            stunned = isAttacked;
+            enemyColSign = sign;
+            stunTimer = stunTime;
+            immuneTimer = immuneTime;
+        }
+    }
+
+    public void isStepping(bool isStepping)
+    {
+        stepping = true;
+    }
 
     public void isPlayerWallTouch(bool wallTouching, float sign)
     {
