@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
 
     public int lives = 3;
 
+    public string dashCond;
+
     private bool checkingSpeed = true;
 
     // Start is called before the first frame update
@@ -121,6 +123,11 @@ public class PlayerManager : MonoBehaviour
             ScreenManager.instance.GameLose();
         }
 
+    }
+
+    public void updateDash(string dash)
+    {
+        dashCond = dash;
     }
 
     public void StopChecking()

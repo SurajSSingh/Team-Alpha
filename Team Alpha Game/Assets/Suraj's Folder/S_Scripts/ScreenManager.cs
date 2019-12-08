@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ScreenManager : MonoBehaviour
 {
     public Text livesText;
+    public Text dashReady;
     public GameObject winScreen;
     public GameObject loseScreen;
 
@@ -23,6 +24,7 @@ public class ScreenManager : MonoBehaviour
     void Update()
     {
         livesText.text = "Lives: " + PlayerManager.instance.lives.ToString();
+        dashReady.text = PlayerManager.instance.dashCond;
     }
 
     public void CloseScreen(GameObject screen)
@@ -45,5 +47,10 @@ public class ScreenManager : MonoBehaviour
     {
         PlayerManager.instance.StopChecking();
         loseScreen.SetActive(true);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

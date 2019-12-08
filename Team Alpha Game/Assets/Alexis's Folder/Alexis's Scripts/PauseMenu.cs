@@ -42,11 +42,19 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
+<<<<<<< HEAD
         SceneManager.LoadScene("Start Screen");
+=======
+        SceneManager.LoadScene(0);
+>>>>>>> master
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
