@@ -50,8 +50,8 @@ public class Player_Controller : MonoBehaviour
 
     private bool dashing = false;
     private bool dashReady = true;
-    private float dashSpeed = 35.0f;
-    private float dashCooldown = 8.0f;
+    private float dashSpeed = 100.0f;
+    private float dashCooldown = 3.0f;
     private float dashTimer = 0.2f;
 
     private bool wallSliding = false;
@@ -122,7 +122,7 @@ public class Player_Controller : MonoBehaviour
             }
             else
             {
-                velocity.x = input.x * moveSpeed;
+                velocity.x = playerOnQuicksand ? input.x*moveSpeed/4 : input.x * moveSpeed;
                 velocity.y -= gravity * Time.deltaTime;
             }
             if (velocity.y > 0)
@@ -137,7 +137,7 @@ public class Player_Controller : MonoBehaviour
             {
                 PlayerManager.instance.updateDash("Dash Unavailable");
             }
-            if (Input.GetKeyDown(KeyCode.Z) && dashReady)
+            if (Input.GetKeyDown(KeyCode.E) && dashReady)
             {
                 dashReady = false;
                 dashing = true;
@@ -147,9 +147,9 @@ public class Player_Controller : MonoBehaviour
             {
                 wantToJump = true;
             }
-            if (wantToJump && onGround && !playerOnQuicksand)
+            if (wantToJump && onGround)
             {
-                velocity.y = jumpVelocity;
+                velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
                 wantToJump = false;
             }
             wallSliding = false;
