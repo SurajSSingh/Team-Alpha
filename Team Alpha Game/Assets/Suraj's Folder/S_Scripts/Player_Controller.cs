@@ -50,7 +50,7 @@ public class Player_Controller : MonoBehaviour
 
     private bool dashing = false;
     private bool dashReady = true;
-    private float dashSpeed = 35.0f;
+    private float dashSpeed = 75.0f;
     private float dashCooldown = 8.0f;
     private float dashTimer = 0.2f;
 
@@ -60,6 +60,7 @@ public class Player_Controller : MonoBehaviour
     private float wallSlideSpeed = -1.5f;
     private float wallStickTime = 0.1f;
     private float wallStickTimer;
+    private float slopeMult = 10.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +77,9 @@ public class Player_Controller : MonoBehaviour
         wallJump = new Vector2(18.0f, 22.0f);
         wallSlideSpeed = -1.5f;
         wallStickTime = 0.1f;
+        dashReady = true;
+        dashing = false;
+        dashCooldown = 4.0f;
         //rb.gravityScale = rbGravity;
     }
 
@@ -94,7 +98,8 @@ public class Player_Controller : MonoBehaviour
         }
         else
         {
-            velocity.x = input.x * moveSpeed;
+            float multiplier = playerOnQuicksand? 0.25f: 1.0f;
+            velocity.x = input.x * moveSpeed * multiplier;
             velocity.y -= gravity * Time.deltaTime;
         }
         if (onGround)
@@ -107,7 +112,7 @@ public class Player_Controller : MonoBehaviour
         {
             velocity.y = velocity.y / 1.05f;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && dashReady)
+        if (Input.GetKeyDown(KeyCode.E) && dashReady && !playerOnQuicksand)
         {
             dashReady = false;
             dashing = true;
@@ -116,8 +121,8 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             wantToJump = true;
         }
-        if (wantToJump && onGround && !playerOnQuicksand){
-            velocity.y = jumpVelocity;
+        if (wantToJump && onGround){
+            velocity.y = playerOnQuicksand? jumpVelocity/4 :jumpVelocity;
             wantToJump = false;
         }
         wallSliding = false;
@@ -218,8 +223,8 @@ public class Player_Controller : MonoBehaviour
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
         Vector2 botLeft = new Vector2(bounds.min.x + velocity.x, bounds.min.y);
         Vector2 botRight = new Vector2(bounds.max.x + velocity.x, bounds.min.y);
-        Debug.Log(botLeft);
-        Debug.Log(botRight);
+        //Debug.Log(botLeft);
+        //Debug.Log(botRight);
         Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
         if (hit)
@@ -234,11 +239,12 @@ public class Player_Controller : MonoBehaviour
 
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
-                        velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
+                        velocity.x += (Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x));
                         velocity.y -= descendVelocityY;
                     }
                 }
             }
+            // velocity *= slopeMult;
         }
     }
 

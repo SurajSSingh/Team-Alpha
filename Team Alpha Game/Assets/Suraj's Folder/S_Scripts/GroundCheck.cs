@@ -5,11 +5,14 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private GameObject Player;
+    private float lessTimer;
+    private float countdown;
     // Start is called before the first frame update
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
     }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer == 11 || other.gameObject.layer == 12){
@@ -25,4 +28,6 @@ public class GroundCheck : MonoBehaviour
         Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
         Player.GetComponent<Player_Controller>().isOnQuicksand(false);
     }
+
+    
 }
