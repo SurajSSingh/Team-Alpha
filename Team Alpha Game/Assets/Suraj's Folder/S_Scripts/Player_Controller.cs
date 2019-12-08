@@ -96,12 +96,12 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(velocity);
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         dashCooldown -= Time.deltaTime;
         immuneTimer -= Time.deltaTime;
         if (!stunned || immuneTimer <= 1.0f)
         {
+            Debug.Log(velocity);
             if (onGround)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -244,6 +244,7 @@ public class Player_Controller : MonoBehaviour
         dashReady = false;
         velocity.x = input.x * dashSpeed;
         velocity.y = input.y;
+        Debug.Log(velocity);
         dashTimer -= Time.deltaTime;
         if (dashTimer <= 0.0f)
         {
