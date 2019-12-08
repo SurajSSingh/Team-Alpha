@@ -50,7 +50,7 @@ public class Player_Controller : MonoBehaviour
 
     private bool dashing = false;
     private bool dashReady = true;
-    private float dashSpeed = 100.0f;
+    private float dashSpeed = 75.0f;
     private float dashCooldown = 3.0f;
     private float dashTimer = 0.2f;
 
@@ -96,6 +96,7 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(velocity);
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         dashCooldown -= Time.deltaTime;
         immuneTimer -= Time.deltaTime;
@@ -154,6 +155,7 @@ public class Player_Controller : MonoBehaviour
             }
             wallSliding = false;
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+            Debug.Log(wallSliding);
             if (onWall && !onGround)
             {
                 wallSliding = true;
@@ -240,7 +242,8 @@ public class Player_Controller : MonoBehaviour
     private void Dash(Vector2 input)
     {
         dashReady = false;
-        velocity = input * dashSpeed;
+        velocity.x = input.x * dashSpeed;
+        velocity.y = input.y;
         dashTimer -= Time.deltaTime;
         if (dashTimer <= 0.0f)
         {
@@ -254,8 +257,8 @@ public class Player_Controller : MonoBehaviour
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
         Vector2 botLeft = new Vector2(bounds.min.x + velocity.x, bounds.min.y);
         Vector2 botRight = new Vector2(bounds.max.x + velocity.x, bounds.min.y);
-        Debug.Log(botLeft);
-        Debug.Log(botRight);
+        // Debug.Log(botLeft);
+        // Debug.Log(botRight);
         Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
         if (hit)
@@ -269,7 +272,7 @@ public class Player_Controller : MonoBehaviour
                     {
 
                         float moveDistance = Mathf.Abs(velocity.x);
-                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance *10;
                         velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
                         velocity.y -= descendVelocityY;
                     }
