@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Alexis's Folder/Alexis's Scenes/Start Screen.unity
+    guid: 7f36466db4e5e064889ec5168445530c
+  - enabled: 1
+    path: Assets/Suraj's Folder/S_Scenes/MVP_Level.unity
+    guid: 2ce2925ed39c947ec910f6e012105b31
   m_configObjects: {}
