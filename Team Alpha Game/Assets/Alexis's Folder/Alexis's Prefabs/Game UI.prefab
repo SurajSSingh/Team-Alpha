@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053749997, y: 0.040221192}
   m_AnchorMax: {x: 0.053749997, y: 0.040221192}
-  m_AnchoredPosition: {x: 132, y: 33.55}
-  m_SizeDelta: {x: 339.7, y: 67.1}
+  m_AnchoredPosition: {x: 68.9, y: 7.8}
+  m_SizeDelta: {x: 224.1, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7799345251883968566
 CanvasRenderer:
@@ -400,18 +400,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 38
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 3
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Dash Ready
 --- !u!1 &5570265749486830741
 GameObject:
   m_ObjectHideFlags: 0
