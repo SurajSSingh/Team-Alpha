@@ -24,6 +24,9 @@ public class GroundCheck : MonoBehaviour
         {
             pc.isStepping(true);
         }
+        if (other.gameObject.CompareTag("Quicksand")){
+            Player.GetComponent<Player_Controller>().isOnQuicksand(true);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -31,4 +34,6 @@ public class GroundCheck : MonoBehaviour
         pc.isPlayerGrounded(false);
         pc.isOnQuicksand(false);
     }
+
+    
 }

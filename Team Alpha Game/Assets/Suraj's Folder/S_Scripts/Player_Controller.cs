@@ -27,6 +27,7 @@ public class Player_Controller : MonoBehaviour
     private bool onWall = false;
 
     [SerializeField]
+    private float prevSign = 0.0f;
     private float sign = 0.0f;
     private float wallSign = 0.0f;
 
@@ -49,8 +50,8 @@ public class Player_Controller : MonoBehaviour
 
     private bool dashing = false;
     private bool dashReady = true;
-    private float dashSpeed = 35.0f;
-    private float dashCooldown = 8.0f;
+    private float dashSpeed = 75.0f;
+    private float dashCooldown = 3.0f;
     private float dashTimer = 0.2f;
 
     private bool wallSliding = false;
@@ -100,6 +101,7 @@ public class Player_Controller : MonoBehaviour
         immuneTimer -= Time.deltaTime;
         if (!stunned || immuneTimer <= 1.0f)
         {
+            Debug.Log(velocity);
             if (onGround)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -121,7 +123,7 @@ public class Player_Controller : MonoBehaviour
             }
             else
             {
-                velocity.x = input.x * moveSpeed;
+                velocity.x = playerOnQuicksand ? input.x*moveSpeed/4 : input.x * moveSpeed;
                 velocity.y -= gravity * Time.deltaTime;
             }
             if (velocity.y > 0)
@@ -146,13 +148,14 @@ public class Player_Controller : MonoBehaviour
             {
                 wantToJump = true;
             }
-            if (wantToJump && onGround && !playerOnQuicksand)
+            if (wantToJump && onGround)
             {
-                velocity.y = jumpVelocity;
+                velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
                 wantToJump = false;
             }
             wallSliding = false;
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+            Debug.Log(wallSliding);
             if (onWall && !onGround)
             {
                 wallSliding = true;
@@ -239,7 +242,9 @@ public class Player_Controller : MonoBehaviour
     private void Dash(Vector2 input)
     {
         dashReady = false;
-        velocity = input * dashSpeed;
+        velocity.x = input.x * dashSpeed;
+        velocity.y = input.y;
+        Debug.Log(velocity);
         dashTimer -= Time.deltaTime;
         if (dashTimer <= 0.0f)
         {
@@ -253,8 +258,8 @@ public class Player_Controller : MonoBehaviour
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
         Vector2 botLeft = new Vector2(bounds.min.x + velocity.x, bounds.min.y);
         Vector2 botRight = new Vector2(bounds.max.x + velocity.x, bounds.min.y);
-        Debug.Log(botLeft);
-        Debug.Log(botRight);
+        // Debug.Log(botLeft);
+        // Debug.Log(botRight);
         Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
         if (hit)
@@ -268,7 +273,7 @@ public class Player_Controller : MonoBehaviour
                     {
 
                         float moveDistance = Mathf.Abs(velocity.x);
-                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance *10;
                         velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
                         velocity.y -= descendVelocityY;
                     }

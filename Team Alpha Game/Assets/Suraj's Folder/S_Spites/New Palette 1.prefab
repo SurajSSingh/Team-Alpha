@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7852166885447699390}
   - component: {fileID: 1510571017806146636}
   m_Layer: 31
-  m_Name: New Palette
+  m_Name: New Palette 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6046213968652320177}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 1.0869565, y: 1.0869565, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -119,14 +119,14 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 60202feedf3f8a841b358d99702e9e28, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 5844a5e2a09664966b227213155d4eeb, type: 2}
+    m_Data: {fileID: 11400000, guid: c68f5ab11121940999dfd249525f82f3, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: afc36d1281cbfe44a8f8fa7c0f8c855b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: f80a06500927d63418b51d37294ee2b7, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 5b7c815f369894ce08738a6320be63e7, type: 3}
+    m_Data: {fileID: 21300000, guid: 278abf8a9de61484aa30fae7b8d31fbd, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 3
     m_Data:
