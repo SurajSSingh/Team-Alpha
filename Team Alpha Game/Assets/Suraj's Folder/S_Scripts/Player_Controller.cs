@@ -136,7 +136,7 @@ public class Player_Controller : MonoBehaviour
             {
                 PlayerManager.instance.updateDash("Dash Unavailable");
             }
-            if (Input.GetKeyDown(KeyCode.Z) && dashReady)
+            if (Input.GetKeyDown(KeyCode.E) && dashReady)
             {
                 dashReady = false;
                 dashing = true;
