@@ -6,15 +6,12 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer ren;
-    [SerializeField]
-    private Vector2 spawnPoint;
     private bool attacked;
     // Start is called before the first frame update
     void Start()
     {
         ren.enabled = true;
         attacked = false;
-        transform.position = spawnPoint;
     }
 
     // Update is called once per frame
