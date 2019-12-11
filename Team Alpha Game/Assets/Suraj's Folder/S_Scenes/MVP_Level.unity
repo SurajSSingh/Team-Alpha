@@ -80730,12 +80730,17 @@ PrefabInstance:
     - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 68.899994
+      value: 356.94998
       objectReference: {fileID: 0}
     - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 7.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800.1
       objectReference: {fileID: 0}
     - target: {fileID: 1967432621584925589, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}

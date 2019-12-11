@@ -14,7 +14,7 @@ public class Level_End : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
+        // Debug.Log(other);
         respawner.GetComponent<Respawn_Manager>().Respawn();
     }
 }
