@@ -61,7 +61,7 @@ public class Respawn_Manager : MonoBehaviour
             checkpoint_tiles.SetTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0),active);
             AudioSource.PlayClipAtPoint(activateCheckpoint,checkpoint);
         }
-        checkpoint.y += 2;
+        checkpoint.y += 0.1f;
 
     }
 

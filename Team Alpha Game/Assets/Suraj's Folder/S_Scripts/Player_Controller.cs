@@ -181,7 +181,7 @@ public class Player_Controller : MonoBehaviour
             {
                 PlayerManager.instance.updateDash("Dash Unavailable");
             }
-            if (Input.GetKeyDown(KeyCode.E) && dashReady)
+            if (Input.GetKeyDown(KeyCode.E) && dashReady && input != Vector2.zero)
             {
                 dashReady = false;
                 dashing = true;
@@ -358,11 +358,11 @@ public class Player_Controller : MonoBehaviour
         if (direction != Vector2.zero)
         {
             Vector2 rayOrigin = GenerateRayOrigins(direction);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, Mathf.Infinity, collisionMask);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, 14.0f, collisionMask);
             if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
                 // Debug.Log("Should Dash");
-                velocity = velocity*3;
+                velocity = velocity/1.5f;
                 AudioSource.PlayClipAtPoint(dashSound,this.transform.position,2.0f);
             }
         }
