@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -51,7 +52,7 @@ public class Player_Controller : MonoBehaviour
 
     private bool playerOnQuicksand = false;
     private bool wantToJump = false;
-    private float timeTillJumpExpire = 0.75f;
+    private float timeTillJumpExpire = 0.4f;
 
     public bool dashing = false;
     public bool dashReady = true;
@@ -79,6 +80,11 @@ public class Player_Controller : MonoBehaviour
     public bool stepping = false;
 
     public Animator animator;
+    public AudioClip runSound;
+    public AudioClip groundJumpSound;
+    public AudioClip wallJumpSound;
+    public float soundTimeDelay = 0.5f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +113,20 @@ public class Player_Controller : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+
+        if ((velocity.x < -0.001 || velocity.x > 0.001) && soundTimeDelay > 0.5f) 
+        {
+            soundTimeDelay = 0.0f;
+            AudioSource.PlayClipAtPoint(runSound,this.transform.position);
+        }
+        else 
+        {
+            soundTimeDelay += Time.deltaTime;
+        }
+    }
+
     void FixedUpdate()
     {
         animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
@@ -165,6 +185,7 @@ public class Player_Controller : MonoBehaviour
             {
                 velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
                 wantToJump = false;
+                AudioSource.PlayClipAtPoint(groundJumpSound,this.transform.position);
             }
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
             if (!wallSliding)
@@ -219,7 +240,7 @@ public class Player_Controller : MonoBehaviour
             if (wantToJump && timeTillJumpExpire <= 0.0f)
             {
                 wantToJump = false;
-                timeTillJumpExpire = 0.75f;
+                timeTillJumpExpire = 0.4f;
             }
             else if (wantToJump)
             {
@@ -387,6 +408,7 @@ public class Player_Controller : MonoBehaviour
         wallSliding = false;
         wantToJump = false;
         wallStickCooldown = 0.6f;
+        AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position);
     }
 
     private void Knockback()
