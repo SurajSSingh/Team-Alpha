@@ -410,8 +410,12 @@ MonoBehaviour:
   gravity: 0
   prevDir: {x: 0, y: 0}
   velocity: {x: 0, y: 0, z: 0}
+  terminalVel: {x: 0, y: 0}
   inSession: 0
   playerJump: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
   jumpHeight: 10
   timeToJumpApex: 1
   jumpVelocity: 0
@@ -428,6 +432,7 @@ MonoBehaviour:
   wallSlideSpeed: 0
   wallStickTime: 0
   wallStickTimer: 0
+  wallStickCooldown: 0
   stunTimer: 0
   stunTime: 0
   knockbackSpeed: 0
@@ -576,7 +581,7 @@ GameObject:
   - component: {fileID: 306538767}
   m_Layer: 13
   m_Name: AboveCheck
-  m_TagString: Untagged
+  m_TagString: EnemyHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +613,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.45}
+  m_Offset: {x: 0, y: 0.55}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -645,9 +650,10 @@ GameObject:
   - component: {fileID: 345806644}
   - component: {fileID: 345806646}
   - component: {fileID: 345806645}
+  - component: {fileID: 345806647}
   m_Layer: 8
   m_Name: RightWallCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,6 +714,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &345806647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345806643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e92d9fa681cc4bb42b84f55cf221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeDirection: -1
 --- !u!114 &475628716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3809,9 +3828,10 @@ GameObject:
   - component: {fileID: 779899052}
   - component: {fileID: 779899054}
   - component: {fileID: 779899053}
+  - component: {fileID: 779899055}
   m_Layer: 8
   m_Name: LeftWallCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3872,6 +3892,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &779899055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779899051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e92d9fa681cc4bb42b84f55cf221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppositeDirection: 1
 --- !u!1 &822563057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,7 +5276,7 @@ GameObject:
   - component: {fileID: 1132665190}
   m_Layer: 13
   m_Name: AboveCheck
-  m_TagString: Untagged
+  m_TagString: EnemyHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5275,7 +5308,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.45}
+  m_Offset: {x: 0, y: 0.55}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5448,7 +5481,7 @@ GameObject:
   - component: {fileID: 1166490294}
   m_Layer: 8
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6606,15 +6639,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4852907746803186452, guid: f37f1e7225e8b244ba95958d05f20807,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4852907746803186449, guid: f37f1e7225e8b244ba95958d05f20807,
         type: 3}
       propertyPath: m_Size.x
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4852907746987993653, guid: f37f1e7225e8b244ba95958d05f20807,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4852907746987993654, guid: f37f1e7225e8b244ba95958d05f20807,
         type: 3}
       propertyPath: m_Size.x
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852907747397519803, guid: f37f1e7225e8b244ba95958d05f20807,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerAttack
       objectReference: {fileID: 0}
     - target: {fileID: 4852907747397519796, guid: f37f1e7225e8b244ba95958d05f20807,
         type: 3}
@@ -6813,7 +6861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.83
+  radius: 0.7
   height: 2
   repathRate: 0.5
   canSearch: 1

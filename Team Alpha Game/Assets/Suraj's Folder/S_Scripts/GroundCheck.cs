@@ -24,7 +24,7 @@ public class GroundCheck : MonoBehaviour
             pc.isPlayerGrounded(true);
             pc.isOnQuicksand(true);
         }
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("EnemyHead"))
         {
             pc.isStepping(true);
         }
@@ -41,7 +41,7 @@ public class GroundCheck : MonoBehaviour
             pc.isPlayerGrounded(true);
             pc.isOnQuicksand(true);
         }
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("EnemyHead"))
         {
             pc.isStepping(true);
         }

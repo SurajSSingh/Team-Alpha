@@ -97,7 +97,7 @@ public class Player_Controller : MonoBehaviour
         wallStickTime = 0.1f;
         wallStickCooldown = 0.0f;
         stunTime = 1.0f;
-        knockbackSpeed = 4.0f;
+        knockbackSpeed = 8.0f;
         immuneTimer = 0.0f;
         immuneTime = 2.0f;
         reboundHeight = 20.0f;
@@ -194,21 +194,22 @@ public class Player_Controller : MonoBehaviour
             }
             if (wallSliding && wantToJump)
             {
-                if (sign != wallSign)
+                if (sign != wallSign && input.x == sign)
                 {
                     velocity.x = wallSign * wallClimb.x;
                     velocity.y = wallClimb.y;
                     DetachFromWall();
                 }
-                if (sign == wallSign && wallStickTimer <= 0.0f)
+                else if (sign == wallSign && wallStickTimer <= 0.0f)
                 {
                     velocity.x = wallSign * wallJump.x;
                     velocity.y = wallJump.y;
                     DetachFromWall();
                 }
-                else if (sign == 0.0f)
+                else if (input.x == 0.0f)
                 {
-                    velocity.x = 10.0f;
+                    velocity.x = wallSign * 20.0f;
+                    velocity.y = -1.0f;
                     DetachFromWall();
                 }
             }
@@ -224,7 +225,7 @@ public class Player_Controller : MonoBehaviour
             if (againstCeiling)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
-                velocity.y = 0;
+                velocity.y = -3.0f;
             }
         }
         else
@@ -324,7 +325,7 @@ public class Player_Controller : MonoBehaviour
         {
             Vector2 rayOrigin = GenerateRayOrigins(direction);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, Mathf.Infinity, collisionMask);
-            if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.5)
+            if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
                 velocity = velocity/5;
             }
@@ -381,11 +382,12 @@ public class Player_Controller : MonoBehaviour
     {
         wallSliding = false;
         wantToJump = false;
-        wallStickCooldown = 0.2f;
+        wallStickCooldown = 0.6f;
     }
 
     private void Knockback()
     {
+        Debug.Log("yes");
         if (stunTimer <= 1.0f && stunTimer >= 0.5f)
         {
             velocity.x = enemyColSign * knockbackSpeed;
