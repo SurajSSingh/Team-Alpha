@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Respawn_Manager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Respawn_Manager : MonoBehaviour
     private float timer = 0.0f;
 
     private Vector3 checkpoint = Vector3.zero;
+    public Tilemap checkpoint_tiles;
+    public Tile active;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +53,12 @@ public class Respawn_Manager : MonoBehaviour
     {
         //Debug.Log(checkpoint);
         checkpoint = other.gameObject.transform.position;
+        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)))
+        {
+            checkpoint_tiles.SetTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0),active);
+        }
         checkpoint.y += 2;
+
     }
 
     public void Respawn()

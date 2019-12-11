@@ -287,8 +287,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a8fcf642b61c3488e9bc1986ccaf6a75, type: 3}
-  m_Color: {r: 0.062611245, g: 0.6320754, b: 0.18556368, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b791bdf74d1ad4a169e65229513e5d7a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -353,12 +353,37 @@ MonoBehaviour:
   rbDrag: 0.5
   rbMass: 1.5
   gravity: 0
-  sign: 0
+  prevDir: {x: 0, y: 0}
   velocity: {x: 0, y: 0, z: 0}
+  terminalVel: {x: 0, y: 0}
   inSession: 0
   playerJump: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
   jumpHeight: 10
   timeToJumpApex: 1
   jumpVelocity: 0
-  wallSign: 0
   wallJumpForce: 250
+  dashing: 0
+  dashReady: 1
+  dashSpeed: 0
+  dashCooldown: 0
+  dashTime: 0
+  dashTimer: 0
+  wallSliding: 0
+  wallClimb: {x: 0, y: 0}
+  wallJump: {x: 0, y: 0}
+  wallSlideSpeed: 0
+  wallStickTime: 0
+  wallStickTimer: 0
+  wallStickCooldown: 0
+  stunTimer: 0
+  stunTime: 0
+  knockbackSpeed: 0
+  immuneTimer: 0
+  immuneTime: 0
+  enemyColSign: 0
+  reboundHeight: 0
+  stunned: 0
+  stepping: 0
