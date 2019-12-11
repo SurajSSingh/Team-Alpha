@@ -25,6 +25,12 @@ public class ScreenManager : MonoBehaviour
     {
         livesText.text = "Lives: " + PlayerManager.instance.lives.ToString();
         dashReady.text = PlayerManager.instance.dashCond;
+        if (dashReady.text.Contains("Un"))
+        {
+            dashReady.color = Color.red;
+        } else {
+            dashReady.color = Color.green;   
+        }
     }
 
     public void CloseScreen(GameObject screen)

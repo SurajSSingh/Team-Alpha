@@ -330,7 +330,8 @@ public class Player_Controller : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, Mathf.Infinity, collisionMask);
             if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
-                velocity = velocity/5;
+                Debug.Log("Should Dash");
+                velocity = velocity*5;
             }
         }
         dashTimer -= Time.deltaTime;
