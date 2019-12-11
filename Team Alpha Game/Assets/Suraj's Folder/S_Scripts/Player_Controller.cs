@@ -78,6 +78,8 @@ public class Player_Controller : MonoBehaviour
     public bool stunned = false;
     public bool stepping = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -107,6 +109,7 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         dashCooldown -= Time.deltaTime;
         immuneTimer -= Time.deltaTime;
