@@ -15,9 +15,9 @@ public class Player_Controller : MonoBehaviour
     private float maxDescendAngle = 120.0f;
 
     [SerializeField]
-    private float rbDrag = 0.5f;
+    private float rbDrag;
     [SerializeField]
-    private float rbMass = 0.5f;
+    private float rbMass;
     [SerializeField]
     //private float rbGravity = -20.0f;
     private float gravity;
@@ -26,15 +26,20 @@ public class Player_Controller : MonoBehaviour
     
     private bool onWall = false;
 
+    private bool againstCeiling = false;
+
     [SerializeField]
-    private float prevSign = 0.0f;
+    private Vector2 prevDir;
     private float sign = 0.0f;
     private float wallSign = 0.0f;
 
     public Vector3 velocity;
+    public Vector2 terminalVel;
 
     public bool inSession = false;
     public bool playerJump = false;
+
+    public LayerMask collisionMask;
 
     //public float fastDescent = 5.0f;
     //public float terminalVel = -20.0f;
@@ -48,49 +53,55 @@ public class Player_Controller : MonoBehaviour
     private bool wantToJump = false;
     private float timeTillJumpExpire = 0.75f;
 
-    private bool dashing = false;
-    private bool dashReady = true;
-    private float dashSpeed = 75.0f;
-    private float dashCooldown = 3.0f;
-    private float dashTimer = 0.2f;
+    public bool dashing = false;
+    public bool dashReady = true;
+    public float dashSpeed;
+    public float dashCooldown;
+    public float dashTime;
+    public float dashTimer;
 
-    private bool wallSliding = false;
-    private Vector2 wallClimb;
-    private Vector2 wallJump;
-    private float wallSlideSpeed;
-    private float wallStickTime;
-    private float wallStickTimer;
+    public bool wallSliding = false;
+    public Vector2 wallClimb;
+    public Vector2 wallJump;
+    public float wallSlideSpeed;
+    public float wallStickTime;
+    public float wallStickTimer;
+    public float wallStickCooldown;
 
-    private float stunTimer;
-    private float stunTime;
-    private float knockbackSpeed;
-    private float immuneTimer;
-    private float immuneTime;
-    private float enemyColSign = 0.0f;
-    private float reboundHeight;
-    private bool stunned = false;
-    private bool stepping = true;
+    public float stunTimer;
+    public float stunTime;
+    public float knockbackSpeed;
+    public float immuneTimer;
+    public float immuneTime;
+    public float enemyColSign = 0.0f;
+    public float reboundHeight;
+    public bool stunned = false;
+    public bool stepping = false;
 
     // Start is called before the first frame update
     void Start()
     {
         inSession = true;
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.drag = rbDrag;
-        rb.mass = rbMass;
-        gravity = 3.5f;
+        rb.drag = 0.5f;
+        rb.mass = 1.5f;
+        gravity = 9.8f;
         jumpVelocity = 22.0f;
+        dashSpeed = 35.0f;
+        dashTime = 0.2f;
         dashTimer = 0.0f;
         dashCooldown = 4.0f;
-        wallClimb = new Vector2(10.0f, 16.0f);
+        wallClimb = new Vector2(32.0f, 16.0f);
         wallJump = new Vector2(18.0f, 22.0f);
-        wallSlideSpeed = -1.5f;
-        wallStickTime = 0.15f;
+        wallSlideSpeed = -3f;
+        wallStickTime = 0.1f;
+        wallStickCooldown = 0.0f;
         stunTime = 1.0f;
         knockbackSpeed = 4.0f;
         immuneTimer = 0.0f;
         immuneTime = 2.0f;
         reboundHeight = 20.0f;
+        terminalVel = new Vector2(dashSpeed, dashSpeed);
     }
 
     // Update is called once per frame
@@ -101,7 +112,6 @@ public class Player_Controller : MonoBehaviour
         immuneTimer -= Time.deltaTime;
         if (!stunned || immuneTimer <= 1.0f)
         {
-            Debug.Log(velocity);
             if (onGround)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -116,15 +126,15 @@ public class Player_Controller : MonoBehaviour
             {
                 Dash(input);
             }
+            else
+            {
+                velocity.x = playerOnQuicksand ? input.x * moveSpeed / 4 : input.x * moveSpeed;
+                velocity.y -= gravity * Time.deltaTime;
+            }
             if (stepping)
             {
                 stepping = false;
                 velocity.y = reboundHeight;
-            }
-            else
-            {
-                velocity.x = playerOnQuicksand ? input.x*moveSpeed/4 : input.x * moveSpeed;
-                velocity.y -= gravity * Time.deltaTime;
             }
             if (velocity.y > 0)
             {
@@ -153,10 +163,12 @@ public class Player_Controller : MonoBehaviour
                 velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
                 wantToJump = false;
             }
-            wallSliding = false;
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-            Debug.Log(wallSliding);
-            if (onWall && !onGround)
+            if (!wallSliding)
+            {
+                wallStickCooldown -= Time.deltaTime;
+            }
+            if (onWall && !onGround && wallStickCooldown <= 0.0f)
             {
                 wallSliding = true;
                 velocity.x = 0;
@@ -184,16 +196,20 @@ public class Player_Controller : MonoBehaviour
             {
                 if (sign != wallSign)
                 {
-                    velocity.x = -sign * wallClimb.x;
+                    velocity.x = wallSign * wallClimb.x;
                     velocity.y = wallClimb.y;
-                    wallSliding = false;
-                    wantToJump = false;
+                    DetachFromWall();
                 }
                 if (sign == wallSign && wallStickTimer <= 0.0f)
                 {
                     velocity.x = wallSign * wallJump.x;
                     velocity.y = wallJump.y;
-                    wantToJump = false;
+                    DetachFromWall();
+                }
+                else if (sign == 0.0f)
+                {
+                    velocity.x = 10.0f;
+                    DetachFromWall();
                 }
             }
             if (wantToJump && timeTillJumpExpire <= 0.0f)
@@ -205,11 +221,17 @@ public class Player_Controller : MonoBehaviour
             {
                 timeTillJumpExpire -= Time.deltaTime;
             }
+            if (againstCeiling)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                velocity.y = 0;
+            }
         }
         else
         {
             Knockback();
         }
+        prevDir = input;
     //    if (Mathf.Sign(Input.GetAxis("Horizontal")) != sign) {
     //        rb.velocity = new Vector2(rb.velocity.x/2,rb.velocity.y);
     //    }
@@ -235,33 +257,94 @@ public class Player_Controller : MonoBehaviour
     //    var vel = rb.velocity;
     //    float speed = vel.magnitude;
     //    //Debug.Log(speed);
+        if (velocity.x > terminalVel.x)
+        {
+            velocity.x = terminalVel.x;
+        }
+        if (velocity.y > terminalVel.y)
+        {
+            velocity.y = terminalVel.y;
+        }
         PlayerManager.instance.updateHealth(velocity.magnitude);
         transform.Translate(velocity * Time.deltaTime);
+    }
+    private Vector2 GenerateRayOrigins(Vector2 direction)
+    {
+        Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
+        Vector2 rayOrigin = Vector2.zero;
+        if (direction.x == 0.0f && direction.y < 0.0f) //Down
+        {
+            rayOrigin = new Vector2(bounds.center.x, bounds.max.y);
+        }
+        else if (direction.x == 0.0f && direction.y > 0.0f) //Up
+        {
+            rayOrigin = new Vector2(bounds.center.x, bounds.min.y);
+        }
+        else if (direction.x < 0.0f && direction.y == 0.0f) //Left
+        {
+            rayOrigin = new Vector2(bounds.min.x, bounds.center.y);
+        }
+        else if (direction.x > 0.0f && direction.y == 0.0f) //Right
+        {
+            rayOrigin = new Vector2(bounds.max.x, bounds.center.y);
+        }
+        else if (direction.x < 0.0f && direction.y < 0.0f) //DownLeft
+        {
+            rayOrigin = new Vector2(bounds.min.x, bounds.min.y);
+        }
+        else if (direction.x > 0.0f && direction.y < 0.0f) //DownRight
+        {
+            rayOrigin = new Vector2(bounds.max.x, bounds.min.y);
+        }
+        else if (direction.x < 0.0f && direction.y > 0.0f) //UpLeft
+        {
+            rayOrigin = new Vector2(bounds.min.x, bounds.max.y);
+        }
+        else if (direction.x > 0.0f && direction.y > 0.0f) // UpRight
+        {
+            rayOrigin = new Vector2(bounds.max.x, bounds.max.y);
+        }
+        return rayOrigin;
     }
 
     private void Dash(Vector2 input)
     {
         dashReady = false;
-        velocity.x = input.x * dashSpeed;
-        velocity.y = input.y;
-        Debug.Log(velocity);
+        Vector2 direction;
+        if (input == Vector2.zero)
+        {
+            direction = prevDir;
+        }
+        else
+        {
+            direction = input;
+        }
+        AngleCheck(direction);
+        if (direction != Vector2.zero)
+        {
+            Vector2 rayOrigin = GenerateRayOrigins(direction);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, Mathf.Infinity, collisionMask);
+            if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.5)
+            {
+                velocity = velocity/5;
+            }
+        }
         dashTimer -= Time.deltaTime;
         if (dashTimer <= 0.0f)
         {
             dashing = false;
-            dashTimer = 0.2f;
+            dashTimer = dashTime;
         }
     }
+
     private void DescendSlope(ref Vector3 velocity)
     {
         float directionX = Mathf.Sign(velocity.x);
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
-        Vector2 botLeft = new Vector2(bounds.min.x + velocity.x, bounds.min.y);
-        Vector2 botRight = new Vector2(bounds.max.x + velocity.x, bounds.min.y);
-        // Debug.Log(botLeft);
-        // Debug.Log(botRight);
+        Vector2 botLeft = new Vector2(bounds.min.x + velocity.x * Time.deltaTime, bounds.min.y);
+        Vector2 botRight = new Vector2(bounds.max.x + velocity.x * Time.deltaTime, bounds.min.y);
         Vector2 rayOrigin = (directionX == -1) ? botRight : botLeft;
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
         if (hit)
         {
             float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
@@ -273,13 +356,32 @@ public class Player_Controller : MonoBehaviour
                     {
 
                         float moveDistance = Mathf.Abs(velocity.x);
-                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance *10;
+                        float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
                         velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
                         velocity.y -= descendVelocityY;
                     }
                 }
             }
         }
+    }
+
+    private void AngleCheck(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) == 1 && Mathf.Abs(direction.y) == 1)
+        {
+            velocity = direction * (dashSpeed / 2);
+        }
+        else if (direction.x == 0 && direction.y != 0 || direction.y == 0 && direction.x != 0)
+        {
+            velocity = direction * dashSpeed;
+        }
+    }
+
+    private void DetachFromWall()
+    {
+        wallSliding = false;
+        wantToJump = false;
+        wallStickCooldown = 0.2f;
     }
 
     private void Knockback()
@@ -328,7 +430,21 @@ public class Player_Controller : MonoBehaviour
         onWall = wallTouching;
     }
 
+    public void isPlayerCeilingTouch(bool ceilingTouching)
+    {
+        againstCeiling = ceilingTouching;
+    }
+
     public void isOnQuicksand(bool onQuicksand){
         playerOnQuicksand = onQuicksand;
+    }
+
+    public void ResetDash()
+    {
+        dashing = false;
+        dashCooldown = 0.0f;
+        dashReady = true;
+        dashTimer = dashTime;
+        velocity = Vector2.zero;
     }
 }

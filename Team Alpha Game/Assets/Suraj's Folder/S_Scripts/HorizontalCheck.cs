@@ -41,5 +41,6 @@ public class HorizontalCheck : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         pc.isPlayerWallTouch(false,0.0f);
+        pc.isPlayerEnemyTouch(false,0.0f);
     }
 }

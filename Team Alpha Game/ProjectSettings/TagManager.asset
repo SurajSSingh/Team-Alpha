@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Quicksand
   - Enemy
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -17,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Platform
+  - Ground
+  - Wall
+  - Checkpoint
+  - Enemy
   - 
   - 
   - 
