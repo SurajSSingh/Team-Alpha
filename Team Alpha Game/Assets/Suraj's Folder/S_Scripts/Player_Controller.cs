@@ -81,8 +81,11 @@ public class Player_Controller : MonoBehaviour
 
     public Animator animator;
     public AudioClip runSound;
+    public AudioClip mudRunSound;
     public AudioClip groundJumpSound;
     public AudioClip wallJumpSound;
+    public AudioClip knockbackSound;
+    public AudioClip dashSound;
     public float soundTimeDelay = 0.5f;
     
 
@@ -119,7 +122,14 @@ public class Player_Controller : MonoBehaviour
         if ((velocity.x < -0.001 || velocity.x > 0.001) && soundTimeDelay > 0.5f) 
         {
             soundTimeDelay = 0.0f;
-            AudioSource.PlayClipAtPoint(runSound,this.transform.position);
+            if (playerOnQuicksand)
+            {
+                AudioSource.PlayClipAtPoint(mudRunSound,this.transform.position,2.0f);
+            }
+            else 
+            {
+                AudioSource.PlayClipAtPoint(runSound,this.transform.position,2.0f);
+            }
         }
         else 
         {
@@ -185,7 +195,7 @@ public class Player_Controller : MonoBehaviour
             {
                 velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
                 wantToJump = false;
-                AudioSource.PlayClipAtPoint(groundJumpSound,this.transform.position);
+                AudioSource.PlayClipAtPoint(groundJumpSound,this.transform.position,2.0f);
             }
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
             if (!wallSliding)
@@ -352,7 +362,8 @@ public class Player_Controller : MonoBehaviour
             if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
                 // Debug.Log("Should Dash");
-                velocity = velocity*5;
+                velocity = velocity*3;
+                AudioSource.PlayClipAtPoint(dashSound,this.transform.position,2.0f);
             }
         }
         dashTimer -= Time.deltaTime;
@@ -408,16 +419,17 @@ public class Player_Controller : MonoBehaviour
         wallSliding = false;
         wantToJump = false;
         wallStickCooldown = 0.6f;
-        AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position);
+        AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position,2.0f);
     }
 
     private void Knockback()
     {
-        Debug.Log("yes");
+        // Debug.Log("yes");
         if (stunTimer <= 1.0f && stunTimer >= 0.5f)
         {
             velocity.x = enemyColSign * knockbackSpeed;
             velocity.y = 1.0f;
+            AudioSource.PlayClipAtPoint(knockbackSound,this.transform.position);
         }
         else if (stunTimer <= 0.5f && stunTimer >= 0.0f)
         {
