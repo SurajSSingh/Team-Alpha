@@ -12,20 +12,38 @@ public class GroundCheck : MonoBehaviour
         Player = gameObject.transform.parent.gameObject;
         pc = Player.GetComponent<Player_Controller>();
     }
-    void OnTriggerStay2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 11 || other.gameObject.layer == 12){
+        if (other.gameObject.CompareTag("Ground"))
+        {
             pc.isPlayerGrounded(true);
         }
-        if (other.gameObject.CompareTag("Quicksand")){
+        if (other.gameObject.CompareTag("Quicksand"))
+        {
+            pc.isPlayerGrounded(true);
             pc.isOnQuicksand(true);
         }
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("EnemyHead"))
         {
             pc.isStepping(true);
         }
-        if (other.gameObject.CompareTag("Quicksand")){
-            Player.GetComponent<Player_Controller>().isOnQuicksand(true);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            pc.isPlayerGrounded(true);
+        }
+        if (other.gameObject.CompareTag("Quicksand"))
+        {
+            pc.isPlayerGrounded(true);
+            pc.isOnQuicksand(true);
+        }
+        if (other.gameObject.CompareTag("EnemyHead"))
+        {
+            pc.isStepping(true);
         }
     }
 
@@ -34,6 +52,4 @@ public class GroundCheck : MonoBehaviour
         pc.isPlayerGrounded(false);
         pc.isOnQuicksand(false);
     }
-
-    
 }

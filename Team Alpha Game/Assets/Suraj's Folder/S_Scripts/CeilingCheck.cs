@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class HorizontalCheck : MonoBehaviour
+public class CeilingCheck : MonoBehaviour
 {
     private GameObject Player;
     private Player_Controller pc;
-    public float oppositeDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,22 +15,22 @@ public class HorizontalCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Ground"))
         {
-            pc.isPlayerWallTouch(true, oppositeDirection);
+            pc.isPlayerCeilingTouch(true);
         }
     }
-    
+
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Ground"))
         {
-            pc.isPlayerWallTouch(true, oppositeDirection);
+            pc.isPlayerCeilingTouch(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        pc.isPlayerWallTouch(false,0.0f);
+        pc.isPlayerCeilingTouch(false);
     }
 }

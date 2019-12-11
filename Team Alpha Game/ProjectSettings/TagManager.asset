@@ -8,6 +8,9 @@ TagManager:
   - Wall
   - Quicksand
   - Enemy
+  - Checkpoint
+  - PlayerAttack
+  - EnemyHead
   layers:
   - Default
   - TransparentFX
@@ -17,12 +20,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Platform
+  - Ground
+  - Wall
+  - Checkpoint
+  - Enemy
   - 
   - 
   - 

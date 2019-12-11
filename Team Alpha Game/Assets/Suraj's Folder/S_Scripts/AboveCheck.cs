@@ -11,15 +11,18 @@ public class AboveCheck : MonoBehaviour
         Enemy = gameObject.transform.parent.gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.CompareTag("PlayerAttack"))
+        {
+            Enemy.GetComponent<Enemy>().isAttacked(true);
+            Destroy(gameObject);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.CompareTag("PlayerAttack"))
         {
             Enemy.GetComponent<Enemy>().isAttacked(true);
             Destroy(gameObject);

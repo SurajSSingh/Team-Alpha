@@ -58,5 +58,6 @@ public class Respawn_Manager : MonoBehaviour
         rb.transform.position = checkpoint;
         rb.velocity = Vector3.zero;
         timer = 0;
+        player.ResetDash();
     }
 }
