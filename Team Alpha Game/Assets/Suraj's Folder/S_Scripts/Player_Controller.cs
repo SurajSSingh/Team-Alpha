@@ -98,15 +98,15 @@ public class Player_Controller : MonoBehaviour
         rb.mass = 1.5f;
         gravity = 9.8f;
         jumpVelocity = 22.0f;
-        dashSpeed = 35.0f;
-        dashTime = 0.2f;
+        dashSpeed = 40.0f;
+        dashTime = 0.3f;
         dashTimer = 0.0f;
         dashCooldown = 4.0f;
         wallClimb = new Vector2(32.0f, 16.0f);
         wallJump = new Vector2(18.0f, 22.0f);
-        wallSlideSpeed = -3f;
-        wallStickTime = 0.1f;
-        wallStickCooldown = 0.0f;
+        wallSlideSpeed = -5f;
+        wallStickTime = 0.2f;
+        wallStickCooldown = 0.1f;
         stunTime = 1.0f;
         knockbackSpeed = 8.0f;
         immuneTimer = 0.0f;
@@ -362,7 +362,7 @@ public class Player_Controller : MonoBehaviour
             if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
                 // Debug.Log("Should Dash");
-                velocity = velocity/1.5f;
+                velocity = velocity/2.0f;
                 AudioSource.PlayClipAtPoint(dashSound,this.transform.position,2.0f);
             }
         }
@@ -418,7 +418,7 @@ public class Player_Controller : MonoBehaviour
     {
         wallSliding = false;
         wantToJump = false;
-        wallStickCooldown = 0.6f;
+        wallStickCooldown = 0.3f;
         AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position,2.0f);
     }
 
