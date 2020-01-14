@@ -26,7 +26,7 @@ public class Respawn_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerJump = player.playerJump;
+        playerJump = player.jumping;
         inSession = player.inSession;
     }
 
