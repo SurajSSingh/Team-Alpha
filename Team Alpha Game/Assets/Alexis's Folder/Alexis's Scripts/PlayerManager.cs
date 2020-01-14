@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class FloatUnityEvent : UnityEvent<float> { };
 
@@ -10,13 +11,15 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
-    public float currHealth = 1000f;
+    public float currHealth = 250f;
 
     public FloatUnityEvent playerHealth = new FloatUnityEvent();
 
     public GameObject respawner;
 
     public int lives = 3;
+
+    public string dashCond;
 
     private bool checkingSpeed = true;
 
@@ -32,10 +35,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Start Screen");
-        }
+
     }
 
     public void updateHealth(float speed)
@@ -46,31 +46,77 @@ public class PlayerManager : MonoBehaviour
             {
                 if (currHealth >= 0)
                 {
-                    currHealth -= 10;
-                    playerHealth.Invoke(currHealth);
+                    if (currHealth <= 50)
+                    {
+                        currHealth -= 2;
+                        playerHealth.Invoke(currHealth);
+                    }
+                    else if (currHealth <= 100)
+                    {
+                        currHealth -= 4;
+                        playerHealth.Invoke(currHealth);
+                    }
+                    else
+                    {
+                        currHealth -= 5;
+                        playerHealth.Invoke(currHealth);
+                    }
                 }
             }
             else if (speed < 2)
             {
-                if (currHealth >= 0)
+                if (currHealth <= 50)
                 {
-                    currHealth -= 5;
+                    currHealth -= 1;
+                    playerHealth.Invoke(currHealth);
+                }
+                else if (currHealth <= 100)
+                {
+                    currHealth -= 2;
+                    playerHealth.Invoke(currHealth);
+                }
+                else
+                {
+                    currHealth -= 4;
                     playerHealth.Invoke(currHealth);
                 }
             }
-            else if (speed > 4)
+            else if (speed > 8)
             {
-                if (currHealth <= 1000)
+                if (currHealth <= 200)
                 {
-                    currHealth += 5;
+                    currHealth += 2;
+                    playerHealth.Invoke(currHealth);
+                }
+                else if (currHealth <= 1000)
+                {
+                    currHealth += 1;
                     playerHealth.Invoke(currHealth);
                 }
             }
             else if (speed > 10)
             {
-                if (currHealth <= 1000)
+                if (currHealth <= 400)
+                {
+                    currHealth += 5;
+                    playerHealth.Invoke(currHealth);
+                }
+                else if (currHealth <= 1000)
+                {
+                    currHealth += 2;
+                    playerHealth.Invoke(currHealth);
+                }
+            }
+            else if (speed > 12)
+            {
+                if (currHealth <= 600)
                 {
                     currHealth += 10;
+                    playerHealth.Invoke(currHealth);
+                }
+                else if (currHealth <= 1000)
+                {
+                    currHealth += 5;
                     playerHealth.Invoke(currHealth);
                 }
             }
@@ -87,6 +133,11 @@ public class PlayerManager : MonoBehaviour
             ScreenManager.instance.GameLose();
         }
 
+    }
+
+    public void updateDash(string dash)
+    {
+        dashCond = dash;
     }
 
     public void StopChecking()

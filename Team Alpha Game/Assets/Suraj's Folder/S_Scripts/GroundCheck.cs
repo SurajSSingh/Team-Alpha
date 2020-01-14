@@ -17,6 +17,11 @@ public class GroundCheck : MonoBehaviour
         {
             Player.GetComponent<Player_Controller>().isPlayerGrounded(true);
         }
+        if (other.gameObject.CompareTag("Slope"))
+        {
+            pc.isPlayerGrounded(true);
+            pc.isOnSlope(true);
+        }
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -27,6 +32,13 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+<<<<<<< Updated upstream
         Player.GetComponent<Player_Controller>().isPlayerGrounded(false);
+=======
+        pc.isPlayerGrounded(false);
+        pc.isOnQuicksand(false);
+        pc.isStepping(false);
+        pc.isOnSlope(false);
+>>>>>>> Stashed changes
     }
 }
