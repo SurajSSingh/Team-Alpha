@@ -55,7 +55,7 @@ public class Player_Controller : MonoBehaviour
 
     private bool playerOnQuicksand = false;
     public bool wantToJump = false;
-    private float timeTillJumpExpire = 0.4f;
+    private float timeTillJumpExpire = 0.25f;
 
     public bool dashing = false;
     public bool dashReady = true;
@@ -105,7 +105,7 @@ public class Player_Controller : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.drag = 0.5f;
         rb.mass = 1.5f;
-        gravity = 7.5f;
+        gravity = 4.5f;
         jumpVelocity = 16.0f;
         wantToJump = false;
         dashSpeed = 35.0f;
@@ -274,14 +274,14 @@ public class Player_Controller : MonoBehaviour
                 }
                 rb.velocity = new Vector2(velocity.x, 0);
             }
-            if (wallSliding && input.x == wallSign)
+            if (wallSliding && sign == wallSign)
             {
                 DetachFromWall();
                 velocity.x = moveSpeed;
             }
             if (wallSliding && wantToJump && !wallJumping)
             {
-                if (input.x == -wallSign && wallClimbCooldown <= 0.0f)
+                if (sign == -wallSign && wallClimbCooldown <= 0.0f)
                 {
                     DetachFromWall();
                     jumping = true;
@@ -292,7 +292,7 @@ public class Player_Controller : MonoBehaviour
                     velocity.x = wallSign * wallClimb.x;
                     velocity.y = wallClimb.y;
                 }
-                else if (input.x == 0.0f)
+                else if (sign == 0.0f)
                 {
                     DetachFromWall();
                     jumping = true;
@@ -306,7 +306,7 @@ public class Player_Controller : MonoBehaviour
             if (wantToJump && timeTillJumpExpire <= 0.0f)
             {
                 wantToJump = false;
-                timeTillJumpExpire = 0.15f;
+                timeTillJumpExpire = 0.25f;
             }
             else if (wantToJump)
             {
