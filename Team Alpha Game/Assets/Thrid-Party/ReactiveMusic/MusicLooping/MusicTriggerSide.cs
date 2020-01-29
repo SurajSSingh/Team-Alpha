@@ -23,15 +23,17 @@ public class MusicTriggerSide : MonoBehaviour {
 		pos.x += (mts.sideNum * colliderWidth);
 		obj.transform.position = pos;
 
-		BoxCollider bc = obj.AddComponent<BoxCollider>();
+		BoxCollider2D bc = obj.AddComponent<BoxCollider2D>();
 		bc.isTrigger = true;
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter2D(Collider2D other){
+		Debug.Log(other.gameObject);
 		parent.inTrigger(sideNum);
 	}
 
-	void OnTriggerExit(Collider other){
+	void OnTriggerExit2D(Collider2D other){
+		Debug.Log(other.gameObject);
 		parent.outOfTrigger(sideNum);
 	}
 

@@ -44,10 +44,12 @@ public class MusicTrigger : MonoBehaviour {
 		if (colliderNum == 0 && !inTrigger1){
 			//	If we're not in trigger 1 and we're leaving trigger 0
 			//	we're in the area for trigger 0
+			Debug.Log("Music 0 playing");
 			musicArea0.activate();
 		}
 		if (colliderNum == 1 && !inTrigger0){
 			//	Vice versa
+			Debug.Log("Music 1 playing");
 			musicArea1.activate();
 		}
 	}

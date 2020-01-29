@@ -134,7 +134,7 @@ public class Player_Controller : MonoBehaviour
     void Update()
     {
 
-        if ((velocity.x < -0.1 || velocity.x > 0.1) && soundTimeDelay > 0.5f) 
+        if ((velocity.x < -0.1 || velocity.x > 0.1) && soundTimeDelay > 0.75f) 
         {
             soundTimeDelay = 0.0f;
             if (playerOnQuicksand)
