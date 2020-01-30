@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 24529391}
   - component: {fileID: 24529392}
   - component: {fileID: 24529393}
+  - component: {fileID: 24529394}
   m_Layer: 0
   m_Name: CeilingCheck
   m_TagString: Untagged
@@ -237,6 +238,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeDirection: 0
+--- !u!114 &24529394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24529389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.71
+    m_FrequencyGain: 2.43
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 1.27
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &27317812
 GameObject:
   m_ObjectHideFlags: 0
@@ -59281,6 +59330,7 @@ GameObject:
   - component: {fileID: 395109787}
   - component: {fileID: 395109786}
   - component: {fileID: 395109788}
+  - component: {fileID: 395109789}
   m_Layer: 0
   m_Name: LeftWallCheck
   m_TagString: Untagged
@@ -59354,6 +59404,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeDirection: 1
+--- !u!114 &395109789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395109784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.71
+    m_FrequencyGain: 2.43
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 1.27
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &418234118
 GameObject:
   m_ObjectHideFlags: 0
@@ -63382,6 +63480,7 @@ GameObject:
   - component: {fileID: 745072514}
   - component: {fileID: 745072513}
   - component: {fileID: 745072515}
+  - component: {fileID: 745072516}
   m_Layer: 0
   m_Name: RightWallCheck
   m_TagString: Untagged
@@ -63455,6 +63554,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeDirection: -1
+--- !u!114 &745072516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745072511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.71
+    m_FrequencyGain: 2.43
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 1.27
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &768190262
 GameObject:
   m_ObjectHideFlags: 0
@@ -78103,7 +78250,6 @@ GameObject:
   - component: {fileID: 1249096662}
   - component: {fileID: 1249096667}
   - component: {fileID: 1249096663}
-  - component: {fileID: 1249096668}
   - component: {fileID: 1249096669}
   m_Layer: 8
   m_Name: Player
@@ -78131,45 +78277,45 @@ MonoBehaviour:
   rbMass: 1.5
   gravity: 0
   prevDir: {x: 0, y: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  terminalVel: {x: 0, y: 0}
-  airTerminalVel: {x: 0, y: 0}
-  inSession: 0
+  velocity: {x: -0.1449113, y: -0.18, z: 0}
+  terminalVel: {x: 35, y: 23.33333}
+  airTerminalVel: {x: 17.5, y: 23.33333}
+  inSession: 1
   collisionMask:
     serializedVersion: 2
     m_Bits: 147201
   jumping: 0
   jumpHeight: 10
   timeToJumpApex: 0.4
-  jumpVelocity: 0
+  jumpVelocity: 16
   wallJumpForce: 250
   wantToJump: 0
-  dashing: 1
-  dashReady: 0
-  dashSpeed: 10
-  dashCooldown: 0
-  dashTime: 0
-  dashTimer: 0
+  dashing: 0
+  dashReady: 1
+  dashSpeed: 35
+  dashCooldown: -5.259996
+  dashTime: 0.2
+  dashTimer: 0.2
   wallSliding: 0
   wallClimbing: 0
   wallJumping: 0
   wantToWallJump: 0
-  wallClimb: {x: 0, y: 0}
-  wallJump: {x: 0, y: 0}
+  wallClimb: {x: 32, y: 6}
+  wallJump: {x: 14, y: 12}
   jumpDirX: 0
-  wallClimbCooldown: 0
-  wallSlideSpeed: 0
-  wallClimbTime: 0
+  wallClimbCooldown: -23.22034
+  wallSlideSpeed: -3
+  wallClimbTime: 0.3
   wallClimbTimer: 0
-  wallJumpTime: 0
+  wallJumpTime: 0.8
   wallJumpTimer: 0
-  stunTimer: 0
-  stunTime: 0
-  knockbackSpeed: 0
-  immuneTimer: 0
-  immuneTime: 0
+  stunTimer: 1
+  stunTime: 1
+  knockbackSpeed: 8
+  immuneTimer: 1.140001
+  immuneTime: 2
   enemyColSign: 0
-  reboundHeight: 0
+  reboundHeight: 20
   stunned: 0
   stepping: 0
   animator: {fileID: 1249096667}
@@ -78179,7 +78325,7 @@ MonoBehaviour:
   wallJumpSound: {fileID: 8300000, guid: 3eca28e1d5089408c9577ca41532834f, type: 3}
   knockbackSound: {fileID: 8300000, guid: 22a26759434be4714b72bc257298e48f, type: 3}
   dashSound: {fileID: 8300000, guid: cd322a2ee9c424100b092f29b8af8c39, type: 3}
-  soundTimeDelay: 0.5
+  soundTimeDelay: 0.0630199
 --- !u!70 &1249096663
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -78303,54 +78449,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1249096668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249096661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 2.71
-    m_FrequencyGain: 2.43
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 1.27
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  m_IgnoreTag: 
-  m_UseImpactDirection: 0
-  m_ScaleImpactWithMass: 0
-  m_ScaleImpactWithSpeed: 0
 --- !u!81 &1249096669
 AudioListener:
   m_ObjectHideFlags: 0
