@@ -62594,7 +62594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80499142d3e19d4586f98df6e178689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 10000000
+  currHealth: 1000
   respawner: {fileID: 1182647628}
   lives: 3
   dashCond: 
