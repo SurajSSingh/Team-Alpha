@@ -12,6 +12,7 @@ TagManager:
   - PlayerAttack
   - EnemyHead
   - Slope
+  - OutTrigger
   layers:
   - Default
   - TransparentFX
