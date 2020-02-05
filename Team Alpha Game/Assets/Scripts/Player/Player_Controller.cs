@@ -7,7 +7,7 @@ public class Player_Controller : MonoBehaviour
 {
     // Fields to play around with
     [SerializeField]
-    private float moveSpeed = 10.0f;
+    private float moveSpeed;
     //[SerializeField]
     //private float jumpForce = 250.0f;
     [SerializeField]
@@ -36,6 +36,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]
     private Vector2 prevDir;
     private float sign = 0.0f;
+    private float prevSign = 0.0f;
     private float wallSign = 0.0f;
 
     public Vector3 velocity;
@@ -47,9 +48,13 @@ public class Player_Controller : MonoBehaviour
     public LayerMask collisionMask;
 
     public bool jumping = false;
+    public bool doubleJump = false;
+    public float jumpTimer;
+    public float jumpTime;
     public float jumpHeight = 10.0f;
     public float timeToJumpApex = 1.0f;
     public float jumpVelocity;
+    public int jumpCount = 2;
 
     public float wallJumpForce = 250.0f;
 
@@ -63,6 +68,10 @@ public class Player_Controller : MonoBehaviour
     public float dashCooldown;
     public float dashTime;
     public float dashTimer;
+    public float momentumTimer;
+    public float momentumFactor;
+    public float runSpeedLimit;
+    public bool fastRunning = false;
 
     public bool wallSliding = false;
     public bool wallClimbing = false;
@@ -71,6 +80,7 @@ public class Player_Controller : MonoBehaviour
     public Vector2 wallClimb;
     public Vector2 wallJump;
     public float jumpDirX;
+    public float wallStickCooldown;
     public float wallClimbCooldown;
     public float wallSlideSpeed;
     public float wallClimbTime;
@@ -107,6 +117,8 @@ public class Player_Controller : MonoBehaviour
         rb.mass = 1.5f;
         gravity = 4.5f;
         jumpVelocity = 16.0f;
+        jumpTimer = 0.0f;
+        moveSpeed = 6.0f;
         wantToJump = false;
         dashSpeed = 35.0f;
         dashTime = 0.2f;
@@ -120,14 +132,22 @@ public class Player_Controller : MonoBehaviour
         wallJumpTime = 0.8f;
         wallJumpTimer = 0.0f;
         jumpDirX = 0.0f;
+        wallStickCooldown = 0.0f;
         wallClimbCooldown = 0.0f;
         stunTime = 1.0f;
         knockbackSpeed = 8.0f;
         immuneTimer = 0.0f;
         immuneTime = 2.0f;
         reboundHeight = 20.0f;
+        momentumTimer = 2.5f;
+        momentumFactor = 1.01f;
+        runSpeedLimit = 12.0f;
+        prevSign = 1.0f;
         terminalVel = new Vector2(dashSpeed, dashSpeed/1.5f);
         airTerminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 1.5f);
+        //for testing
+        doubleJump = true;
+        fastRunning = true;
     }
 
     // Update is called once per frame
@@ -156,8 +176,10 @@ public class Player_Controller : MonoBehaviour
     {
         animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        UpdateSign();
         dashCooldown -= Time.deltaTime;
         wallClimbCooldown -= Time.deltaTime;
+        wallStickCooldown -= Time.deltaTime;
         immuneTimer -= Time.deltaTime;
         if ((!stunned || immuneTimer <= 1.0f) && !wallClimbing)
         {
@@ -166,6 +188,7 @@ public class Player_Controller : MonoBehaviour
                 jumping = false;
                 wallJumping = false;
                 wallClimbing = false;
+                jumpCount = 2;
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 descending = velocity.y < 0.0f ? true : false;
                 velocity.y = 0;
@@ -201,7 +224,16 @@ public class Player_Controller : MonoBehaviour
                         }
                         else
                         {
-                            velocity.x = playerOnQuicksand ? input.x * moveSpeed / 4 : input.x * moveSpeed;
+                            velocity.x = input.x * moveSpeed;
+                            if (playerOnQuicksand)
+                            {
+                                velocity.x = velocity.x / 4;
+                            }
+                        }
+                        if (momentumTimer <= 5.0f && fastRunning)
+                        {
+                            momentumFactor = 1.0f + 0.2f * (5.0f - momentumTimer);
+                            velocity.x = velocity.x * momentumFactor;
                         }
                     }
                     else if (onGround) //ground momentum simulation
@@ -254,19 +286,27 @@ public class Player_Controller : MonoBehaviour
             {
                 wantToJump = true;
             }
+            if (wantToJump && doubleJump && jumping && jumpCount >= 1)
+            {
+                velocity.y = jumpVelocity;
+                jumpCount -= 1;
+                Jump();
+                wantToJump = false;
+            }
             if (wantToJump && onGround)
             {
                 velocity.y = playerOnQuicksand ? jumpVelocity/4 : jumpVelocity;
-                jumping = true;
-                wantToJump = false;
+                jumpCount -= 1;
+                Jump();
                 AudioSource.PlayClipAtPoint(groundJumpSound,this.transform.position,2.0f);
             }
             sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-            if (onWall && !onGround && velocity.y <= 2.0f && wallJumpTimer <= 0.65f)
+            if (onWall && !onGround && velocity.y <= 2.0f && wallJumpTimer <= 0.65f && wallStickCooldown <= 0.0f)
             {
                 wallClimbing = false;
                 wallJumping = false;
                 wallSliding = true;
+                jumpCount = 0;
                 velocity.x = 0;
                 if (velocity.y < wallSlideSpeed)
                 {
@@ -284,7 +324,7 @@ public class Player_Controller : MonoBehaviour
                 if (sign == -wallSign && wallClimbCooldown <= 0.0f)
                 {
                     DetachFromWall();
-                    jumping = true;
+                    Jump();
                     wallClimbing = true;
                     wallClimbTimer = wallClimbTime;
                     wallClimbCooldown = 1.0f;
@@ -295,7 +335,7 @@ public class Player_Controller : MonoBehaviour
                 else if (sign == 0.0f)
                 {
                     DetachFromWall();
-                    jumping = true;
+                    Jump();
                     wallJumping = true;
                     wallJumpTimer = wallJumpTime;
                     jumpDirX = wallSign;
@@ -331,6 +371,27 @@ public class Player_Controller : MonoBehaviour
         PlayerManager.instance.updateHealth(velocity.magnitude);
         transform.Translate(velocity * Time.deltaTime);
     }
+
+    private void Jump()
+    {
+        jumping = true;
+        wantToJump = false;
+    }
+
+    private void UpdateSign()
+    {
+        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+        if (sign == prevSign && sign != 0.0f)
+        {
+            momentumTimer -= Time.deltaTime;
+        }
+        else
+        {
+            momentumTimer = 5.5f;
+        }
+        prevSign = sign;
+    }
+
     private Vector2 GenerateRayOrigins(Vector2 direction)
     {
         Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
@@ -476,6 +537,7 @@ public class Player_Controller : MonoBehaviour
     {
         wallSliding = false;
         wantToJump = false;
+        wallStickCooldown = 0.3f;
         AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position,2.0f);
     }
 
