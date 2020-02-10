@@ -21,6 +21,7 @@ public class Player_Sound
     // Sound of abilities
     public AudioClip dashSound;
     public AudioClip doubleJumpSound;
+    public float soundTimeDelay = 0.5f;
 
     public void RunningSound(GameObject player)
     {
