@@ -27,7 +27,10 @@ public class MovingMist : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveMist();
+        if (currentWP < waypoints.Count)
+        {
+            MoveMist();
+        }
     }
 
     void MoveMist()
