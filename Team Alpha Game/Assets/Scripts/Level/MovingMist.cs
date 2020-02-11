@@ -6,6 +6,7 @@ public class MovingMist : MonoBehaviour
 {
     public List<GameObject> waypoints;
     public List<float> mistSpeed;
+    public List<Vector3> mistscale;
     public float tolerance = 0.1f;
 
     private int currentWP = 0;
@@ -41,7 +42,7 @@ public class MovingMist : MonoBehaviour
         {
             this.transform.position = Vector2.MoveTowards(this.transform.position,
                                                           waypoints[currentWP].transform.position,
-                                                          mistSpeed[currentWP]*Time.deltaTime);
+                                                          mistSpeed[currentWP-1]*Time.deltaTime);
         }
     }
 

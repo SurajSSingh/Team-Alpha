@@ -82683,6 +82683,12 @@ MonoBehaviour:
   - 5
   - 4
   - 3
+  mistscale:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   tolerance: 0.1
 --- !u!4 &2061424118
 Transform:
@@ -82692,7 +82698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061424114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 33.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 50, z: 1}
   m_Children:
   - {fileID: 1532426655}
