@@ -50,6 +50,11 @@ public class GroundCheck : MonoBehaviour
         {
             pc.isStepping(true);
         }
+        if(other.gameObject.CompareTag("Slope"))
+        {
+            pc.isPlayerGrounded(true);
+            pc.isOnSlope(true);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)

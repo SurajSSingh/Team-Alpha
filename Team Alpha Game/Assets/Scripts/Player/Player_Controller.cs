@@ -7,6 +7,8 @@ public class Player_Controller : MonoBehaviour
 {
     // Fields to play around with
     [SerializeField]
+    private SpriteRenderer ren;
+    [SerializeField]
     private float moveSpeed;
     //[SerializeField]
     //private float jumpForce = 250.0f;
@@ -14,7 +16,6 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]
     private float maxDescendAngle = 120.0f;
-
     [SerializeField]
     private float rbDrag;
     [SerializeField]
@@ -23,11 +24,11 @@ public class Player_Controller : MonoBehaviour
     //private float rbGravity = -20.0f;
     private float gravity;
 
-    private bool onGround = false;
+    public bool onGround = false;
     
-    private bool onWall = false;
+    public bool onWall = false;
 
-    private bool onSlope = false;
+    public bool onSlope = false;
 
     private bool againstCeiling = false;
 
@@ -35,7 +36,7 @@ public class Player_Controller : MonoBehaviour
 
     [SerializeField]
     private Vector2 prevDir;
-    private float sign = 0.0f;
+    public float sign = 0.0f;
     private float prevSign = 0.0f;
     private float wallSign = 0.0f;
 
@@ -62,8 +63,15 @@ public class Player_Controller : MonoBehaviour
     public bool wantToJump = false;
     private float timeTillJumpExpire = 0.25f;
 
+    public bool attacking = false;
+    public bool airborne = false;
+    public bool pivoting = false;
+    public float displacementTimer;
+    public float pivotTimer;
+
     public bool dashing = false;
     public bool dashReady = true;
+    public Vector2 dashDir;
     public float dashSpeed;
     public float dashCooldown;
     public float dashTime;
@@ -115,7 +123,7 @@ public class Player_Controller : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.drag = 0.5f;
         rb.mass = 1.5f;
-        gravity = 4.5f;
+        gravity = 6.0f;
         jumpVelocity = 16.0f;
         jumpTimer = 0.0f;
         moveSpeed = 6.0f;
@@ -140,14 +148,15 @@ public class Player_Controller : MonoBehaviour
         immuneTime = 2.0f;
         reboundHeight = 20.0f;
         momentumTimer = 2.5f;
-        momentumFactor = 1.01f;
+        momentumFactor = 1.8f;
         runSpeedLimit = 12.0f;
         prevSign = 1.0f;
         terminalVel = new Vector2(dashSpeed, dashSpeed/1.5f);
         airTerminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 1.5f);
-        //for testing
         doubleJump = true;
-        fastRunning = true;
+        fastRunning = false;
+        displacementTimer = 0.2f;
+        pivotTimer = 0.5f;
     }
 
     // Update is called once per frame
@@ -174,21 +183,47 @@ public class Player_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         UpdateSign();
         dashCooldown -= Time.deltaTime;
         wallClimbCooldown -= Time.deltaTime;
         wallStickCooldown -= Time.deltaTime;
         immuneTimer -= Time.deltaTime;
-        if ((!stunned || immuneTimer <= 1.0f) && !wallClimbing)
+        animator.SetBool("Grounded", onGround);
+        if (jumping || !onGround && !onWall)
+        {
+            displacementTimer -= Time.deltaTime;
+            if (displacementTimer <= 0.0f)
+            {
+                airborne = true;
+                animator.SetBool("Airborne", airborne);
+                displacementTimer = 0.2f;
+            }
+        }
+        if (airborne && velocity.y <= 0.0f)
+        {
+            jumping = false;
+            animator.SetBool("Jumping", jumping);
+        }
+        if ((!stunned || immuneTimer <= 1.0f) && !wallClimbing && !wallJumping && !attacking)
         {
             if (onGround)
             {
                 jumping = false;
+                airborne = false;
+                animator.SetBool("Jumping", jumping);
+                animator.SetBool("DoubleJump", jumping);
+                animator.SetBool("Airborne", airborne);
                 wallJumping = false;
                 wallClimbing = false;
-                jumpCount = 2;
+                if (doubleJump)
+                {
+                    jumpCount = 2;
+                }
+                else
+                {
+                    jumpCount = 1;
+                }
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 descending = velocity.y < 0.0f ? true : false;
                 velocity.y = 0;
@@ -203,51 +238,66 @@ public class Player_Controller : MonoBehaviour
             }
             if (dashing)
             {
-                Dash(input);
+                Dash(dashDir);
             }
             else
             {
-                if (!wallJumping)
+                if (input.x != 0.0f)
                 {
-                    if (input.x != 0.0f)
+                    if (!onGround && !onWall)
                     {
-                        if (!onGround && !onWall)
+                        animator.SetBool("Running", true);
+                        if (Mathf.Abs(velocity.x) >= moveSpeed) //influence if airborne velocity x greater than movespeed
                         {
-                            if (Mathf.Abs(velocity.x) >= moveSpeed) //influence if airborne velocity x greater than movespeed
-                            {
-                                velocity.x += input.x * 0.04f;
-                            }
-                            else
-                            {
-                                velocity.x += input.x * 0.2f; //influence if airborne velocity x less than movespeed
-                            }
+                            velocity.x += input.x * 0.04f;
                         }
                         else
                         {
-                            velocity.x = input.x * moveSpeed;
-                            if (playerOnQuicksand)
-                            {
-                                velocity.x = velocity.x / 4;
-                            }
+                            velocity.x += input.x * 0.2f; //influence if airborne velocity x less than movespeed
                         }
-                        if (momentumTimer <= 5.0f && fastRunning)
+                    }
+                    else
+                    {
+                        velocity.x = input.x * moveSpeed;
+                        if (playerOnQuicksand)
                         {
-                            momentumFactor = 1.0f + 0.2f * (5.0f - momentumTimer);
-                            velocity.x = velocity.x * momentumFactor;
+                            velocity.x = velocity.x / 4;
                         }
                     }
-                    else if (onGround) //ground momentum simulation
+                    if (momentumTimer <= 0.0f)
                     {
-                        velocity.x = velocity.x / 1.2f;
+                        fastRunning = true;
+                        velocity.x = input.x * moveSpeed * momentumFactor;
                     }
-                    else if (velocity.x > 1.0f) //airborne movement dampening
+                    else if (fastRunning && momentumTimer > 0.0f)
                     {
-                        velocity.x = velocity.x / 1.01f;
+                        pivotTimer = 0.5f;
+                        pivoting = true;
+                        animator.SetBool("Pivoting", pivoting);
+                        fastRunning = false;
                     }
                 }
-                else
+                else if (onGround) //ground momentum simulation
                 {
-                    WallJump();
+                    if (pivoting)
+                    {
+                        velocity.x = velocity.x / 1.2f;
+                        pivotTimer -= Time.deltaTime;
+                        if (pivotTimer <= 0.0f)
+                        {
+                            pivoting = false;
+                            animator.SetBool("Pivoting", pivoting);
+                            pivotTimer = 1.2f;
+                        }
+                    }
+                    else
+                    {
+                        velocity.x = 0.0f;
+                    }
+                }
+                else if (Mathf.Abs(velocity.x) > 1.0f) //airborne movement dampening
+                {
+                    velocity.x = velocity.x / 1.01f;
                 }
                 if (velocity.y < 0)
                 {
@@ -257,7 +307,6 @@ public class Player_Controller : MonoBehaviour
                 {
                     velocity.y -= gravity * Time.deltaTime;
                 }
-                velocity.y -= gravity * Time.deltaTime;
             }
             if (stepping == true)
             {
@@ -281,13 +330,20 @@ public class Player_Controller : MonoBehaviour
                 dashReady = false;
                 dashing = true;
                 dashCooldown = 4.0f;
+                dashDir = input;
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 wantToJump = true;
             }
-            if (wantToJump && doubleJump && jumping && jumpCount >= 1)
+            if (Input.GetKeyDown(KeyCode.Z) && onGround)
             {
+                animator.SetBool("Attack", true);
+                attacking = true;
+            }
+            if (wantToJump && doubleJump && airborne && jumpCount == 1)
+            {
+                animator.SetBool("DoubleJump", true);
                 velocity.y = jumpVelocity;
                 jumpCount -= 1;
                 Jump();
@@ -300,12 +356,12 @@ public class Player_Controller : MonoBehaviour
                 Jump();
                 AudioSource.PlayClipAtPoint(groundJumpSound,this.transform.position,2.0f);
             }
-            sign = Mathf.Sign(Input.GetAxis("Horizontal"));
             if (onWall && !onGround && velocity.y <= 2.0f && wallJumpTimer <= 0.65f && wallStickCooldown <= 0.0f)
             {
                 wallClimbing = false;
                 wallJumping = false;
                 wallSliding = true;
+                animator.SetBool("Wall Sliding", wallSliding);
                 jumpCount = 0;
                 velocity.x = 0;
                 if (velocity.y < wallSlideSpeed)
@@ -331,6 +387,7 @@ public class Player_Controller : MonoBehaviour
                     jumpDirX = -wallSign;
                     velocity.x = wallSign * wallClimb.x;
                     velocity.y = wallClimb.y;
+                    animator.SetBool("Wall Climbing", wallClimbing);
                 }
                 else if (sign == 0.0f)
                 {
@@ -339,8 +396,9 @@ public class Player_Controller : MonoBehaviour
                     wallJumping = true;
                     wallJumpTimer = wallJumpTime;
                     jumpDirX = wallSign;
-                    velocity.x = jumpDirX * wallJump.x;
-                    velocity.y = wallJump.y;
+                    ToggleFlip();
+                    WallJump();
+                    animator.SetBool("Wall Jumping", wallJumping);
                 }
             }
             if (wantToJump && timeTillJumpExpire <= 0.0f)
@@ -366,9 +424,15 @@ public class Player_Controller : MonoBehaviour
         {
             WallClimb();
         }
+        else if (wallJumping)
+        {
+            WallJump();
+        }
         prevDir = input;
         LimitSpeed();
         PlayerManager.instance.updateHealth(velocity.magnitude);
+        animator.SetFloat("SpeedX", Mathf.Abs(velocity.x));
+        animator.SetFloat("SpeedY", velocity.y);
         transform.Translate(velocity * Time.deltaTime);
     }
 
@@ -376,18 +440,36 @@ public class Player_Controller : MonoBehaviour
     {
         jumping = true;
         wantToJump = false;
+        animator.SetBool("Jumping", jumping);
     }
 
     private void UpdateSign()
     {
-        sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-        if (sign == prevSign && sign != 0.0f)
+        sign = Input.GetAxisRaw("Horizontal");
+        if (sign != 0.0f)
+        {
+            if (sign == 1.0f)
+            {
+                ren.flipX = false;
+            }
+            else //sign == -1.0f
+            {
+                ren.flipX = true;
+            }
+        }
+        if (sign == prevSign && sign != 0.0f && !onWall)
         {
             momentumTimer -= Time.deltaTime;
+            animator.SetFloat("Momentum Timer", momentumTimer);
         }
         else
         {
-            momentumTimer = 5.5f;
+            if (sign == 0.0f && onGround)
+            {
+                animator.SetBool("Running", false);
+            }
+            momentumTimer = 2.5f;
+            fastRunning = false;
         }
         prevSign = sign;
     }
@@ -431,18 +513,10 @@ public class Player_Controller : MonoBehaviour
         return rayOrigin;
     }
 
-    private void Dash(Vector2 input)
+    private void Dash(Vector2 direction)
     {
         dashReady = false;
-        Vector2 direction;
-        if (input == Vector2.zero)
-        {
-            direction = prevDir;
-        }
-        else
-        {
-            direction = input;
-        }
+        momentumTimer = 2.5f;
         AngleCheck(direction);
         if (direction != Vector2.zero)
         {
@@ -484,7 +558,7 @@ public class Player_Controller : MonoBehaviour
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
                         velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * dirX;
-                        velocity.y -= descendVelocityY;
+                        velocity.y -= descendVelocityY - 0.15f;
                     }
                 }
             }
@@ -536,6 +610,7 @@ public class Player_Controller : MonoBehaviour
     private void DetachFromWall()
     {
         wallSliding = false;
+        animator.SetBool("Wall Sliding", wallSliding);
         wantToJump = false;
         wallStickCooldown = 0.3f;
         AudioSource.PlayClipAtPoint(wallJumpSound,this.transform.position,2.0f);
@@ -543,6 +618,11 @@ public class Player_Controller : MonoBehaviour
 
     private void Knockback()
     {
+        animator.SetBool("Stunned", stunned);
+        dashing = false;
+        wallSliding = false;
+        animator.SetBool("Wall Sliding", wallSliding);
+        jumping = false;
         if (stunTimer <= 1.0f && stunTimer >= 0.5f)
         {
             velocity.x = enemyColSign * knockbackSpeed;
@@ -556,6 +636,7 @@ public class Player_Controller : MonoBehaviour
         else
         {
             stunned = false;
+            animator.SetBool("Stunned", stunned);
         }
     }
 
@@ -575,12 +656,14 @@ public class Player_Controller : MonoBehaviour
             if (wallClimbTimer <= 0.0f)
             {
                 wallClimbing = false;
+                animator.SetBool("Wall Climbing", wallClimbing);
             }
         }
         else
         {
             wallClimbTimer = 0.0f;
             wallClimbing = false;
+            animator.SetBool("Wall Climbing", wallClimbing);
         }
     }
 
@@ -597,12 +680,26 @@ public class Player_Controller : MonoBehaviour
             if (wallJumpTimer <= 0.0f)
             {
                 wallJumping = false;
+                animator.SetBool("Wall Jumping", wallJumping);
             }
         }
         else
         {
             wallJumpTimer = 0.0f;
             wallJumping = false;
+            animator.SetBool("Wall Jumping", wallJumping);
+        }
+    }
+
+    private void ToggleFlip() //Flips the direction that the character is currently facing
+    {
+        if (ren.flipX)
+        {
+            ren.flipX = false;
+        }
+        else
+        {
+            ren.flipX = true;
         }
     }
 
