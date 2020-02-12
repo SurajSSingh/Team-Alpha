@@ -12902,7 +12902,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 7ed561d3710064923957618a9dea5a2d, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 76fcdbad9ebd540209600c08e325cae9, type: 3}
-    volume: 0
+    volume: 1
 --- !u!4 &1245472211
 Transform:
   m_ObjectHideFlags: 0
@@ -12943,7 +12943,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323989346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.7, y: 0, z: 0}
+  m_LocalPosition: {x: 15.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 256540264}
@@ -14474,7 +14474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889967662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 149.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 256540264}
@@ -14832,7 +14832,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 3b1d8968b75424e26a5e050631c07a5c, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 7ed561d3710064923957618a9dea5a2d, type: 3}
-    volume: 0
+    volume: 1
   - clip: {fileID: 8300000, guid: 76fcdbad9ebd540209600c08e325cae9, type: 3}
     volume: 0
 --- !u!4 &1926755486

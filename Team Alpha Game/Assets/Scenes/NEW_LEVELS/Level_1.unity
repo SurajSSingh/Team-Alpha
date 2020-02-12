@@ -247,9 +247,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 3b1d8968b75424e26a5e050631c07a5c, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 7ed561d3710064923957618a9dea5a2d, type: 3}
-    volume: 1
+    volume: 0
   - clip: {fileID: 8300000, guid: 76fcdbad9ebd540209600c08e325cae9, type: 3}
-    volume: 1
+    volume: 0
   inGameplay: 0
   editorAudio: []
 --- !u!4 &99181964
@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128861614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.7, y: 0, z: 0}
+  m_LocalPosition: {x: 109, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 384868140}
@@ -787,12 +787,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loops:
-  - clip: {fileID: 8300000, guid: 22a26759434be4714b72bc257298e48f, type: 3}
+  - clip: {fileID: 8300000, guid: 3b1d8968b75424e26a5e050631c07a5c, type: 3}
     volume: 1
-  - clip: {fileID: 8300000, guid: 65fbb795ecb604772ad77fa4483fb61d, type: 3}
+  - clip: {fileID: 8300000, guid: 7ed561d3710064923957618a9dea5a2d, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 76fcdbad9ebd540209600c08e325cae9, type: 3}
-    volume: 0
+    volume: 1
 --- !u!4 &348743229
 Transform:
   m_ObjectHideFlags: 0
@@ -10402,10 +10402,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loops:
-  - clip: {fileID: 8300000, guid: 22a26759434be4714b72bc257298e48f, type: 3}
+  - clip: {fileID: 8300000, guid: 3b1d8968b75424e26a5e050631c07a5c, type: 3}
     volume: 1
-  - clip: {fileID: 8300000, guid: 65fbb795ecb604772ad77fa4483fb61d, type: 3}
-    volume: 0
+  - clip: {fileID: 8300000, guid: 7ed561d3710064923957618a9dea5a2d, type: 3}
+    volume: 1
   - clip: {fileID: 8300000, guid: 76fcdbad9ebd540209600c08e325cae9, type: 3}
     volume: 0
 --- !u!4 &1191541915
@@ -10816,7 +10816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455481441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 233, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 384868140}
