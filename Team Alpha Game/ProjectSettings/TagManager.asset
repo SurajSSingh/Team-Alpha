@@ -11,6 +11,8 @@ TagManager:
   - Checkpoint
   - PlayerAttack
   - EnemyHead
+  - Slope
+  - OutTrigger
   layers:
   - Default
   - TransparentFX
@@ -26,10 +28,10 @@ TagManager:
   - Wall
   - Checkpoint
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Art-Background
+  - Art-Midground
+  - Art-Foreground
+  - Music
   - 
   - 
   - 
