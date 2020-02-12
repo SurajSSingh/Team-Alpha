@@ -9289,7 +9289,7 @@ PrefabInstance:
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994160, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -12759,16 +12759,16 @@ MonoBehaviour:
   - {fileID: 1542039539}
   - {fileID: 317295281}
   mistSpeed:
-  - 20
-  - 20
-  - 20
-  - 20
-  - 20
-  - 20
-  - 20
-  - 20
-  - 20
-  - 10
+  - 5
+  - 4
+  - 3
+  - 4
+  - 3
+  - 4
+  - 3
+  - 5
+  - 6
+  - 7
   mistscale:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -14573,13 +14573,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76fdf182a5143679df0caeb8b93dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ren: {fileID: 1912340206}
   moveSpeed: 8
   rb: {fileID: 1912340202}
   maxDescendAngle: 120
   rbDrag: 0.5
   rbMass: 1.5
   gravity: 0
+  onGround: 0
+  onWall: 0
+  onSlope: 0
   prevDir: {x: 0, y: 0}
+  sign: 0
   velocity: {x: -0.1449113, y: -0.18, z: 0}
   terminalVel: {x: 35, y: 23.33333}
   airTerminalVel: {x: 17.5, y: 23.33333}
@@ -14597,8 +14602,14 @@ MonoBehaviour:
   jumpCount: 2
   wallJumpForce: 250
   wantToJump: 0
+  attacking: 0
+  airborne: 0
+  pivoting: 0
+  displacementTimer: 0
+  pivotTimer: 0
   dashing: 0
   dashReady: 1
+  dashDir: {x: 0, y: 0}
   dashSpeed: 35
   dashCooldown: -5.259996
   dashTime: 0.2
