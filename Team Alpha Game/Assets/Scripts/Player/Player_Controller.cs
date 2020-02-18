@@ -133,7 +133,7 @@ public class Player_Controller : MonoBehaviour
         dashTimer = 0.0f;
         dashCooldown = 4.0f;
         wallClimb = new Vector2(32.0f, 6.0f);
-        wallJump = new Vector2(14.0f, 12.0f);
+        wallJump = new Vector2(7.0f, 8.0f);
         wallSlideSpeed = -3.0f;
         wallClimbTime = 0.3f;
         wallClimbTimer = 0.0f;
