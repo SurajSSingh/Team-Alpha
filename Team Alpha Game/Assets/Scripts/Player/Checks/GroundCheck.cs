@@ -15,6 +15,24 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        CheckOverlaps(other);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        CheckOverlaps(other);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        pc.isPlayerGrounded(false);
+        pc.isOnQuicksand(false);
+        pc.isStepping(false);
+        pc.isOnSlope(false);
+    }
+
+    private void CheckOverlaps(Collider2D other)
+    {
         if (other.gameObject.CompareTag("Ground"))
         {
             pc.isPlayerGrounded(true);
@@ -33,35 +51,5 @@ public class GroundCheck : MonoBehaviour
             pc.isPlayerGrounded(true);
             pc.isOnSlope(true);
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            pc.isPlayerGrounded(true);
-        }
-        if (other.gameObject.CompareTag("Quicksand"))
-        {
-            pc.isPlayerGrounded(true);
-            pc.isOnQuicksand(true);
-        }
-        if (other.gameObject.CompareTag("EnemyHead"))
-        {
-            pc.isStepping(true);
-        }
-        if(other.gameObject.CompareTag("Slope"))
-        {
-            pc.isPlayerGrounded(true);
-            pc.isOnSlope(true);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        pc.isPlayerGrounded(false);
-        pc.isOnQuicksand(false);
-        pc.isStepping(false);
-        pc.isOnSlope(false);
     }
 }

@@ -64,13 +64,21 @@ public class Player_Controller : MonoBehaviour
     private float timeTillJumpExpire = 0.25f;
 
     public bool attacking = false;
+    public bool dashAttacking = false;
+    public bool diving = false;
+    public bool diveHit = false;
+    public bool landing = false;
     public bool airborne = false;
     public bool pivoting = false;
+    public float attackTimer;
+    public float dashAttackTimer;
     public float displacementTimer;
     public float pivotTimer;
+    public float diveWindUpTimer;
 
     public bool dashing = false;
     public bool dashReady = true;
+    public bool dashAttack = true;
     public Vector2 dashDir;
     public float dashSpeed;
     public float dashCooldown;
@@ -157,6 +165,9 @@ public class Player_Controller : MonoBehaviour
         fastRunning = false;
         displacementTimer = 0.2f;
         pivotTimer = 0.5f;
+        attackTimer = 0.8f;
+        dashAttackTimer = 0.5f;
+        diveWindUpTimer = 0.4f;
     }
 
     // Update is called once per frame
@@ -205,14 +216,14 @@ public class Player_Controller : MonoBehaviour
             jumping = false;
             animator.SetBool("Jumping", jumping);
         }
-        if ((!stunned || immuneTimer <= 1.0f) && !wallClimbing && !wallJumping && !attacking)
+        if ((!stunned || immuneTimer <= 1.0f) && !wallClimbing && !wallJumping && !attacking && !diving)
         {
             if (onGround)
             {
                 jumping = false;
                 airborne = false;
                 animator.SetBool("Jumping", jumping);
-                animator.SetBool("DoubleJump", jumping);
+                animator.SetBool("Double Jump", jumping);
                 animator.SetBool("Airborne", airborne);
                 wallJumping = false;
                 wallClimbing = false;
@@ -238,7 +249,16 @@ public class Player_Controller : MonoBehaviour
             }
             if (dashing)
             {
-                Dash(dashDir);
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    dashAttacking = true;
+                    DashAttack();
+                    animator.SetBool("Dash Attack", dashAttacking);
+                }
+                else
+                {
+                    Dash(dashDir);
+                }
             }
             else
             {
@@ -246,8 +266,12 @@ public class Player_Controller : MonoBehaviour
                 {
                     if (!onGround && !onWall)
                     {
-                        animator.SetBool("Running", true);
-                        if (Mathf.Abs(velocity.x) >= moveSpeed) //influence if airborne velocity x greater than movespeed
+                        if (Input.GetKeyDown(KeyCode.Z))
+                        {
+                            diving = true;
+                            animator.SetBool("Dive", diving);
+                        }
+                        else if (Mathf.Abs(velocity.x) >= moveSpeed) //influence if airborne velocity x greater than movespeed
                         {
                             velocity.x += input.x * 0.04f;
                         }
@@ -338,12 +362,12 @@ public class Player_Controller : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Z) && onGround)
             {
-                animator.SetBool("Attack", true);
                 attacking = true;
+                animator.SetBool("Attack", attacking);
             }
             if (wantToJump && doubleJump && airborne && jumpCount == 1)
             {
-                animator.SetBool("DoubleJump", true);
+                animator.SetBool("Double Jump", true);
                 velocity.y = jumpVelocity;
                 jumpCount -= 1;
                 Jump();
@@ -428,12 +452,84 @@ public class Player_Controller : MonoBehaviour
         {
             WallJump();
         }
+        else if (attacking)
+        {
+            Attack();
+        }
+        else if (diving)
+        {
+            Dive();
+        }
         prevDir = input;
         LimitSpeed();
         PlayerManager.instance.updateHealth(velocity.magnitude);
         animator.SetFloat("SpeedX", Mathf.Abs(velocity.x));
         animator.SetFloat("SpeedY", velocity.y);
         transform.Translate(velocity * Time.deltaTime);
+    }
+
+    private void Attack()
+    {
+        attackTimer -= Time.deltaTime;
+        velocity.x = 0.2f;
+        if (fastRunning)
+        {
+            velocity.x = velocity.x * momentumFactor;
+        }
+        if (attackTimer <= 0.0f)
+        {
+            attacking = false;
+            attackTimer = 0.8f;
+            animator.SetBool("Attack", attacking);
+        }
+    }
+
+    private void DashAttack()
+    {
+        dashAttackTimer -= Time.deltaTime;
+        velocity.x = velocity.x / 0.5f;
+        if (dashAttackTimer <= 0.0f)
+        {
+            dashing = false;
+            dashAttacking = false;
+            dashAttackTimer = 0.5f;
+            animator.SetBool("Dash Attack", dashAttacking);
+        }
+    }
+
+    private void Dive()
+    {
+        diveWindUpTimer -= Time.deltaTime;
+        velocity.x = 0;
+        jumping = false;
+        animator.SetBool("Jumping", jumping);
+        dashing = false;
+        animator.SetBool("Dashing", dashing);
+        if (diveWindUpTimer <= 0.0f)
+        {
+            velocity.y = -17.5f;
+            if (landing)
+            {
+                diving = false;
+                animator.SetBool("Dive", diving);
+            }
+            else if (diveHit)
+            {
+                diving = false;
+                animator.SetBool("Dive", diving);
+                animator.SetBool("Dive Attack", diveHit);
+                Rebound();
+            }
+        }
+    }
+
+    private void Rebound()
+    {
+        jumpCount = 0;
+        jumping = true;
+        animator.SetBool("Jumping", jumping);
+        velocity.y = jumpVelocity * 1.2f;
+        velocity.x = moveSpeed * sign;
     }
 
     private void Jump()
@@ -506,7 +602,7 @@ public class Player_Controller : MonoBehaviour
         {
             rayOrigin = new Vector2(bounds.min.x, bounds.max.y);
         }
-        else if (direction.x > 0.0f && direction.y > 0.0f) // UpRight
+        else if (direction.x > 0.0f && direction.y > 0.0f) //UpRight
         {
             rayOrigin = new Vector2(bounds.max.x, bounds.max.y);
         }
@@ -618,11 +714,18 @@ public class Player_Controller : MonoBehaviour
 
     private void Knockback()
     {
+        stunTimer -= Time.deltaTime;
         animator.SetBool("Stunned", stunned);
         dashing = false;
+        animator.SetBool("Dashing", dashing);
         wallSliding = false;
         animator.SetBool("Wall Sliding", wallSliding);
+        attacking = false;
+        animator.SetBool("Attack", attacking);
+        dashAttacking = false;
+        animator.SetBool("Dash Attack", dashAttacking);
         jumping = false;
+        animator.SetBool("Jumping", jumping);
         if (stunTimer <= 1.0f && stunTimer >= 0.5f)
         {
             velocity.x = enemyColSign * knockbackSpeed;
