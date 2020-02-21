@@ -6,10 +6,15 @@ using UnityEngine.UI;
 
 public class ScreenManager : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transitonTime = 1f;
+
     public Text livesText;
     public Text dashReady;
     public GameObject winScreen;
     public GameObject loseScreen;
+    public GameObject playerUI;
 
     public static ScreenManager instance;
 
@@ -41,22 +46,39 @@ public class ScreenManager : MonoBehaviour
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
+        playerUI.SetActive(true);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void GameWin()
     {
+        playerUI.SetActive(false);
         PlayerManager.instance.StopChecking();
+        StartCoroutine(LoadScreen());
         winScreen.SetActive(true);
     }
 
     public void GameLose()
     {
+        playerUI.SetActive(false);
         PlayerManager.instance.StopChecking();
+        StartCoroutine(LoadScreen());
         loseScreen.SetActive(true);
     }
 
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator LoadScreen()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitonTime);
     }
 }
