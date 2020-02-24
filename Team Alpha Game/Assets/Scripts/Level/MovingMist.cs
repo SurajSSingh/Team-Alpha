@@ -8,6 +8,9 @@ public class MovingMist : MonoBehaviour
     public List<float> mistSpeed;
     public List<Vector3> mistscale;
     public float tolerance = 0.1f;
+    public MovingMist passOnMist;
+    private bool started;
+    public bool starter = false;
 
     private int currentWP = 0;
     // Start is called before the first frame update
@@ -17,6 +20,7 @@ public class MovingMist : MonoBehaviour
         {
             this.transform.position = waypoints[currentWP].transform.position;
             NextWaypoint();
+            started = starter;
         }
         else
         {
@@ -27,7 +31,7 @@ public class MovingMist : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentWP < waypoints.Count)
+        if (started && currentWP < waypoints.Count)
         {
             MoveMist();
         }
@@ -35,8 +39,8 @@ public class MovingMist : MonoBehaviour
 
     void MoveMist()
     {
-        Debug.Log(currentWP);
-        Debug.Log(CurrentPosDiff().magnitude);
+        //Debug.Log(currentWP);
+        //Debug.Log(CurrentPosDiff().magnitude);
         if(CurrentPosDiff().magnitude <= tolerance)
         {
             NextWaypoint();
@@ -62,5 +66,16 @@ public class MovingMist : MonoBehaviour
         {
             currentWP = currentWP + 1;
         }
+        if (currentWP >= waypoints.Count && passOnMist != null)
+        {
+            //Debug.Log("Pass On");
+            passOnMist.StartFog();
+            started = false;
+        }
+    }
+
+    public void StartFog()
+    {
+        started = true;
     }
 }
