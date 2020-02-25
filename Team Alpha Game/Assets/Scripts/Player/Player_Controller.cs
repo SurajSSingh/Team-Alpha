@@ -220,6 +220,7 @@ public class Player_Controller : MonoBehaviour
         {
             if (onGround)
             {
+                landing = true;
                 jumping = false;
                 airborne = false;
                 animator.SetBool("Jumping", jumping);
