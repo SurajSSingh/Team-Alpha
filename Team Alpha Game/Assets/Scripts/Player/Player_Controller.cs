@@ -341,14 +341,6 @@ public class Player_Controller : MonoBehaviour
             {
                 velocity.y = velocity.y / 1.05f;
             }
-            if (dashReady)
-            {
-                PlayerManager.instance.updateDash("Dash Available");
-            }
-            else
-            {
-                PlayerManager.instance.updateDash("Dash Unavailable");
-            }
             if (Input.GetKeyDown(KeyCode.E) && dashReady && input != Vector2.zero && !wallJumping)
             {
                 dashReady = false;
