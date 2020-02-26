@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172302239402553939}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: LevelLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 314608667491718739}
   - component: {fileID: 253133743746946879}
   - component: {fileID: 3355680261612272090}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -113,9 +113,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8189366913118162460}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &8956515251666558064
 GameObject:
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1827648132946684131}
   - component: {fileID: 3912438736492837830}
   - component: {fileID: 1806974222338618320}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Crossfade
   m_TagString: Untagged
   m_Icon: {fileID: 0}

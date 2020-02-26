@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class ScreenManager : MonoBehaviour
 {
     public Animator transition;
+    public GameObject player;
 
     public float transitonTime = 1f;
 
+    public Image DashComponent;
+    public Image DiveComponent;
+    public Sprite dashImage;
+    public Sprite diveImage;
+    public Sprite emptyImage;
     public Text livesText;
-    public Text dashReady;
     public GameObject winScreen;
     public GameObject loseScreen;
     public GameObject playerUI;
@@ -29,12 +34,20 @@ public class ScreenManager : MonoBehaviour
     void Update()
     {
         livesText.text = "Lives: " + PlayerManager.instance.lives.ToString();
-        dashReady.text = PlayerManager.instance.dashCond;
-        if (PlayerManager.instance.dashCond.Contains("Un"))
+        bool dashReady = player.GetComponent<Player_Controller>().dashReady;
+        bool diveReady = player.GetComponent<Player_Controller>().diving;
+        if (dashReady)
         {
-            dashReady.color = Color.red;
+            DashComponent.sprite = dashImage;
         } else {
-            dashReady.color = Color.green;   
+            DashComponent.sprite = emptyImage;
+        }
+        if (diveReady)
+        {
+            DiveComponent.sprite = diveImage;
+        } else
+        {
+            DiveComponent.sprite = emptyImage;
         }
     }
 
