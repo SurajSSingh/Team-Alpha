@@ -36,10 +36,15 @@ public class PlayerManager : MonoBehaviour
        
     }
 
-    public void updateHealth(float speed)
+    public void updateHealth(float speed, bool inMist)
     {
         if (lives > 0 && checkingSpeed)
         {
+            if (inMist)
+            {
+                currHealth -= 5;
+                Debug.Log("HURT");
+            }
             if (speed < 0.1)
             {
                 if (currHealth >= 0)

@@ -13,6 +13,7 @@ TagManager:
   - EnemyHead
   - Slope
   - OutTrigger
+  - Mist
   layers:
   - Default
   - TransparentFX

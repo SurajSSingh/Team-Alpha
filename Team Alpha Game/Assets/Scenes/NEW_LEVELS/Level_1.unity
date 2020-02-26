@@ -2770,7 +2770,7 @@ GameObject:
   - component: {fileID: 437636605}
   m_Layer: 0
   m_Name: Fatal_Fog
-  m_TagString: Untagged
+  m_TagString: Mist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2791,7 +2791,7 @@ MonoBehaviour:
   - {fileID: 435087978}
   - {fileID: 129181008}
   mistSpeed:
-  - 10
+  - 8
   - 20
   mistscale: []
   tolerance: 0.1
@@ -10841,9 +10841,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1818089079}
   - component: {fileID: 1818089080}
+  - component: {fileID: 1818089081}
   m_Layer: 0
   m_Name: Mist_Sprite
-  m_TagString: Untagged
+  m_TagString: Mist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10911,6 +10912,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1818089081
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818089078}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1.0869565, y: 1.0869565}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1820845286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11043,6 +11070,7 @@ MonoBehaviour:
   reboundHeight: 20
   stunned: 0
   stepping: 0
+  inMist: 0
   animator: {fileID: 1820845289}
   runSound: {fileID: 8300000, guid: 415219a19789a410e912869ea4bbf097, type: 3}
   mudRunSound: {fileID: 8300000, guid: 5fa3f225798ce437899a8b79c3767adf, type: 3}
@@ -12257,7 +12285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80499142d3e19d4586f98df6e178689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 1000000
+  currHealth: 1000
   respawner: {fileID: 1049915382}
   lives: 1
 --- !u!4 &1901477592
@@ -12526,9 +12554,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2030351754}
   - component: {fileID: 2030351755}
+  - component: {fileID: 2030351756}
   m_Layer: 0
   m_Name: Mist_Sprite
-  m_TagString: Untagged
+  m_TagString: Mist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12596,6 +12625,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2030351756
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030351753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1.0869565, y: 1.0869565}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &2061735713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12718,6 +12773,31 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 2061735714}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 412212448}
+    - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12737,31 +12817,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 2061735714}
-    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 412212448}
-    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
@@ -15225,7 +15280,7 @@ GameObject:
   - component: {fileID: 2145404957}
   m_Layer: 0
   m_Name: Fatal_Fog (1)
-  m_TagString: Untagged
+  m_TagString: Mist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

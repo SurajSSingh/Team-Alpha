@@ -113,6 +113,7 @@ public class Player_Controller : MonoBehaviour
     public float reboundHeight;
     public bool stunned = false;
     public bool stepping = false;
+    public bool inMist = false;
 
     public Animator animator;
     public AudioClip runSound;
@@ -455,7 +456,7 @@ public class Player_Controller : MonoBehaviour
         }
         prevDir = input;
         LimitSpeed();
-        PlayerManager.instance.updateHealth(velocity.magnitude);
+        PlayerManager.instance.updateHealth(velocity.magnitude, inMist);
         animator.SetFloat("SpeedX", Mathf.Abs(velocity.x));
         animator.SetFloat("SpeedY", velocity.y);
         transform.Translate(velocity * Time.deltaTime);
@@ -849,5 +850,20 @@ public class Player_Controller : MonoBehaviour
         dashReady = true;
         dashTimer = dashTime;
         velocity = Vector2.zero;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mist"))
+        {
+            inMist = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mist"))
+        {
+            inMist = false;
+        }
     }
 }
