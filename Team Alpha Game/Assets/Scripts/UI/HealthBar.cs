@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     GameObject playerManagerComponent;
     Image healthBarComponent;
     float maxHealth = 1000f;
+    float currenthealth;
 
 
     // Start is called before the first frame update
@@ -17,13 +18,14 @@ public class HealthBar : MonoBehaviour
 
         playerManagerComponent = GameObject.Find("PlayerManager");
 
-        playerManagerComponent.GetComponent<PlayerManager>().playerHealth.AddListener(currHealthListener);
+        currenthealth = playerManagerComponent.GetComponent<PlayerManager>().currHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currenthealth = playerManagerComponent.GetComponent<PlayerManager>().currHealth;
+        healthBarComponent.fillAmount = currenthealth / maxHealth;
     }
 
     void currHealthListener(float health)
