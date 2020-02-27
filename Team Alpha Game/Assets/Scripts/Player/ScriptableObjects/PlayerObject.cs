@@ -2,17 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerObject : MonoBehaviour
+public class PlayerObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Time Values
+    public float wallJumpTime;
+    public float stunTime;
+    public float immuneTime;
+    public float wallClimbTime;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Float Values
+    public float moveSpeed;
+    public float maxDescendAngle;
+    //public float rbDrag;
+    //public float rbMass;
+    public float gravity;
+    public float jumpTime;
+    //public float timeToJumpApex;
+    public float jumpVelocity;
+    public float wallJumpForce;
+    public float reboundHeight;
+    public float knockbackSpeed;
+    public float wallSlideSpeed;
+    public float wallStickCooldown;
+    public float wallClimbCooldown;
+    public float jumpDirX;
+
+
+    // Int Values
+    public int jumpCount;
+
+    // Vector Values
+    public Vector2 terminalVel;
+    public Vector2 airTerminalVel;
+    public Vector2 wallClimb;
+    public Vector2 wallJump;
 }
