@@ -6,12 +6,15 @@ using UnityEngine;
 public class PlayerObject : ScriptableObject
 {
     // Time Values
+    [Header(" Time Values")]
+    //[Space]
     public float wallJumpTime;
     public float stunTime;
     public float immuneTime;
     public float wallClimbTime;
 
     // Float Values
+    [Header(" Float Values")]
     public float moveSpeed;
     public float maxDescendAngle;
     //public float rbDrag;
@@ -29,6 +32,7 @@ public class PlayerObject : ScriptableObject
     public float jumpDirX;
 
     // Vector Values
+    [Header(" Vector Values")]
     public Vector2 terminalVel;
     public Vector2 airTerminalVel;
     public Vector2 wallClimb;
