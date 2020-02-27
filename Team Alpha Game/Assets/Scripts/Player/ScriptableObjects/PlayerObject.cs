@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Player", menuName = "Player")]
 public class PlayerObject : ScriptableObject
 {
     // Time Values
@@ -26,10 +27,6 @@ public class PlayerObject : ScriptableObject
     public float wallStickCooldown;
     public float wallClimbCooldown;
     public float jumpDirX;
-
-
-    // Int Values
-    public int jumpCount;
 
     // Vector Values
     public Vector2 terminalVel;

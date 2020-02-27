@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa87b7a1102e3403bbcd826a7036fb23, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  wallJumpTime: 0
+  stunTime: 0
+  immuneTime: 0
+  wallClimbTime: 0
+  moveSpeed: 6
+  maxDescendAngle: 0
+  gravity: 0
+  jumpTime: 0
+  jumpVelocity: 0
+  wallJumpForce: 0
+  reboundHeight: 0
+  knockbackSpeed: 0
+  wallSlideSpeed: 0
+  wallStickCooldown: 0
+  wallClimbCooldown: 0
+  jumpDirX: 0
+  terminalVel: {x: 0, y: 0}
+  airTerminalVel: {x: 0, y: 0}
+  wallClimb: {x: 0, y: 0}
+  wallJump: {x: 0, y: 0}

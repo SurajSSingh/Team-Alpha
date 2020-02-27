@@ -5,11 +5,12 @@ using UnityEngine.Audio;
 
 public class Player_Controller : MonoBehaviour
 {
+    public PlayerObject po;
     // Fields to play around with
     [SerializeField]
     private SpriteRenderer ren;
-    [SerializeField]
-    private float moveSpeed;
+    //[SerializeField]
+    //private float moveSpeed;
     //[SerializeField]
     //private float jumpForce = 250.0f;
     [SerializeField]
@@ -135,7 +136,7 @@ public class Player_Controller : MonoBehaviour
         gravity = 6.0f;
         jumpVelocity = 16.0f;
         jumpTimer = 0.0f;
-        moveSpeed = 6.0f;
+        //moveSpeed = 6.0f;
         wantToJump = false;
         dashSpeed = 35.0f;
         dashTime = 0.2f;
@@ -273,7 +274,7 @@ public class Player_Controller : MonoBehaviour
                             diving = true;
                             animator.SetBool("Dive", diving);
                         }
-                        else if (Mathf.Abs(velocity.x) >= moveSpeed) //influence if airborne velocity x greater than movespeed
+                        else if (Mathf.Abs(velocity.x) >= po.moveSpeed) //influence if airborne velocity x greater than movespeed
                         {
                             velocity.x += input.x * 0.04f;
                         }
@@ -284,7 +285,7 @@ public class Player_Controller : MonoBehaviour
                     }
                     else
                     {
-                        velocity.x = input.x * moveSpeed;
+                        velocity.x = input.x * po.moveSpeed;
                         if (playerOnQuicksand)
                         {
                             velocity.x = velocity.x / 4;
@@ -293,7 +294,7 @@ public class Player_Controller : MonoBehaviour
                     if (momentumTimer <= 0.0f)
                     {
                         fastRunning = true;
-                        velocity.x = input.x * moveSpeed * momentumFactor;
+                        velocity.x = input.x * po.moveSpeed * momentumFactor;
                     }
                     else if (fastRunning && momentumTimer > 0.0f)
                     {
@@ -391,7 +392,7 @@ public class Player_Controller : MonoBehaviour
             if (wallSliding && sign == wallSign)
             {
                 DetachFromWall();
-                velocity.x = moveSpeed;
+                velocity.x = po.moveSpeed;
             }
             if (wallSliding && wantToJump && !wallJumping)
             {
@@ -523,7 +524,7 @@ public class Player_Controller : MonoBehaviour
         jumping = true;
         animator.SetBool("Jumping", jumping);
         velocity.y = jumpVelocity * 1.2f;
-        velocity.x = moveSpeed * sign;
+        velocity.x = po.moveSpeed * sign;
     }
 
     private void Jump()
@@ -744,11 +745,11 @@ public class Player_Controller : MonoBehaviour
             wallClimbTimer -= Time.deltaTime;
             if (wallClimbTimer <= wallClimbTime && wallClimbTimer >= wallClimbTime / 2)
             {
-                velocity.x = -jumpDirX * moveSpeed / 4;
+                velocity.x = -jumpDirX * po.moveSpeed / 4;
             }
             else if (wallClimbTimer > 0.0f && wallClimbTimer < wallClimbTime / 2)
             {
-                velocity.x = jumpDirX * moveSpeed / 4;
+                velocity.x = jumpDirX * po.moveSpeed / 4;
             }
             if (wallClimbTimer <= 0.0f)
             {
