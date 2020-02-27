@@ -14082,8 +14082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76fdf182a5143679df0caeb8b93dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  po: {fileID: 11400000, guid: 03f93b5320aff4484bc5422a23a53904, type: 2}
   ren: {fileID: 1912340206}
-  moveSpeed: 8
   rb: {fileID: 1912340202}
   maxDescendAngle: 120
   rbDrag: 0.5

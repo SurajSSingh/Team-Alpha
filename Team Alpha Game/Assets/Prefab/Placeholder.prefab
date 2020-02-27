@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76fdf182a5143679df0caeb8b93dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  po: {fileID: 11400000, guid: 03f93b5320aff4484bc5422a23a53904, type: 2}
   ren: {fileID: 6390601727423354964}
-  moveSpeed: 8
   rb: {fileID: 6390601727423354965}
   maxDescendAngle: 120
   rbDrag: 0.5
@@ -153,12 +153,20 @@ MonoBehaviour:
   wallJumpForce: 250
   wantToJump: 0
   attacking: 0
+  dashAttacking: 0
+  diving: 0
+  diveHit: 0
+  landing: 0
   airborne: 0
   pivoting: 0
+  attackTimer: 0
+  dashAttackTimer: 0
   displacementTimer: 0
   pivotTimer: 0
+  diveWindUpTimer: 0
   dashing: 0
   dashReady: 1
+  dashAttack: 1
   dashDir: {x: 0, y: 0}
   dashSpeed: 35
   dashCooldown: -5.259996
@@ -191,6 +199,7 @@ MonoBehaviour:
   reboundHeight: 20
   stunned: 0
   stepping: 0
+  inMist: 0
   animator: {fileID: 6390601727423354966}
   runSound: {fileID: 8300000, guid: 415219a19789a410e912869ea4bbf097, type: 3}
   mudRunSound: {fileID: 8300000, guid: 5fa3f225798ce437899a8b79c3767adf, type: 3}
