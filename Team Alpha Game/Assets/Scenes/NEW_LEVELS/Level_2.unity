@@ -10374,7 +10374,7 @@ GameObject:
   - component: {fileID: 1511737842}
   m_Layer: 10
   m_Name: Slope
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13992,26 +13992,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 1776306361}
-    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1968638642}
-    - target: {fileID: 6448045841377363804, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045842635344819, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14036,6 +14016,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1776306361}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1968638642}
+    - target: {fileID: 6448045841377363804, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842635344819, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
