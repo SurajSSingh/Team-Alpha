@@ -21,6 +21,7 @@ public class MovingMist : MonoBehaviour
             this.transform.position = waypoints[currentWP].transform.position;
             NextWaypoint();
             started = starter;
+            passOnMist.gameObject.SetActive(false);
         }
         else
         {
@@ -69,6 +70,7 @@ public class MovingMist : MonoBehaviour
         if (currentWP >= waypoints.Count && passOnMist != null)
         {
             //Debug.Log("Pass On");
+            passOnMist.gameObject.SetActive(true);
             passOnMist.StartFog();
             started = false;
         }
