@@ -71,16 +71,14 @@ public class ScreenManager : MonoBehaviour
     {
         playerUI.SetActive(false);
         PlayerManager.instance.StopChecking();
-        StartCoroutine(LoadScreen());
-        winScreen.SetActive(true);
+        StartCoroutine(LoadWinScreen());
     }
 
     public void GameLose()
     {
         playerUI.SetActive(false);
         PlayerManager.instance.StopChecking();
-        StartCoroutine(LoadScreen());
-        loseScreen.SetActive(true);
+        StartCoroutine(LoadLooseScreen());
     }
 
     public void ReturnToMenu()
@@ -88,10 +86,21 @@ public class ScreenManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator LoadScreen()
+    IEnumerator LoadLooseScreen()
     {
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitonTime);
+
+        loseScreen.SetActive(true);
+    }
+
+    IEnumerator LoadWinScreen()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitonTime);
+
+        winScreen.SetActive(true);
     }
 }
