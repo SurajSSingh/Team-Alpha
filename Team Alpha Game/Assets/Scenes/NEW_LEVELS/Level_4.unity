@@ -9256,6 +9256,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 587815468}
     - target: {fileID: 8772496278429494140, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
