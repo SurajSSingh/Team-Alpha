@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d25c035cea7f244bce719f17f6e0d8, type: 3}
+  m_Name: PlayerAttributes
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 10
+  moveSpeed: 6
+  maxDescendAngle: 120
+  jumpVelocity: 16
+  reboundVelocity: 20
+  dashSpeed: 35
+  momentumFactor: 1.8
+  knockbackSpeed: 8
+  wallSlideSpeed: -3
+  wallClimbVel: {x: 32, y: 6}
+  wallJumpVel: {x: 7, y: 8}
+  jumpBufferTime: 0.25
+  dashAttackTime: 0.5
+  displacementTime: 0.2
+  pivotTime: 0.5
+  diveWindUpTime: 0.4
+  dashCooldownTime: 4
+  dashTime: 0.2
+  momentumTime: 2.5
+  wallStickCooldown: 0.3
+  wallClimbCooldown: 1
+  wallClimbTime: 0.3
+  wallJumpCooldown: 1
+  wallJumpTime: 0.15
+  stunTime: 1
+  immuneTime: 2
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 11776
+  slopeCollisionMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  rbDrag: 0.5
+  rbMass: 1.5
+  gravity: 6
