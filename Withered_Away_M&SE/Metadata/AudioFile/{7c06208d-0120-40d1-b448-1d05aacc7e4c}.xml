@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7c06208d-0120-40d1-b448-1d05aacc7e4c}">
+		<property name="assetPath">
+			<value>String Ensemble01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.089886621315191</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c9d11273-4ab7-4e34-9326-945fb0402e5e}</destination>
+		</relationship>
+	</object>
+</objects>
