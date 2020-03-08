@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8423323259741665998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../Withered_Away_M&SE/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637192440700000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6933181596662593208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1000
+  Default: 1000
+  Exists: 1
 --- !u!114 &-6322909907466882184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,6 +53,43 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-968625651115817176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Distance
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 20
+  Default: 20
+  Exists: 1
+--- !u!114 &-163105751360413470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../Withered_Away_M&SE/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637192440700000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 914
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,16 +103,44 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3548257859089130269}
-  - {fileID: -6322909907466882184}
-  EditorEvents: []
-  EditorParameters: []
+  - {fileID: -163105751360413470}
+  - {fileID: -8423323259741665998}
+  EditorEvents:
+  - {fileID: 4187746101853586561}
+  - {fileID: 1623360603421257686}
+  EditorParameters:
+  - {fileID: -968625651115817176}
+  - {fileID: -6933181596662593208}
+  - {fileID: 5367926935780096291}
   MasterBanks:
-  - {fileID: -6322909907466882184}
+  - {fileID: -8423323259741665998}
   StringsBanks:
-  - {fileID: 3548257859089130269}
-  stringsBankWriteTime: 637189463190000000
+  - {fileID: -163105751360413470}
+  stringsBankWriteTime: 637192440700000000
   cacheVersion: 3
+--- !u!114 &1623360603421257686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: 8dd7d191ba601b4fa084e8de4b9efd13
+  Banks:
+  - {fileID: -8423323259741665998}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 69000
 --- !u!114 &3548257859089130269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,4 +160,44 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 688
+  Exists: 1
+--- !u!114 &4187746101853586561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Intro
+  m_EditorClassIdentifier: 
+  Path: event:/Intro
+  guid: 1d16ce7d99cf03449756d501b0d7d15b
+  Banks:
+  - {fileID: -8423323259741665998}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 84399
+--- !u!114 &5367926935780096291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: InMenu
+  m_EditorClassIdentifier: 
+  Name: InMenu
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 1
