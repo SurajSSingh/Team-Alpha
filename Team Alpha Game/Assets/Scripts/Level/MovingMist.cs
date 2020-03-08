@@ -11,6 +11,7 @@ public class MovingMist : MonoBehaviour
     public MovingMist passOnMist;
     private bool started;
     public bool starter = false;
+    public GameObject player;
 
     private int currentWP = 0;
     // Start is called before the first frame update
@@ -21,7 +22,10 @@ public class MovingMist : MonoBehaviour
             this.transform.position = waypoints[currentWP].transform.position;
             NextWaypoint();
             started = starter;
-            passOnMist.gameObject.SetActive(false);
+            if(passOnMist != null)
+            {
+                passOnMist.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -78,6 +82,7 @@ public class MovingMist : MonoBehaviour
 
     public void StartFog()
     {
+        this.gameObject.SetActive(true);
         started = true;
     }
 }

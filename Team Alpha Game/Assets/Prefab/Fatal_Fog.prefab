@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5704963331957815308}
   - component: {fileID: 5704963331957815309}
   - component: {fileID: 5704963331957815310}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5, y: 0.5}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5704963333355472739}
   - component: {fileID: 5704963333355472738}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Fatal_Fog
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -172,3 +172,4 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 0}
   starter: 1
+  player: {fileID: 0}

@@ -8218,7 +8218,7 @@ GameObject:
   - component: {fileID: 518029806}
   - component: {fileID: 518029807}
   - component: {fileID: 518029808}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -12915,7 +12915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205435635}
   - component: {fileID: 1205435634}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Fatal_Fog
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -12970,6 +12970,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 0}
   starter: 1
+  player: {fileID: 0}
 --- !u!4 &1205435635
 Transform:
   m_ObjectHideFlags: 0
