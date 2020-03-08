@@ -16,20 +16,18 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Safe</value>
+			<value>First Safe</value>
+			<value>Second Safe</value>
 			<value>Danger</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>
-		<property name="seekSpeed">
-			<value>0.29999998211860657</value>
-		</property>
 		<property name="seekSpeedDescending">
-			<value>0.59999996423721313</value>
+			<value>0.8999999463558197</value>
 		</property>
 	</object>
 </objects>
