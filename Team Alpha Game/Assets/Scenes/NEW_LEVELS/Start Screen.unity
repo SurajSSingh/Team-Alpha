@@ -504,6 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96362180}
   - component: {fileID: 96362181}
+  - component: {fileID: 96362182}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -548,6 +549,21 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &96362182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96362179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31227955fc1884eecb8e0a5cee13f6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepScenes:
+  - Start Screen
+  - Prologue
 --- !u!1 &157529758
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,9 +3600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  parameter: InMenu
+  parameter: Scene
   TriggerEvent: 12
-  value: 1
+  value: 0
 --- !u!114 &1589460507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3600,9 +3616,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  parameter: InMenu
+  parameter: Scene
   TriggerEvent: 11
-  value: 0
+  value: 1
 --- !u!1 &1606653010
 GameObject:
   m_ObjectHideFlags: 0

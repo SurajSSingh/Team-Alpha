@@ -18,6 +18,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7594385839483808250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  Name: Scene
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-6933181596662593208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,6 +67,24 @@ MonoBehaviour:
   Path: ../../Withered_Away_M&SE/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637189463190000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-2264438581952684225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Withered_Away_M&SE/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637192464930000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -103,20 +138,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -163105751360413470}
-  - {fileID: -8423323259741665998}
+  - {fileID: 6043950101596529152}
+  - {fileID: -2264438581952684225}
   EditorEvents:
   - {fileID: 4187746101853586561}
-  - {fileID: 1623360603421257686}
   EditorParameters:
-  - {fileID: -968625651115817176}
-  - {fileID: -6933181596662593208}
-  - {fileID: 5367926935780096291}
+  - {fileID: -7594385839483808250}
   MasterBanks:
-  - {fileID: -8423323259741665998}
+  - {fileID: -2264438581952684225}
   StringsBanks:
-  - {fileID: -163105751360413470}
-  stringsBankWriteTime: 637192440700000000
+  - {fileID: 6043950101596529152}
+  stringsBankWriteTime: 637192464930000000
   cacheVersion: 3
 --- !u!114 &1623360603421257686
 MonoBehaviour:
@@ -174,16 +206,16 @@ MonoBehaviour:
   m_Name: event:/Intro
   m_EditorClassIdentifier: 
   Path: event:/Intro
-  guid: 1d16ce7d99cf03449756d501b0d7d15b
+  guid: cf6780661893d34eb2249ecf7d3eca7f
   Banks:
-  - {fileID: -8423323259741665998}
+  - {fileID: -2264438581952684225}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 84399
+  Length: 86693
 --- !u!114 &5367926935780096291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,4 +232,24 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 1
+--- !u!114 &6043950101596529152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Withered_Away_M&SE/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637192464930000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 778
   Exists: 1
