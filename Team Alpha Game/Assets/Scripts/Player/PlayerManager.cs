@@ -17,9 +17,11 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject respawner;
 
-    public int lives = 3;
+    public int lives = 1;
 
     private bool checkingSpeed = true;
+
+    public LevelMusicScript levelMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        levelMusic.UpdateHealth(currHealth);
     }
 
     public void updateHealth(float speed, bool inMist)
@@ -124,6 +126,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (lives <= 0)
         {
+            currHealth = 0;
             ScreenManager.instance.GameLose();
         }
 

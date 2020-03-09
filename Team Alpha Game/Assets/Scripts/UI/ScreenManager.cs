@@ -23,6 +23,8 @@ public class ScreenManager : MonoBehaviour
     public GameObject loseScreen;
     public GameObject playerUI;
 
+    public LevelMusicScript levelMusic;
+
     public static ScreenManager instance;
 
     void Start()
@@ -60,12 +62,14 @@ public class ScreenManager : MonoBehaviour
 
     public void ResetLevel()
     {
+        levelMusic.Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
         playerUI.SetActive(true);
     }
 
     public void NextLevel()
     {
+        levelMusic.Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -85,6 +89,7 @@ public class ScreenManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        levelMusic.Stop();
         SceneManager.LoadScene(0);
     }
 

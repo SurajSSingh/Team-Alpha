@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelMusicScript : MonoBehaviour
 {
-    LevelMusicScript instance;
     FMOD.Studio.EventInstance levelMusic;
     float safeSection = 0.0f;
 
@@ -12,10 +11,6 @@ public class LevelMusicScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(instance != this)
-        {
-            instance = this;
-        }
         levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
         levelMusic.start();
     }
@@ -50,5 +45,10 @@ public class LevelMusicScript : MonoBehaviour
         {
             levelMusic.setParameterByName("Zone", safeSection);
         }
+    }
+
+    public void Stop()
+    {
+        FMODUnity.RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

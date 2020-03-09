@@ -2829,6 +2829,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513769844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2895655332134071782, guid: 4e34a733ec4254212849f64b8fc2e096,
+    type: 3}
+  m_PrefabInstance: {fileID: 2895655332427508882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa3da9b2e90f4b969c1f621d0af4282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &595747231
 GameObject:
   m_ObjectHideFlags: 0
@@ -10371,6 +10383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a7b17ed082b46b1afb4035a9cd275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelMusic: {fileID: 513769844}
 --- !u!61 &1408219241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11386,9 +11399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80499142d3e19d4586f98df6e178689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHealth: 1e+15
+  currHealth: 1000
   respawner: {fileID: 1049915382}
   lives: 1
+  levelMusic: {fileID: 513769844}
 --- !u!4 &1901477592
 Transform:
   m_ObjectHideFlags: 0
@@ -12643,6 +12657,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 412212448}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 513769844}
     - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
