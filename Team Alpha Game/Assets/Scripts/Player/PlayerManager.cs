@@ -132,6 +132,11 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    public void ChangeHealth(float value)
+    {
+        currHealth += value;
+    }
+
     public void StopChecking()
     {
         checkingSpeed = false;
