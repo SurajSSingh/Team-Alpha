@@ -84,5 +84,6 @@ public class MovingMist : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         started = true;
+        NextWaypoint();
     }
 }

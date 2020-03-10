@@ -44903,7 +44903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2145404956
 Transform:
   m_ObjectHideFlags: 0
@@ -44952,7 +44952,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   tolerance: 0.1
   passOnMist: {fileID: 0}
-  starter: 0
+  starter: 1
   player: {fileID: 412212448}
 --- !u!1001 &2895655332427508882
 PrefabInstance:
