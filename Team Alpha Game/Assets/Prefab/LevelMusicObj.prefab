@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MusicName: 
+  sectionNum:
+  - 3
+  - 0
+  - 1
 --- !u!1 &4852266787651676187
 GameObject:
   m_ObjectHideFlags: 0

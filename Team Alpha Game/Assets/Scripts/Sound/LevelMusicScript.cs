@@ -14,7 +14,6 @@ public class LevelMusicScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(sectionNum);
         if(MusicName != null && MusicName != "")
         {
             levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/"+MusicName);
@@ -58,8 +57,6 @@ public class LevelMusicScript : MonoBehaviour
         }
         else
         {
-            Debug.Log(sectionNum);
-            Debug.Log(sectionNum[currentIdx]);
             levelMusic.setParameterByName("Zone", sectionNum[currentIdx]);
         }
     }
