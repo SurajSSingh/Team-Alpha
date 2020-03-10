@@ -9636,10 +9636,39 @@ PrefabInstance:
       propertyPath: levelMusic
       value: 
       objectReference: {fileID: 875660940}
+    - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486067, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52.92502
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486067, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 295.85
+      objectReference: {fileID: 0}
     - target: {fileID: 5354424740812917977, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2.7951965
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486068, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_Text
+      value: Cichol finally arrives at the heart of the forest to the sight of an
+        opening to a cave. Powerful spiritual energies flow from within the cave,
+        daring trespassers at the stake of their lives. Cichol, unwavering, quickly
+        makes his way into the cave, following the light of spirit lanterns to the
+        forsaken chamber at the end.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486068, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}

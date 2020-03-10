@@ -13951,6 +13951,34 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486067, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52.94999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486067, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 295.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486068, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_Text
+      value: Cichol nears the source of dark energy emanating from the heart of the
+        forest. The remaining path hosts a swamp abundant with quicksand, posing great
+        danger for a single misstep. Cichol steels himself for the combined danger
+        of the mist approaching from his rear and the damning depths below...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842397486068, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
 --- !u!95 &1776306361 stripped

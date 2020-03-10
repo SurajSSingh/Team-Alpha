@@ -1480,7 +1480,7 @@ PrefabInstance:
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the fourth level.
+      value: '4: Heart of Morrigan'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -2101,7 +2101,7 @@ PrefabInstance:
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the second level.
+      value: '2: Hallownest Forest'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -2976,7 +2976,7 @@ PrefabInstance:
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the third level.
+      value: '3: Swamp of the Forgotten'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -4860,12 +4860,12 @@ PrefabInstance:
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the first level.
+      value: "1:  Hallownest Forest (Tutorial)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 45
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
