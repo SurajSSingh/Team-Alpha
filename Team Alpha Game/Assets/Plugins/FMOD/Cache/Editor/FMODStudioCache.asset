@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8956109554233493152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  Min: 0
+  Max: 4
+  Default: 3
+  Exists: 1
+--- !u!114 &-8534209148250376542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/InMist
+  m_EditorClassIdentifier: 
+  Name: InMist
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-8423323259741665998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,7 +68,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 50
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7784690120520427756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +86,24 @@ MonoBehaviour:
   Max: 1000
   Default: 1000
   Exists: 1
+--- !u!114 &-7619002622357865241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Withered_Away_M&SE/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637194680640000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-7594385839483808250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +154,40 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  Exists: 0
+--- !u!114 &-7114890407323654725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  Min: 0
+  Max: 4
+  Default: 3
+  Exists: 0
+--- !u!114 &-6976010416846612884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1000
+  Default: 1000
   Exists: 0
 --- !u!114 &-6933181596662593208
 MonoBehaviour:
@@ -170,7 +256,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6322909907466882184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +308,24 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-6173409492419099181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  Name: Scene
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-6047271533606116168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +377,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-5685219497189942353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1000
+  Default: 1000
+  Exists: 1
 --- !u!114 &-5380374704016264233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +445,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-4821119680591597035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/InMist
+  m_EditorClassIdentifier: 
+  Name: InMist
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-4547637300335608368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +478,7 @@ MonoBehaviour:
   Min: 0
   Max: 1000
   Default: 1000
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4441631244629270468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +496,7 @@ MonoBehaviour:
   lastModified: 637194054360000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4238977979862451321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +514,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-4215710406752628343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Withered_Away_M&SE/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637194682250000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4197798944968957325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,15 +704,16 @@ MonoBehaviour:
   Path: event:/Music
   guid: 838c88d7d67c5d41b80b6a75c1bf5d54
   Banks:
-  - {fileID: -4441631244629270468}
+  - {fileID: -4215710406752628343}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -176509826550573731}
-  - {fileID: 2601466359310059508}
-  - {fileID: -94748314051758147}
-  - {fileID: -6184725675568776570}
+  - {fileID: -4821119680591597035}
+  - {fileID: 8232668795465976430}
+  - {fileID: 5489189019257867088}
+  - {fileID: 2357931920156682234}
+  - {fileID: 7238228473229589295}
   MinDistance: 0
   MaxDistance: 0
   Length: 167993
@@ -647,7 +803,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 50
-  Exists: 1
+  Exists: 0
 --- !u!114 &-163105751360413470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,7 +840,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 3
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,18 +855,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 6043950101596529152}
-  - {fileID: -4441631244629270468}
+  - {fileID: -4215710406752628343}
   EditorEvents:
   - {fileID: 4187746101853586561}
   - {fileID: -1324173256693874922}
   - {fileID: 124797510430951799}
   EditorParameters:
-  - {fileID: 481850355803298315}
+  - {fileID: 1803068959768642112}
   MasterBanks:
-  - {fileID: -4441631244629270468}
+  - {fileID: -4215710406752628343}
   StringsBanks:
   - {fileID: 6043950101596529152}
-  stringsBankWriteTime: 637194054360000000
+  stringsBankWriteTime: 637194682250000000
   cacheVersion: 3
 --- !u!114 &124797510430951799
 MonoBehaviour:
@@ -727,18 +883,35 @@ MonoBehaviour:
   Path: event:/Music_Lv4
   guid: e04e7ecffdc2fe41af12369b2e96dc1b
   Banks:
-  - {fileID: -4441631244629270468}
+  - {fileID: -4215710406752628343}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7800069055629374473}
-  - {fileID: -6502073047671655307}
-  - {fileID: -4547637300335608368}
-  - {fileID: 4376612006419660807}
+  - {fileID: -8534209148250376542}
+  - {fileID: 7568950148185762961}
+  - {fileID: -5685219497189942353}
+  - {fileID: -8956109554233493152}
   MinDistance: 0
   MaxDistance: 0
   Length: 155665
+--- !u!114 &195324937006965968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Finished
+  m_EditorClassIdentifier: 
+  Name: Finished
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &481850355803298315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +928,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &880609133788215685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +1021,91 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 69000
+--- !u!114 &1803068959768642112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  Name: Scene
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &2003384533305525079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/InMist
+  m_EditorClassIdentifier: 
+  Name: InMist
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &2030343932926192739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Finished
+  m_EditorClassIdentifier: 
+  Name: Finished
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &2073552134056061394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/IsDead
+  m_EditorClassIdentifier: 
+  Name: IsDead
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &2357931920156682234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  Min: 0
+  Max: 4
+  Default: 3
+  Exists: 1
 --- !u!114 &2509644293301013834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +1148,7 @@ MonoBehaviour:
   Min: 0
   Max: 1000
   Default: 1000
-  Exists: 1
+  Exists: 0
 --- !u!114 &2843664518621072819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +1252,7 @@ MonoBehaviour:
   Path: event:/Intro
   guid: cf6780661893d34eb2249ecf7d3eca7f
   Banks:
-  - {fileID: -4441631244629270468}
+  - {fileID: -4215710406752628343}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1018,7 +1276,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 3
-  Exists: 1
+  Exists: 0
 --- !u!114 &4656734941734638912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1311,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &5102802273612749475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  Min: 0
+  Max: 4
+  Default: 3
+  Exists: 0
 --- !u!114 &5367926935780096291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1345,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 1
+--- !u!114 &5489189019257867088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1000
+  Default: 1000
+  Exists: 1
 --- !u!114 &6043950101596529152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,11 +1376,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../Withered_Away_M&SE/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637194054360000000
+  lastModified: 637194682250000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1034
+    Value: 1080
+  Exists: 1
+--- !u!114 &7238228473229589295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Finished
+  m_EditorClassIdentifier: 
+  Name: Finished
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &7348877432352973503
 MonoBehaviour:
@@ -1107,6 +1416,23 @@ MonoBehaviour:
   Max: 4
   Default: 3
   Exists: 0
+--- !u!114 &7568950148185762961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Finished
+  m_EditorClassIdentifier: 
+  Name: Finished
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8007110551450804261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,6 +1467,23 @@ MonoBehaviour:
   Max: 100
   Default: 50
   Exists: 1
+--- !u!114 &8232668795465976430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/IsDead
+  m_EditorClassIdentifier: 
+  Name: IsDead
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8245982182753534408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,6 +1500,40 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 50
+  Exists: 0
+--- !u!114 &8532598461514109868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1000
+  Default: 1000
+  Exists: 0
+--- !u!114 &8724211470440415586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Lv4/InMist
+  m_EditorClassIdentifier: 
+  Name: InMist
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &8882690525826456522
 MonoBehaviour:

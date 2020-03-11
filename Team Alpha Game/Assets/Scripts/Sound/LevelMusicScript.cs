@@ -39,9 +39,17 @@ public class LevelMusicScript : MonoBehaviour
         
     }
 
-    public void UpdateDistance(float distance)
+    public void UpdateMist(bool inMist)
     {
-        levelMusic.setParameterByName("Distance", distance);
+        if (inMist)
+        {
+            levelMusic.setParameterByName("InMist", 1.0f);
+        }
+        else
+        {
+            levelMusic.setParameterByName("InMist", 0.0f);
+        }
+        
     }
 
     public void UpdateHealth (float health)

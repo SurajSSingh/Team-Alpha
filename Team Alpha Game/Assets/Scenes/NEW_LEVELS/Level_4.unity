@@ -562,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36076803}
   - component: {fileID: 36076804}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (3)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -3182,7 +3182,7 @@ GameObject:
   - component: {fileID: 489025061}
   - component: {fileID: 489025062}
   - component: {fileID: 489025063}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -4082,7 +4082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 638418195}
   - component: {fileID: 638418196}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (8)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -4913,7 +4913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673633580}
   - component: {fileID: 673633581}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (4A)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -6239,7 +6239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 866241517}
   - component: {fileID: 866241518}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (2)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -6826,7 +6826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081835491}
   - component: {fileID: 1081835492}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (1)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -6892,7 +6892,7 @@ GameObject:
   - component: {fileID: 1122578793}
   - component: {fileID: 1122578794}
   - component: {fileID: 1122578795}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -6998,7 +6998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150238695}
   - component: {fileID: 1150238696}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (7)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -7723,7 +7723,7 @@ GameObject:
   - component: {fileID: 1224127628}
   - component: {fileID: 1224127629}
   - component: {fileID: 1224127630}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -7900,7 +7900,7 @@ GameObject:
   - component: {fileID: 1234314673}
   - component: {fileID: 1234314674}
   - component: {fileID: 1234314675}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -8659,7 +8659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325531255}
   - component: {fileID: 1325531256}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (6)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -17936,7 +17936,7 @@ GameObject:
   - component: {fileID: 1425786792}
   - component: {fileID: 1425786793}
   - component: {fileID: 1425786794}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -77400,7 +77400,7 @@ GameObject:
   - component: {fileID: 1489251653}
   - component: {fileID: 1489251654}
   - component: {fileID: 1489251655}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -77540,7 +77540,7 @@ GameObject:
   - component: {fileID: 1491708070}
   - component: {fileID: 1491708071}
   - component: {fileID: 1491708072}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -77916,7 +77916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560441742}
   - component: {fileID: 1560441743}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (5)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -78122,7 +78122,7 @@ GameObject:
   - component: {fileID: 1603596015}
   - component: {fileID: 1603596016}
   - component: {fileID: 1603596017}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -79009,7 +79009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639693754}
   - component: {fileID: 1639693753}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -80042,7 +80042,7 @@ GameObject:
   - component: {fileID: 1674709759}
   - component: {fileID: 1674709760}
   - component: {fileID: 1674709761}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -86771,7 +86771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920736570}
   - component: {fileID: 1920736571}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fatal_Fog (4B)
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -91319,7 +91319,7 @@ GameObject:
   - component: {fileID: 1950226312}
   - component: {fileID: 1950226313}
   - component: {fileID: 1950226314}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Mist_Sprite
   m_TagString: Mist
   m_Icon: {fileID: 0}
@@ -91970,7 +91970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084131648}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Fog Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

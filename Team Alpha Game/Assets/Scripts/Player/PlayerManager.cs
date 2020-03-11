@@ -45,7 +45,11 @@ public class PlayerManager : MonoBehaviour
             if (inMist)
             {
                 currHealth -= 5;
-                Debug.Log("HURT");
+                levelMusic.UpdateMist(true);
+            }
+            else
+            {
+                levelMusic.UpdateMist(false);
             }
             if (speed < 0.1)
             {
@@ -121,7 +125,7 @@ public class PlayerManager : MonoBehaviour
             {
                 respawner.GetComponent<Respawn_Manager>().Respawn();
                 lives -= 1;
-                currHealth = 1000;
+                //currHealth = 1000;
             }
         }
         else if (lives <= 0)

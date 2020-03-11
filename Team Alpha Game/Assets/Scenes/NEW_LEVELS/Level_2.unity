@@ -42823,6 +42823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fatal_Fog
       objectReference: {fileID: 0}
+    - target: {fileID: 5704963333355472737, guid: 8675411dc5b6f4c93846821715655033,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5704963333355472739, guid: 8675411dc5b6f4c93846821715655033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42903,5 +42908,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[4]
       value: 
       objectReference: {fileID: 175551101}
+    - target: {fileID: 5704963331957815307, guid: 8675411dc5b6f4c93846821715655033,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8675411dc5b6f4c93846821715655033, type: 3}
