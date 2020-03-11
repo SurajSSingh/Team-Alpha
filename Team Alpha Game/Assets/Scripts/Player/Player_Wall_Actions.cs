@@ -89,59 +89,28 @@ public class Player_Wall_Actions : MonoBehaviour
         wallJumpTime = attributes.wallJumpTime;
     }
 
-    
-    void FixedUpdate()
-    {
-        ReceiveValues();
-        if (control)
-        {
-            //conditions to wall slide:
-            //against a wall
-            //not on ground
-            //y velocity is less than 2
-            //0.3 or more seconds have elapsed since player last detached from wall
-            if (onWall && !onGround && velocity.y <= 2.0f && wallStickTimer <= 0.0f)
-            {
-                WallSlide();
-            }
-            if (wallSliding)
-            {
-                ManageWallSlide();
-            }
-        }
-        else if (wallClimbing)
-        {
-            ManageWallClimb();
-        }
-        else if (wallJumping)
-        {
-            ManageWallJump();
-        }
-        SendValues();
-    }
-
     public void WallSlide() //Sets player velocity to wall slide speed
     {
-        wallClimbing = false;
-        wallJumping = false;
-        wallSliding = true;
+        state.wallClimbing = false;
+        state.wallJumping = false;
+        state.wallSliding = true;
         animator.AnimatorWallClimb();
         animator.AnimatorWallJump();
         animator.AnimatorWallSlide();
-        jumpCount = 0;
+        state.jumpCount = 0;
     }
 
     public void ManageWallSlide()
     {
-        if (sign == wallSign || stunned || onGround)
+        if (state.sign == state.wallSign || state.stunned || state.onGround)
         {
             DetachFromWall();
         }
-        else if (wantToJump && sign == -wallSign && wallClimbCooldownTimer <= 0.0f) //Player facing towards wall and space entered
+        else if (state.wantToJump && state.sign == -state.wallSign && timers.wallClimbCooldownTimer <= 0.0f) //Player facing towards wall and space entered
         {
             WallClimb();
         }
-        else if (wantToJump && sign == wallSign && wallJumpCooldownTimer <= 0.0f) //Player facing away from wall and space entered
+        else if (state.wantToJump && state.sign != -state.wallSign && timers.wallJumpCooldownTimer <= 0.0f) //Player facing away from wall and space entered
         {
             WallJump();
         }
@@ -149,29 +118,30 @@ public class Player_Wall_Actions : MonoBehaviour
 
     public void ManageWallClimb() //If player is stunned, cancel wall climb, else continue
     {
-        if (!stunned)
+        if (!state.stunned)
         {
-            if (wallClimbTimer <= 0.0f)
+            if (timers.wallClimbTimer <= 0.0f)
             {
-                wallClimbing = false;
+                state.wallClimbing = false;
                 animator.AnimatorWallClimb();
-                control = true;
+                state.control = true;
             }
         }
         else
         {
-            wallClimbing = false;
+            state.wallClimbing = false;
             animator.AnimatorWallClimb();
         }
     }
 
-    public void WallClimbMove() //Simulate wall climb movement over wallClimbTime duration
+    public void WallClimbMove(ref Vector3 velocity, float wallSign) //Simulate wall climb movement over wallClimbTime duration
     {
-        if (wallClimbTimer <= wallClimbTime && wallClimbTimer >= wallClimbTime / 2.0f)
+        velocity.y = wallClimbVel.y;
+        if (timers.wallClimbTimer <= wallClimbTime && timers.wallClimbTimer >= wallClimbTime / 5.0f * 3)
         {
             velocity.x = wallSign * moveSpeed / 4.0f;
         }
-        else if (wallClimbTimer > 0.0f && wallClimbTimer < wallClimbTime / 2.0f)
+        else if (timers.wallClimbTimer > 0.0f && timers.wallClimbTimer < wallClimbTime / 5.0f * 2)
         {
             velocity.x = -wallSign * moveSpeed / 4.0f;
         }
@@ -180,39 +150,37 @@ public class Player_Wall_Actions : MonoBehaviour
     public void WallClimb()
     {
         DetachFromWall();
-        wallClimbing = true;
+        state.wallClimbing = true;
         animator.AnimatorWallClimb();
-        control = false;
-        wallClimbTimer = wallClimbTime;
-        wallClimbCooldownTimer = wallClimbCooldown;
-        velocity.x = -wallSign * wallClimbVel.x;
-        velocity.y = wallClimbVel.y;
+        state.control = false;
+        timers.wallClimbTimer = wallClimbTime;
+        timers.wallClimbCooldownTimer = wallClimbCooldown;
     }
 
     public void ManageWallJump() //If player is stunned, cancel wall jump, else continue
     {
-        if (!stunned)
+        if (!state.stunned)
         {
-            if (wallJumpTimer <= 0.0f)
+            if (timers.wallJumpTimer <= 0.0f)
             {
-                wallJumping = false;
+                state.wallJumping = false;
                 animator.AnimatorWallJump();
-                control = true;
+                state.control = true;
             }
         }
         else
         {
-            wallJumpTimer = 0.0f;
-            wallJumping = false;
+            timers.wallJumpTimer = 0.0f;
+            state.wallJumping = false;
             animator.AnimatorWallJump();
         }
     }
 
-    public void WallJumpMove() //Simulate wall jump movement over wallJumpTime duration
+    public void WallJumpMove(ref Vector3 velocity, float wallSign) //Simulate wall jump movement over wallJumpTime duration
     {
-        if (wallJumpTimer <= wallJumpTime && wallJumpTimer >= 0.0f)
+        if (timers.wallJumpTimer <= wallJumpTime && timers.wallJumpTimer >= 0.0f)
         {
-            velocity.x = -wallSign * wallJumpVel.x;
+            velocity.x = wallSign * wallJumpVel.x;
             velocity.y = wallJumpVel.y;
         }
     }
@@ -220,20 +188,22 @@ public class Player_Wall_Actions : MonoBehaviour
     public void WallJump()
     {
         DetachFromWall();
-        wallJumping = true;
-        control = false;
+        state.wallJumping = true;
+        state.control = false;
         animator.AnimatorWallJump();
-        wallJumpTimer = wallJumpTime;
+        timers.wallJumpTimer = wallJumpTime;
+        timers.wallJumpCooldownTimer = wallJumpCooldown;
         animator.ToggleFlip();
         ManageWallJump();
     }
 
     public void DetachFromWall()
     {
-        wallSliding = false;
+        
+        state.wallSliding = false;
         animator.AnimatorWallSlide();
-        wantToJump = false;
-        wallStickTimer = wallStickCooldown;
+        state.wantToJump = false;
+        timers.wallStickTimer = wallStickCooldown;
     }
 
     private void ReceiveValues()
@@ -256,27 +226,5 @@ public class Player_Wall_Actions : MonoBehaviour
         wallClimbCooldownTimer = timers.wallClimbCooldownTimer;
         wallJumpTimer = timers.wallJumpTimer;
         wallJumpCooldownTimer = timers.wallJumpCooldownTimer;
-    }
-
-    private void SendValues()
-    {
-        speedManager.velocity = velocity;
-        state.jumpCount = jumpCount;
-        state.onGround = onGround;
-        state.onWall = onWall;
-        state.control = control;
-        state.wantToJump = wantToJump;
-        state.wallSliding = wallSliding;
-        state.wallClimbing = wallClimbing;
-        state.wallJumping = wallJumping;
-        state.stunned = stunned;
-        state.sign = sign;
-        state.wallSign = wallSign;
-        timers.jumpBufferTimer = jumpBufferTimer;
-        timers.wallStickTimer = wallStickTimer;
-        timers.wallClimbTimer = wallClimbTimer;
-        timers.wallClimbCooldownTimer = wallClimbCooldownTimer;
-        timers.wallJumpTimer = wallJumpTimer;
-        timers.wallJumpCooldownTimer = wallJumpCooldownTimer;
     }
 }

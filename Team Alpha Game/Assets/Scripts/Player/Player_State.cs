@@ -67,12 +67,14 @@ public class Player_State : MonoBehaviour
     public bool doubleJump = false;
 
     //Timers
+    private float jumpTimer;
     private float displacementTimer;
     private float pivotTimer;
     private float momentumTimer;
     private float wallStickTimer;
 
     //Timer Values
+    private float jumpTime;
     private float displacementTime;
     private float pivotTime;
     private float momentumTime;
@@ -87,11 +89,8 @@ public class Player_State : MonoBehaviour
         pJump = GetComponent<Player_Jump>();
         wallActions = GetComponent<Player_Wall_Actions>();
         speedManager = GetComponent<Speed_Manager>();
-        velocity = speedManager.velocity;
-        displacementTimer = timers.displacementTimer;
-        pivotTimer = timers.pivotTimer;
-        momentumTimer = timers.momentumTimer;
-        wallStickTimer = timers.wallStickTimer;
+        ReceiveValues();
+        jumpTime = attributes.jumpTime;
         displacementTime = attributes.displacementTime;
         pivotTime = attributes.pivotTime;
         momentumTime = attributes.momentumTime;
@@ -117,16 +116,11 @@ public class Player_State : MonoBehaviour
         pJump.Unground(); //Delay for transition from grounded to airborne
         if (airborne) 
         {
-            if (velocity.y < 0.0f) //Triggers descending animation
-            {
-                jumping = false;
-                animator.AnimatorJump();
-            }
-            if (wantToJump && jumpCount == 1 && doubleJump) //If player used 1st jump, pressed space and has access to double jump ability
+            if (wantToJump && jumpCount == 1 && doubleJump && jumpTimer <= 0.0f) //If player used 1st jump, pressed space and has access to double jump ability
             {
                 pJump.DoubleJump();
             }
-            if (velocity.y < 0.0f)  //Player is descending if y velocity is negative while airborne
+            if (velocity.y < 0.0f && !doubleJumping) //Triggers descending animation
             {
                 Descend_State();
             }
@@ -137,9 +131,12 @@ public class Player_State : MonoBehaviour
         }
         else if (onGround)
         {
-            if (momentumTimer > 0.0f && sprinting || input.x == 0.0f && sprinting) //If player changes direction or stops moving while sprinting
+            if (momentumTimer > 0.0f || input.x == 0.0f || input.x != prevSign) //If player changes direction or stops moving while sprinting
             {
-                Pivot();
+                if (sprinting)
+                {
+                    Pivot();
+                }
             }
             if (onSlope) //If player is standing on a slope
             {
@@ -157,7 +154,7 @@ public class Player_State : MonoBehaviour
         if (onWall)
         {
             Wall_State();
-            if (!onGround && velocity.y <= 2.0f && wallStickTimer <= 0.0f) 
+            if (!onGround && velocity.y <= 2.0f && wallStickTimer <= 0.0f && !wallSliding) 
             //If player is on wall, not touching ground, has low vertical speed and the wall stick cooldown is over, attach to wall to perform a wall slide
             {
                 wallActions.WallSlide();
@@ -257,6 +254,8 @@ public class Player_State : MonoBehaviour
     {
         airborne = true;
         onGround = false;
+        onSlope = false;
+        onQuicksand = false;
         animator.AnimatorAirborne();
         animator.AnimatorGrounded();
     }
@@ -265,15 +264,11 @@ public class Player_State : MonoBehaviour
     {
         onGround = true;
         descending = false;
-        jumping = false;
-        doubleJumping = false;
         airborne = false;
         diving = false;
         wallJumping = false;
         wallClimbing = false;
         animator.AnimatorGrounded();
-        animator.AnimatorJump();
-        animator.AnimatorDoubleJump();
         animator.AnimatorAirborne();
         animator.AnimatorWallClimb();
         animator.AnimatorWallJump();
@@ -286,10 +281,6 @@ public class Player_State : MonoBehaviour
         {
             jumpCount = 1;
         }
-        if (!stunned)
-        {
-            control = true;
-        }
     }
 
     public void Wall_State() //Sets all mutually exclusive states and animations when against a wall to false
@@ -297,7 +288,6 @@ public class Player_State : MonoBehaviour
         sprinting = false;
         pivoting = false;
         dashing = false;
-        jumpCount = 0;
         momentumTimer = momentumTime;
         animator.AnimatorMomentum();
         animator.AnimatorPivot();
@@ -331,8 +321,8 @@ public class Player_State : MonoBehaviour
         }
         else
         {
-            momentumTimer = momentumTime;
             sprinting = false;
+            momentumTimer = momentumTime;
             animator.AnimatorMomentum();
         }
     }
@@ -417,6 +407,7 @@ public class Player_State : MonoBehaviour
     private void ReceiveValues()
     {
         velocity = speedManager.velocity;
+        jumpTimer = timers.jumpTimer;
         displacementTimer = timers.displacementTimer;
         pivotTimer = timers.pivotTimer;
         momentumTimer = timers.momentumTimer;
@@ -426,7 +417,9 @@ public class Player_State : MonoBehaviour
     private void SendValues()
     {
         speedManager.velocity = velocity;
+        timers.jumpTimer = jumpTimer;
         timers.displacementTimer = displacementTimer;
+        timers.momentumTimer = momentumTimer;
     }
 
     //Triggers

@@ -86,7 +86,7 @@ public class Player_Dash : MonoBehaviour
         }
         if (control && dash) //If player has control and has access to dash ability
         {
-            if (Input.GetKeyDown(KeyCode.E) && dashReady && input != Vector2.zero)
+            if (Input.GetKeyDown(KeyCode.E) && dashReady && input != Vector2.zero && input.y != -1.0f) //Player can not dash downward or without inputting a direction
             {
                 StartDash();
             }
@@ -94,18 +94,17 @@ public class Player_Dash : MonoBehaviour
         SendValues();
     }
 
-    public void Dash(Vector2 direction) //If player is stunned, cancel dash, else continue
+    public void Dash(ref Vector3 velocity, Vector2 direction) //If player is stunned, cancel dash, else continue
     {
-        velocity = speedManager.velocity;
         AngleCheck(direction);
         if (direction != Vector2.zero)
         {
             Vector2 rayOrigin = GenerateRaycastOrigins(direction);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, 7.0f, collisionMask);
             //If a collision is detected along the path of the dash, speed will be dampened to ensure player doesn't phase through object
-            if (hit && hit.distance - 0.15 <= velocity.magnitude * Time.deltaTime * 1.65f)
+            if (hit && hit.distance - 0.15f <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
-                speedManager.velocity = velocity / 1.8f;
+                velocity = velocity / 1.8f;
             }
         }
     }
@@ -187,13 +186,13 @@ public class Player_Dash : MonoBehaviour
 
     private void StartDash() //Starts dash in player input direction
     {
-        state.dashDir = state.input;
-        state.dashing = true;
+        dashDir = state.input;
+        dashing = true;
         animator.AnimatorDash();
-        state.control = false;
-        state.dashReady = false;
-        timers.dashTimer = dashTime;
-        timers.momentumTimer = momentumTime;
+        control = false;
+        dashReady = false;
+        dashTimer = dashTime;
+        momentumTimer = momentumTime;
     }
 
     private void ResetDash() //Resets dash cooldown timer and gives control back to player, ending the dash

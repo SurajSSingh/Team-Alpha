@@ -8,6 +8,7 @@ public class Player_Jump : MonoBehaviour
     Player_Animator animator;
     Player_Timers timers;
     Player_Attributes attributes;
+    Speed_Manager speed_Manager;
 
     //Counters
     private int jumpCount;
@@ -30,9 +31,11 @@ public class Player_Jump : MonoBehaviour
     //Timers
     private float displacementTimer;
     private float jumpBufferTimer;
+    private float jumpTimer;
 
     //Timer Values
     private float jumpBufferTime;
+    private float jumpTime;
 
     void Start()
     {
@@ -51,7 +54,9 @@ public class Player_Jump : MonoBehaviour
         doubleJumping = state.doubleJumping;
         displacementTimer = timers.displacementTimer;
         jumpBufferTimer = timers.jumpBufferTimer;
+        jumpTimer = timers.jumpTimer;
         jumpBufferTime = attributes.jumpBufferTime;
+        jumpTime = attributes.jumpTime;
     }
 
     void Update()
@@ -59,7 +64,7 @@ public class Player_Jump : MonoBehaviour
         ReceiveValues();
         if (control)
         {
-            Unground();
+            JumpBuffer();
             if (jumpBufferTimer <= 0.0f)
             {
                 wantToJump = false;
@@ -69,41 +74,42 @@ public class Player_Jump : MonoBehaviour
                 wantToJump = true;
                 jumpBufferTimer = jumpBufferTime;
             }
-            JumpBuffer();
         }
         SendValues();
     }
 
     public void Jump()
     {
-        jumping = true;
-        wantToJump = false;
-        jumpCount -= 1;
+        state.jumping = true;
+        state.onGround = false;
+        state.wantToJump = false;
+        state.jumpCount -= 1;
+        timers.jumpTimer = jumpTime;
         animator.AnimatorJump();
     }
 
     public void DoubleJump()
     {
-        jumping = true;
-        wantToJump = false;
-        jumpCount -= 1;
-        doubleJumping = true;
+        state.jumping = true;
+        state.wantToJump = false;
+        state.jumpCount -= 1;
+        state.doubleJumping = true;
         animator.AnimatorJump();
         animator.AnimatorDoubleJump();
     }
 
     public void Unground() //Checks if player is in the air for more than 0.2 seconds. If true, player is considered airborne
     {
-        if (jumping || !onGround && !onWall)
+        if (!state.onGround)
         {
-            if (displacementTimer <= 0.0f)
+            if (timers.displacementTimer <= 0.0f)
             {
                 state.Airborne_State();
             }
         }
     }
 
-    public void JumpBuffer()
+    private void JumpBuffer()
     {
         if (wantToJump && jumpBufferTimer <= 0.0f) 
         {
@@ -124,6 +130,7 @@ public class Player_Jump : MonoBehaviour
         doubleJumping = state.doubleJumping;
         displacementTimer = timers.displacementTimer;
         jumpBufferTimer = timers.jumpBufferTimer;
+        jumpTimer = timers.jumpTimer;
     }
 
     private void SendValues()
@@ -139,5 +146,6 @@ public class Player_Jump : MonoBehaviour
         state.doubleJumping = doubleJumping;
         timers.displacementTimer = displacementTimer;
         timers.jumpBufferTimer = jumpBufferTimer;
+        timers.jumpTimer = jumpTimer;
     }
 }

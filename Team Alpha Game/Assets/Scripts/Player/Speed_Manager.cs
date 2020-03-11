@@ -61,6 +61,7 @@ public class Speed_Manager : MonoBehaviour
     //Timers
     private float pivotTimer;
     private float momentumTimer;
+    private float wallStickTimer;
 
     //Movement Stats
     private float moveSpeed;
@@ -73,6 +74,7 @@ public class Speed_Manager : MonoBehaviour
     //Timer Values
     private float pivotTime;
     private float momentumTime;
+    private float wallStickCooldown;
 
     //Physics
     private Vector2 terminalVel;
@@ -94,40 +96,7 @@ public class Speed_Manager : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         rb.drag = 0.5f;
         rb.mass = 1.5f;
-        onGround = state.onGround;
-        onWall = state.onWall;
-        onSlope = state.onSlope;
-        onQuicksand = state.onQuicksand;
-        againstCeiling = state.againstCeiling;
-        airborne = state.airborne;
-        inMist = state.inMist;
-        descending = state.descending;
-        inSession = state.inSession;
-        control = state.control;
-        jumping = state.jumping;
-        doubleJumping = state.doubleJumping;
-        wantToJump = state.wantToJump;
-        attacking = state.attacking;
-        diving = state.diving;
-        diveHit = state.diveHit;
-        pivoting = state.pivoting;
-        dashing = state.dashing;
-        dashAttacking = state.dashAttacking;
-        sprinting = state.sprinting;
-        wallSliding = state.wallSliding;
-        wallClimbing = state.wallClimbing;
-        wallJumping = state.wallJumping;
-        stunned = state.stunned;
-        input = state.input;
-        sign = state.sign;
-        prevSign = state.prevSign;
-        wallSign = state.wallSign;
-        pivotSign = state.pivotSign;
-        dashDir = state.dashDir;
-        jumpDirX = state.jumpDirX;
-        enemyColSign = state.enemyColSign;
-        pivotTimer = timers.pivotTimer;
-        momentumTimer = timers.momentumTimer;
+        ReceiveValues();
         moveSpeed = attributes.moveSpeed;
         jumpVelocity = attributes.jumpVelocity;
         maxDescendAngle = attributes.maxDescendAngle;
@@ -136,8 +105,9 @@ public class Speed_Manager : MonoBehaviour
         wallSlideSpeed = attributes.wallSlideSpeed;
         pivotTime = attributes.pivotTime;
         momentumTime = attributes.momentumTime;
-        terminalVel = new Vector2(dashSpeed / 3.0f, dashSpeed / 2.0f);
-        airTerminalVel = new Vector2(dashSpeed / 3.0f, dashSpeed / 2.0f);
+        wallStickCooldown = attributes.wallStickCooldown;
+        terminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 2.0f);
+        airTerminalVel = new Vector2(dashSpeed / 3.0f, dashSpeed / 1.5f);
         slopeCollisionMask = attributes.slopeCollisionMask;
         gravity = attributes.gravity;
     }
@@ -147,17 +117,9 @@ public class Speed_Manager : MonoBehaviour
         ReceiveValues();
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         UpdateSign();
-        if (againstCeiling)
-        {
-            velocity.y = -1.0f;
-        }
         if (onGround)
         {
             velocity.y = 0;
-        }
-        if (onWall)
-        {
-            velocity.x = 0;
         }
         if (control) //If player currently has control over character
         {
@@ -167,7 +129,7 @@ public class Speed_Manager : MonoBehaviour
                 {
                     if (sprinting) //If player continuously moved in same direction for momentumTime(2.5 seconds), sprint
                     {
-                        move.Sprint(ref velocity, sign, input.x, onSlope);
+                        move.Sprint(ref velocity, input.x, onSlope);
                     }
                     else
                     {
@@ -175,7 +137,7 @@ public class Speed_Manager : MonoBehaviour
                     }
                     if (onQuicksand)
                     {
-                        velocity.x = velocity.x / 4.0f;
+                        velocity.x = velocity.x / 2.0f;
                     }
                 }
                 else //No input
@@ -184,7 +146,8 @@ public class Speed_Manager : MonoBehaviour
                 }
                 if (jumping) //If on quicksand, cut jump speed by 4, else jump normally
                 {
-                    velocity.y = onQuicksand ? jumpVelocity / 4.0f : jumpVelocity;
+                    velocity.y = onQuicksand ? jumpVelocity / 2.0f : jumpVelocity;
+                    jumping = false;
                 }
             }
             else if (airborne)
@@ -211,21 +174,30 @@ public class Speed_Manager : MonoBehaviour
                 {
                     velocity.x = velocity.x / 1.01f;
                 }
+                if (doubleJumping) //Second jump
+                {
+                    velocity.y = jumpVelocity;
+                    doubleJumping = false;
+                }
                 if (velocity.y < 0.0f) //Fast descending
                 {
                     velocity.y -= Mathf.Pow(gravity, 2) * Time.deltaTime;
                 }
                 else //Dampen rising speed
                 {
+                    velocity.y = velocity.y / 1.1f;
                     velocity.y -= gravity * Time.deltaTime;
                 }
-                if (doubleJumping) //Second jump
-                {
-                    velocity.y = jumpVelocity;
-                }
             }
-            else if (onWall)
+            if (onWall)
             {
+                if (sign == -wallSign)
+                {
+                    if (onGround || wallStickTimer > 0.0f)
+                    {
+                        velocity.x = -velocity.x;
+                    }
+                }
                 if (wallSliding)
                 {
                     if (velocity.y > wallSlideSpeed)
@@ -237,21 +209,29 @@ public class Speed_Manager : MonoBehaviour
         }
         else if (wallClimbing)
         {
-            wallActions.WallClimbMove();
+            wallActions.WallClimbMove(ref velocity, wallSign);
         }
         else if (wallJumping)
         {
-            wallActions.WallJumpMove();
+            wallActions.WallJumpMove(ref velocity, wallSign);
         }
         else if (dashing)
         {
-            pDash.Dash(dashDir);
+            pDash.Dash(ref velocity, dashDir);
         }
         else if (pivoting)
         {
             move.Pivot(ref velocity, pivotSign, pivotTimer);
         }
-        if (onSlope && input.x != 0.0f)
+        if (againstCeiling)
+        {
+            velocity.y = -3.0f;
+        }
+        if (onWall && wallStickTimer > 0.0f)
+        {
+            velocity.x = wallSign * 3.0f;
+        }
+        if (onSlope && input.x != 0.0f && velocity.y <= 0.0f)
         {
             move.DescendSlope(ref velocity);
         }
@@ -299,7 +279,7 @@ public class Speed_Manager : MonoBehaviour
         {
             velocity.x = terminalVel.x * dirX;
         }
-        if (Mathf.Abs(velocity.y) > terminalVel.y)
+        if (Mathf.Abs(velocity.y) > airTerminalVel.y)
         {
             velocity.y = terminalVel.y * dirY;
         }
@@ -359,6 +339,7 @@ public class Speed_Manager : MonoBehaviour
         enemyColSign = state.enemyColSign;
         pivotTimer = timers.pivotTimer;
         momentumTimer = timers.momentumTimer;
+        wallStickTimer = timers.wallStickTimer;
     }
 
     private void SendValues()
@@ -366,6 +347,8 @@ public class Speed_Manager : MonoBehaviour
         state.sign = sign;
         state.prevSign = prevSign;
         state.input = input;
+        state.jumping = jumping;
+        state.doubleJumping = doubleJumping;
         timers.momentumTimer = momentumTimer;
     }
 }
