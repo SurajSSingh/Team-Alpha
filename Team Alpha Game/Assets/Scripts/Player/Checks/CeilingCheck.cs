@@ -5,19 +5,19 @@ using UnityEngine;
 public class CeilingCheck : MonoBehaviour
 {
     private GameObject Player;
-    private Player_Controller pc;
-    // Start is called before the first frame update
+    Player_State state;
+
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
-        pc = Player.GetComponent<Player_Controller>();
+        state = Player.GetComponent<Player_State>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            pc.isPlayerCeilingTouch(true);
+            state.againstCeiling = true;
         }
     }
 
@@ -25,12 +25,12 @@ public class CeilingCheck : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            pc.isPlayerCeilingTouch(true);
+            state.againstCeiling = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        pc.isPlayerCeilingTouch(false);
+        state.againstCeiling = false;
     }
 }

@@ -648,7 +648,7 @@ public class Player_Controller : MonoBehaviour
 
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
-                        velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * dirX;
+                        velocity.x += Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * dirX - 0.15f;
                         velocity.y -= descendVelocityY - 0.15f;
                     }
                 }

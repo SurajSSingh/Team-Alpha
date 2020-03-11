@@ -31,9 +31,9 @@ public class Player_Move : MonoBehaviour
         slopeCollisionMask = attributes.slopeCollisionMask;
     }
 
-    public void Sprint(ref Vector3 velocity, float sign, float inputX, bool onSlope)
+    public void Sprint(ref Vector3 velocity, float inputX, bool onSlope)
     {
-        velocity.x = sign * inputX * moveSpeed * momentumFactor;
+        velocity.x = inputX * moveSpeed * momentumFactor;
         if (onSlope)
         {
             velocity.y = velocity.y * momentumFactor;
@@ -65,13 +65,14 @@ public class Player_Move : MonoBehaviour
             {
                 if (Mathf.Sign(hit.normal.x) == dirX)
                 {
-                    if (hit.distance - 0.15f <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x))
+                    if (hit.distance <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x))
                     {
 
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
-                        velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * dirX;
-                        velocity.y -= descendVelocityY - 0.15f;
+                        float skinWidth = 0.15f;
+                        velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * dirX - (skinWidth * dirX);
+                        velocity.y -= descendVelocityY - skinWidth;
                     }
                 }
             }
