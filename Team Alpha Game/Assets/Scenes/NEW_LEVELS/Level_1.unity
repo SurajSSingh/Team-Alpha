@@ -445,7 +445,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c37cd323ed5a8cc4983d5cb18c5cd9ed, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -2834,7 +2834,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c37cd323ed5a8cc4983d5cb18c5cd9ed, type: 3}
     m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
@@ -41653,7 +41653,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c37cd323ed5a8cc4983d5cb18c5cd9ed, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -43462,11 +43462,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: transition
@@ -43483,11 +43478,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 513769844}
     - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -43519,6 +43509,16 @@ PrefabInstance:
         he suspects the dark energy is originating from. Bewildered forest creatures
         attack Cichol in fear of their lives as he evades and resorts to combating
         the beasts.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
@@ -45046,16 +45046,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 31.88
       objectReference: {fileID: 0}
-    - target: {fileID: 2316908823820379181, guid: 4e34a733ec4254212849f64b8fc2e096,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 10.257992
-      objectReference: {fileID: 0}
-    - target: {fileID: 2316908823820379181, guid: 4e34a733ec4254212849f64b8fc2e096,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 21.515984
-      objectReference: {fileID: 0}
     - target: {fileID: 2814910143814179834, guid: 4e34a733ec4254212849f64b8fc2e096,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45090,6 +45080,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316908823820379181, guid: 4e34a733ec4254212849f64b8fc2e096,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 10.257992
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316908823820379181, guid: 4e34a733ec4254212849f64b8fc2e096,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 21.515984
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e34a733ec4254212849f64b8fc2e096, type: 3}
