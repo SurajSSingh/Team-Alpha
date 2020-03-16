@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="ParameterPreset" id="{f8dde92a-1fba-4214-ada0-3faf16a25749}">
 		<property name="name">
-			<value>Distance</value>
+			<value>InMist</value>
 		</property>
 		<relationship name="folder">
 			<destination>{00b56ff3-afa2-4a10-ab71-e69fd08e0608}</destination>
@@ -12,11 +12,18 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{9baeb1ee-03a6-41b5-9ded-9e707777d89a}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
 		<property name="maximum">
-			<value>100</value>
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>No</value>
+			<value>Yes</value>
 		</property>
 		<property name="initialValue">
-			<value>50</value>
+			<value>0</value>
 		</property>
 	</object>
 </objects>

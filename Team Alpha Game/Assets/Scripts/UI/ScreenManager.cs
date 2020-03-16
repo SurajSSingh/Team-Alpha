@@ -13,11 +13,12 @@ public class ScreenManager : MonoBehaviour
 
     public Image DashComponent;
     public Image DiveComponent;
-    public Image fadinText1;
-    public Image fadinText2;
+    //public Image fadinText1;
+    //public Image fadinText2;
     public Sprite dashImage;
     public Sprite diveImage;
-    public Sprite emptyImage;
+    public Sprite emptyDash;
+    public Sprite emptyDive;
     public Text livesText;
     public GameObject winScreen;
     public GameObject loseScreen;
@@ -44,14 +45,14 @@ public class ScreenManager : MonoBehaviour
         {
             DashComponent.sprite = dashImage;
         } else {
-            DashComponent.sprite = emptyImage;
+            DashComponent.sprite = emptyDash;
         }
         if (diveReady)
         {
             DiveComponent.sprite = diveImage;
         } else
         {
-            DiveComponent.sprite = emptyImage;
+            DiveComponent.sprite = emptyDive;
         }
     }
 
@@ -100,8 +101,8 @@ public class ScreenManager : MonoBehaviour
         yield return new WaitForSeconds(transitonTime);
 
         loseScreen.SetActive(true);
-        fadinText1.CrossFadeAlpha(0, 3, false);
-        fadinText1.enabled = false;
+        //fadinText1.CrossFadeAlpha(0, 3, false);
+        //fadinText1.enabled = false;
     }
 
     IEnumerator LoadWinScreen()
@@ -111,7 +112,7 @@ public class ScreenManager : MonoBehaviour
         yield return new WaitForSeconds(transitonTime);
 
         winScreen.SetActive(true);
-        fadinText2.CrossFadeAlpha(0, 3, false);
-        fadinText2.enabled = false;
+        //fadinText2.CrossFadeAlpha(0, 3, false);
+        //fadinText2.enabled = false;
     }
 }

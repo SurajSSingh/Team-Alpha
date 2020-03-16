@@ -55,6 +55,10 @@ public class Respawn_Manager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log(checkpoint);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Player_Controller>().ChangeHealth(50);
+        }
         checkpoint = other.gameObject.transform.position;
         if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)))
         {

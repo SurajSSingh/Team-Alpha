@@ -5,13 +5,23 @@ using UnityEngine;
 public class LevelMusicScript : MonoBehaviour
 {
     FMOD.Studio.EventInstance levelMusic;
-    float safeSection = 0.0f;
+    int currentIdx = 0;
+    int maxIdx = 3;
+    public string MusicName;
+    public List<float> sectionNum;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        if(MusicName != null && MusicName != "")
+        {
+            levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/"+MusicName);
+        }
+        else
+        {
+            levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        }
         levelMusic.start();
     }
 
@@ -22,12 +32,24 @@ public class LevelMusicScript : MonoBehaviour
 
     public void NextSafeSection()
     {
-        safeSection = 1.0f;
+        if(currentIdx < maxIdx)
+        {
+            currentIdx += 1;
+        }
+        
     }
 
-    public void UpdateDistance(float distance)
+    public void UpdateMist(bool inMist)
     {
-        levelMusic.setParameterByName("Distance", distance);
+        if (inMist)
+        {
+            levelMusic.setParameterByName("InMist", 1.0f);
+        }
+        else
+        {
+            levelMusic.setParameterByName("InMist", 0.0f);
+        }
+        
     }
 
     public void UpdateHealth (float health)
@@ -43,7 +65,7 @@ public class LevelMusicScript : MonoBehaviour
         }
         else
         {
-            levelMusic.setParameterByName("Zone", safeSection);
+            levelMusic.setParameterByName("Zone", sectionNum[currentIdx]);
         }
     }
 
