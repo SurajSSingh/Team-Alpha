@@ -66,8 +66,8 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Spikes"))
         {
-            pc.isPlayerGrounded(true);
-            pc.ChangeHealth(-10);
+            state.Grounded_State();
+            // state.ChangeHealth(-10);
         }
         if (other.gameObject.CompareTag("EnemyHead"))
         {
