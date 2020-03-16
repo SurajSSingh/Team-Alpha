@@ -5,42 +5,64 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private GameObject Player;
-    private Player_Controller pc;
-    // Start is called before the first frame update
+    Player_State state;
+    Player_Timers timers;
+    Player_Attributes attributes;
+
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
-        pc = Player.GetComponent<Player_Controller>();
+        state = Player.GetComponent<Player_State>();
+        timers = Player.GetComponent<Player_Timers>();
+        attributes = state.attributes;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        timers.displacementTimer = attributes.displacementTime;
         CheckOverlaps(other);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        CheckOverlaps(other);
+        timers.displacementTimer = attributes.displacementTime;
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            state.onGround = true;
+        }
+        if (other.gameObject.CompareTag("Quicksand"))
+        {
+            state.onGround = true;
+            state.onQuicksand = true;
+        }
+        if (other.gameObject.CompareTag("EnemyHead"))
+        {
+        }
+        if (other.gameObject.CompareTag("Slope"))
+        {
+            state.onGround = true;
+            state.onSlope = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        pc.isPlayerGrounded(false);
-        pc.isOnQuicksand(false);
-        pc.isStepping(false);
-        pc.isOnSlope(false);
+        timers.displacementTimer = attributes.displacementTime;
+        state.onGround = false;
+        state.onQuicksand = false;
+        state.onSlope = false;
     }
 
     private void CheckOverlaps(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            pc.isPlayerGrounded(true);
+            state.Grounded_State();
         }
         if (other.gameObject.CompareTag("Quicksand"))
         {
-            pc.isPlayerGrounded(true);
-            pc.isOnQuicksand(true);
+            state.Grounded_State();
+            state.onQuicksand = true;
         }
         if (other.gameObject.CompareTag("Spikes"))
         {
@@ -49,12 +71,11 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("EnemyHead"))
         {
-            pc.isStepping(true);
         }
         if (other.gameObject.CompareTag("Slope"))
         {
-            pc.isPlayerGrounded(true);
-            pc.isOnSlope(true);
+            state.Grounded_State();
+            state.onSlope = true;
         }
     }
 }

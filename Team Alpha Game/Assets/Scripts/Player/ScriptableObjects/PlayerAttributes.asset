@@ -23,14 +23,15 @@ MonoBehaviour:
   knockbackSpeed: 8
   wallSlideSpeed: -3
   wallClimbVel: {x: 32, y: 6}
-  wallJumpVel: {x: 7, y: 8}
+  wallJumpVel: {x: 12, y: 8}
   jumpBufferTime: 0.25
+  jumpTime: 0.3
   dashAttackTime: 0.5
   displacementTime: 0.2
   pivotTime: 0.5
   diveWindUpTime: 0.4
   dashCooldownTime: 4
-  dashTime: 0.2
+  dashTime: 1
   momentumTime: 2.5
   wallStickCooldown: 0.3
   wallClimbCooldown: 1

@@ -114,7 +114,7 @@ public class Player_State : MonoBehaviour
         ReceiveValues();
         Momentum_State();
         pJump.Unground(); //Delay for transition from grounded to airborne
-        if (airborne) 
+        if (airborne)
         {
             if (wantToJump && jumpCount == 1 && doubleJump && jumpTimer <= 0.0f) //If player used 1st jump, pressed space and has access to double jump ability
             {
@@ -154,7 +154,7 @@ public class Player_State : MonoBehaviour
         if (onWall)
         {
             Wall_State();
-            if (!onGround && velocity.y <= 2.0f && wallStickTimer <= 0.0f && !wallSliding) 
+            if (!onGround && velocity.y <= 2.0f && wallStickTimer <= 0.0f && !wallSliding)
             //If player is on wall, not touching ground, has low vertical speed and the wall stick cooldown is over, attach to wall to perform a wall slide
             {
                 wallActions.WallSlide();

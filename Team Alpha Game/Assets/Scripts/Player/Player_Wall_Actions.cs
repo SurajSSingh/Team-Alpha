@@ -199,7 +199,7 @@ public class Player_Wall_Actions : MonoBehaviour
 
     public void DetachFromWall()
     {
-        
+
         state.wallSliding = false;
         animator.AnimatorWallSlide();
         state.wantToJump = false;

@@ -111,7 +111,7 @@ public class Player_Jump : MonoBehaviour
 
     private void JumpBuffer()
     {
-        if (wantToJump && jumpBufferTimer <= 0.0f) 
+        if (wantToJump && jumpBufferTimer <= 0.0f)
         {
             wantToJump = false;
         }
