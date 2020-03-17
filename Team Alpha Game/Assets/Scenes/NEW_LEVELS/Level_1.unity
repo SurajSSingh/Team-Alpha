@@ -43462,6 +43462,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: transition
@@ -43478,6 +43483,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 513769844}
     - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -43509,16 +43519,6 @@ PrefabInstance:
         he suspects the dark energy is originating from. Bewildered forest creatures
         attack Cichol in fear of their lives as he evades and resorts to combating
         the beasts.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045842901994175, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448045841377363802, guid: 8ec49f2fa44010d4788430f239f602b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
@@ -44937,7 +44937,7 @@ MonoBehaviour:
   - {fileID: 1661055602}
   mistSpeed:
   - 2
-  - 10
+  - 6
   - 6
   mistscale:
   - {x: 0, y: 0, z: 0}
@@ -44965,6 +44965,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelMusicObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895655332134071782, guid: 4e34a733ec4254212849f64b8fc2e096,
+        type: 3}
+      propertyPath: sectionNum.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895655332134071782, guid: 4e34a733ec4254212849f64b8fc2e096,
+        type: 3}
+      propertyPath: sectionNum.Array.data[2]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2895655332134071777, guid: 4e34a733ec4254212849f64b8fc2e096,
         type: 3}
@@ -45020,16 +45030,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895655332134071782, guid: 4e34a733ec4254212849f64b8fc2e096,
-        type: 3}
-      propertyPath: sectionNum.Array.data[0]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895655332134071782, guid: 4e34a733ec4254212849f64b8fc2e096,
-        type: 3}
-      propertyPath: sectionNum.Array.data[2]
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5627734862837637908, guid: 4e34a733ec4254212849f64b8fc2e096,
         type: 3}
