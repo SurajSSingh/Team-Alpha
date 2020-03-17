@@ -9,6 +9,8 @@ public class Player_State : MonoBehaviour
     Player_Timers timers;
     Player_Dash pDash;
     Player_Jump pJump;
+    Player_Dive pDive;
+    Player_Attack pAttack;
     Player_Wall_Actions wallActions;
     Speed_Manager speedManager;
     public Player_Attributes attributes;
@@ -37,6 +39,7 @@ public class Player_State : MonoBehaviour
     public bool wantToJump = false; //true when player presses space key
     public bool attacking = false; //true when using normal attack / no control while true
     public bool diving = false; //true when using dive / no control while true
+    public bool landing = false; // true when player lands on ground following a dive / no control while true
     public bool diveHit = false; //true when player collides with enemy below during dive, ends dive
     public bool pivoting = false; //true when player changes direction or stops movement during sprint / no control while true
     public bool dashing = false; //true when player is dashing / no control while true
@@ -49,7 +52,6 @@ public class Player_State : MonoBehaviour
     public bool attacked = false; //true when player collides with enemy
     public bool stunned = false; //true if player is not immune when attacked; no control while true
     public bool immune = false; //when true, player is immune to further enemy damage and collisions
-
 
     //Directional States
     public Vector2 input; //Direction player wants to move
@@ -87,6 +89,8 @@ public class Player_State : MonoBehaviour
         timers = GetComponent<Player_Timers>();
         pDash = GetComponent<Player_Dash>();
         pJump = GetComponent<Player_Jump>();
+        pDive = GetComponent<Player_Dive>();
+        pAttack = GetComponent<Player_Attack>();
         wallActions = GetComponent<Player_Wall_Actions>();
         speedManager = GetComponent<Speed_Manager>();
         ReceiveValues();
@@ -181,17 +185,25 @@ public class Player_State : MonoBehaviour
         {
             ManagePivot();
         }
+        else if (attacking)
+        {
+            pAttack.ManageAttack();
+        }
         else if (dashing)
         {
             pDash.ManageDash();
         }
-        else if (attacking)
+        else if (dashAttacking)
         {
-
+            pDash.ManageDashAttack();
         }
         else if (diving)
         {
-
+            pDive.ManageDive();
+        }
+        else if (landing)
+        {
+            pDive.ManageLanding();
         }
         else if (stunned)
         {
@@ -265,7 +277,6 @@ public class Player_State : MonoBehaviour
         onGround = true;
         descending = false;
         airborne = false;
-        diving = false;
         wallJumping = false;
         wallClimbing = false;
         animator.AnimatorGrounded();

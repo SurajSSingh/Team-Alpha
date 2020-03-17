@@ -103,6 +103,11 @@ public class Player_Animator : MonoBehaviour
         animator.SetBool("Diving", state.diving);
     }
 
+    public void AnimatorLanding()
+    {
+        animator.SetBool("Landing", state.landing);
+    }
+
     public void AnimatorDiveAttack()
     {
         animator.SetBool("Dive Attack", state.diveHit);

@@ -14,6 +14,8 @@ public class Speed_Manager : MonoBehaviour
     Player_Wall_Actions wallActions;
     Player_Jump pJump;
     Player_Dash pDash;
+    Player_Dive pDive;
+    Player_Attack pAttack;
     Player_Move move;
     PlayerManager playerManager;
 
@@ -92,6 +94,8 @@ public class Speed_Manager : MonoBehaviour
         wallActions = GetComponent<Player_Wall_Actions>();
         pJump = GetComponent<Player_Jump>();
         pDash = GetComponent<Player_Dash>();
+        pDive = GetComponent<Player_Dive>();
+        pAttack = GetComponent<Player_Attack>();
         move = GetComponent<Player_Move>();
         playerManager = GetComponent<PlayerManager>();
         rb.drag = 0.5f;
@@ -176,10 +180,9 @@ public class Speed_Manager : MonoBehaviour
                 }
                 if (doubleJumping) //Second jump
                 {
-                    velocity.y = jumpVelocity;
-                    doubleJumping = false;
+                    velocity.y = jumpVelocity * 2.0f;
                 }
-                if (velocity.y < 0.0f) //Fast descending
+                if (velocity.y <= 0.0f) //Fast descending
                 {
                     velocity.y -= Mathf.Pow(gravity, 2) * Time.deltaTime;
                 }
@@ -223,6 +226,14 @@ public class Speed_Manager : MonoBehaviour
         {
             move.Pivot(ref velocity, pivotSign, pivotTimer);
         }
+        else if (diving)
+        {
+            pDive.Dive(ref velocity);
+        }
+        else if (attacking)
+        {
+            pAttack.Attack(ref velocity, sign);
+        }
         if (againstCeiling)
         {
             velocity.y = -3.0f;
@@ -235,7 +246,14 @@ public class Speed_Manager : MonoBehaviour
         {
             move.DescendSlope(ref velocity);
         }
-        LimitSpeed();
+        if (!dashing && !doubleJumping)
+        {
+            LimitSpeed();
+        }
+        if (doubleJumping)
+        {
+            doubleJumping = false;
+        }
         SendValues();
         animator.AnimatorSpeedX(Mathf.Abs(velocity.x));
         animator.AnimatorSpeedY(velocity.y);
@@ -245,15 +263,18 @@ public class Speed_Manager : MonoBehaviour
     private void UpdateSign() //Update sprite flip depending on player input direction and manage momentum by comparing current input direction to previous input direction
     {
         sign = input.x;
-        if (sign != 0.0f) //If player is facing opposite direction, flip sprite horizontally
+        if (control)
         {
-            if (sign == 1.0f)
+            if (sign != 0.0f) //If player is facing opposite direction, flip sprite horizontally
             {
-                animator.SetFlip(false);
-            }
-            else //sign == -1.0f
-            {
-                animator.SetFlip(true);
+                if (sign == 1.0f)
+                {
+                    animator.SetFlip(false);
+                }
+                else //sign == -1.0f
+                {
+                    animator.SetFlip(true);
+                }
             }
         }
         prevSign = sign;
