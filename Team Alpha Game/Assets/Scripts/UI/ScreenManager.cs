@@ -17,7 +17,8 @@ public class ScreenManager : MonoBehaviour
     //public Image fadinText2;
     public Sprite dashImage;
     public Sprite diveImage;
-    public Sprite emptyImage;
+    public Sprite emptyDash;
+    public Sprite emptyDive;
     public Text livesText;
     public GameObject winScreen;
     public GameObject loseScreen;
@@ -44,14 +45,14 @@ public class ScreenManager : MonoBehaviour
         {
             DashComponent.sprite = dashImage;
         } else {
-            DashComponent.sprite = emptyImage;
+            DashComponent.sprite = emptyDash;
         }
         if (diveReady)
         {
             DiveComponent.sprite = diveImage;
         } else
         {
-            DiveComponent.sprite = emptyImage;
+            DiveComponent.sprite = emptyDive;
         }
     }
 
