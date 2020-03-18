@@ -43,6 +43,7 @@ public class Player_Dash : MonoBehaviour
     //Timer Values
     private float dashCooldownTime;
     private float dashTime;
+    private float dashAttackTime;
     private float momentumTime;
 
     //Physics
@@ -73,6 +74,7 @@ public class Player_Dash : MonoBehaviour
         dashSpeed = attributes.dashSpeed;
         dashCooldownTime = attributes.dashCooldownTime;
         dashTime = attributes.dashTime;
+        dashAttackTime = attributes.dashAttackTime;
         momentumTime = attributes.momentumTime;
         collisionMask = attributes.collisionMask;
     }
@@ -91,12 +93,19 @@ public class Player_Dash : MonoBehaviour
                 StartDash();
             }
         }
+        else if (dashing && !dashAttacking)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                StartDashAttack();
+            }
+        }
         SendValues();
     }
 
-    public void Dash(ref Vector3 velocity, Vector2 direction) //If player is stunned, cancel dash, else continue
+    public void Dash(ref Vector3 velocity, Vector2 direction) //Adjusts dash speed based on angle and collisions in dash path
     {
-        AngleCheck(direction);
+        AngleCheck(ref velocity, direction);
         if (direction != Vector2.zero)
         {
             Vector2 rayOrigin = GenerateRaycastOrigins(direction);
@@ -104,18 +113,26 @@ public class Player_Dash : MonoBehaviour
             //If a collision is detected along the path of the dash, speed will be dampened to ensure player doesn't phase through object
             if (hit && hit.distance - 0.15f <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
-                velocity = velocity / 1.8f;
+                velocity = velocity / 3.0f;
             }
         }
     }
 
-    public void ManageDash()
+    public void ManageDash() //If player is stunned, cancel dash, else continue
     {
+        animator.AnimatorDash();
         if (!state.stunned && !state.onWall)
         {
             if (timers.dashTimer <= 0.0f)
             {
-                ResetDash();
+                if (dashAttacking)
+                {
+                    StartDashAttack();
+                }
+                else
+                {
+                    ResetDash();
+                }
             }
         }
         else
@@ -129,7 +146,32 @@ public class Player_Dash : MonoBehaviour
         }
     }
 
-    private void AngleCheck(Vector2 direction) //Dampens dashSpeed if dashing up or diagonally
+    public void DashAttack(ref Vector3 velocity) //Suspends player in place while dash attacking
+    {
+        velocity = Vector2.zero;
+    }
+
+    public void ManageDashAttack() //If player is stunned, cancel dash attack, else continue
+    {
+        animator.AnimatorDash();
+        animator.AnimatorDashAttack();
+        if (!state.stunned)
+        {
+            if (timers.dashAttackTimer <= 0.0f)
+            {
+                state.dashAttacking = false;
+                animator.AnimatorDashAttack();
+                state.control = true;
+            }
+        }
+        else
+        {
+            state.dashAttacking = false;
+            animator.AnimatorDashAttack();
+        }
+    }
+
+    private void AngleCheck(ref Vector3 velocity, Vector2 direction) //Dampens dashSpeed if dashing up or diagonally
     {
         if ((Mathf.Abs(direction.x) == 1 && Mathf.Abs(direction.y) == 1))
         {
@@ -188,7 +230,6 @@ public class Player_Dash : MonoBehaviour
     {
         dashDir = state.input;
         dashing = true;
-        animator.AnimatorDash();
         control = false;
         dashReady = false;
         dashTimer = dashTime;
@@ -202,7 +243,14 @@ public class Player_Dash : MonoBehaviour
         state.control = true;
         timers.dashCooldownTimer = dashCooldownTime;
         timers.momentumTimer = momentumTime;
-        speedManager.velocity = velocity / 2.0f;
+        speedManager.velocity = speedManager.velocity / 4.0f;
+    }
+
+    private void StartDashAttack() //Queues dash attack to occur immediately after dash
+    {
+        dashAttacking = true;
+        dashAttackTimer = dashAttackTime;
+        dashing = false;
     }
 
     private void ReceiveValues()
