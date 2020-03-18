@@ -154,6 +154,7 @@ public class PlayerManager : MonoBehaviour
         {
             currHealth = 0;
             ScreenManager.instance.GameLose();
+            player.SetActive(false);
         }
 
     }
