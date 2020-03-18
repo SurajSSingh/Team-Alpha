@@ -20,11 +20,14 @@ public class MovingMist : MonoBehaviour
         if (waypoints.Count != 0 && mistSpeed.Count == waypoints.Count)
         {
             this.transform.position = waypoints[currentWP].transform.position;
-            NextWaypoint();
             started = starter;
             if(passOnMist != null)
             {
                 passOnMist.gameObject.SetActive(false);
+            }
+            if (started)
+            {
+                NextWaypoint();
             }
         }
         else
@@ -36,7 +39,7 @@ public class MovingMist : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (started && currentWP < waypoints.Count)
+        if (started && currentWP <= waypoints.Count)
         {
             MoveMist();
         }
@@ -84,6 +87,7 @@ public class MovingMist : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         started = true;
+        Debug.Log(currentWP);
         NextWaypoint();
     }
 }

@@ -384,4 +384,9 @@ public class Speed_Manager : MonoBehaviour
         state.doubleJumping = doubleJumping;
         timers.momentumTimer = momentumTimer;
     }
+
+    public void InstantChangeHealth(float health)
+    {
+        PlayerManager.instance.updateHealth(health, inMist);
+    }
 }

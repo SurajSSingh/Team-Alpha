@@ -49,15 +49,17 @@ public class Respawn_Manager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log(checkpoint);
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<Player_Controller>().ChangeHealth(50);
-        }
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+        //}
         checkpoint = other.gameObject.transform.position;
-        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)))
+        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)) && other.gameObject.CompareTag("Player"))
         {
             checkpoint_tiles.SetTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0),active);
-            AudioSource.PlayClipAtPoint(activateCheckpoint,checkpoint);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Music/Checkpoint",this.transform.position);
+            //AudioSource.PlayClipAtPoint(activateCheckpoint,checkpoint);
+            other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
         }
         checkpoint.y += 0.1f;
 
