@@ -67,6 +67,7 @@ public class Player_Dive : MonoBehaviour
 
     public void Dive(ref Vector3 velocity) //Player dives straight downward at high speed
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Abilities_Dive", this.transform.position);
         velocity.x = 0;
         velocity.y = diveSpeed;
         CheckEnemyBelow(ref velocity);

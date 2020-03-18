@@ -54,6 +54,7 @@ public class Player_Collisions : MonoBehaviour
     
     public void Knockback(ref Vector3 velocity, float enemyColSign)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/EnemyRebound", this.transform.position);
         if (timers.stunTimer >= stunTime-0.5f && timers.stunTimer <= stunTime)
         {
             velocity.x = knockbackSpeed * 5.0f * enemyColSign;
