@@ -45,6 +45,7 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Spikes"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.descending = true;
             state.jumping = false;
             state.doubleJumping = false;
@@ -88,6 +89,7 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Spikes"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.descending = true;
             state.onGround = false;
         }
