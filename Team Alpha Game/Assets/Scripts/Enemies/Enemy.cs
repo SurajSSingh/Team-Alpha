@@ -9,12 +9,19 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer ren;
     private bool attacked;
     public AudioClip deathSound;
+    GameObject player;
+    GroundCheck groundCheck;
+    WallCheck leftWallCheck;
+    WallCheck rightWallCheck;
     // Start is called before the first frame update
     void Start()
     {
         ren = this.GetComponent<SpriteRenderer>();
         ren.enabled = true;
         attacked = false;
+        groundCheck = player.transform.GetChild(1).gameObject.GetComponent<GroundCheck>();
+        leftWallCheck = player.transform.GetChild(2).gameObject.GetComponent<WallCheck>();
+        rightWallCheck = player.transform.GetChild(3).gameObject.GetComponent<WallCheck>();
     }
 
     // Update is called once per frame

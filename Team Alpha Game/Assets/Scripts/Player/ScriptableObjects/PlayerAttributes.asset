@@ -29,7 +29,7 @@ MonoBehaviour:
   jumpTime: 0.3
   attackTime: 0.75
   dashAttackTime: 0.5
-  displacementTime: 0.2
+  displacementTime: 0.05
   pivotTime: 0.5
   dashCooldownTime: 4
   dashTime: 0.5
@@ -46,6 +46,9 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 11776
+  diveCollisionMask:
+    serializedVersion: 2
+    m_Bits: 8192
   slopeCollisionMask:
     serializedVersion: 2
     m_Bits: 1024

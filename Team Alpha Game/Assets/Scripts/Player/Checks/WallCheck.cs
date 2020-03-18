@@ -8,11 +8,13 @@ public class WallCheck : MonoBehaviour
     private GameObject Player;
     Player_State state;
     public float oppositeDirection;
-    // Start is called before the first frame update
+    public bool attacking;
+
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
         state = Player.GetComponent<Player_State>();
+        attacking = false;
     }
 
     void OnTriggerStay2D(Collider2D other)
