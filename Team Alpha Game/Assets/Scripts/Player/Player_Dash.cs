@@ -88,14 +88,14 @@ public class Player_Dash : MonoBehaviour
         }
         if (control && dash) //If player has control and has access to dash ability
         {
-            if (Input.GetKeyDown(KeyCode.E) && dashReady && input != Vector2.zero && input.y != -1.0f) //Player can not dash downward or without inputting a direction
+            if (Input.GetAxisRaw("Fire1") == 1.0f && dashReady && input != Vector2.zero && input.y != -1.0f) //Player can not dash downward or without inputting a direction
             {
                 StartDash();
             }
         }
         else if (dashing && !dashAttacking)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetAxisRaw("Fire3") == 1.0f)
             {
                 StartDashAttack();
             }

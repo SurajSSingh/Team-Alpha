@@ -55,7 +55,7 @@ public class Player_Dive : MonoBehaviour
         ReceiveValues();
         if (control && dive) //If player has control and has access to dive ability
         {
-            if (Input.GetKeyDown(KeyCode.Z) && airborne) //Player is airborne and presses Z key
+            if (Input.GetAxisRaw("Fire2") == 1.0f && airborne) //Player is airborne and presses Z key
             {
                 StartDive();
             }

@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ren = this.GetComponent<SpriteRenderer>();
         ren.enabled = true;
         attacked = false;
     }
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if (ren.enabled && attacked)
         {
-            AudioSource.PlayClipAtPoint(deathSound,this.transform.position,2.0f);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint", this.transform.position);
             Destroy(gameObject);
         }
     }
