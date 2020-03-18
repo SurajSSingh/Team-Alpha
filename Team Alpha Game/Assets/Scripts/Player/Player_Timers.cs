@@ -22,6 +22,7 @@ public class Player_Timers : MonoBehaviour
     public float landingTimer;
     public float stunTimer;
     public float immuneTimer;
+    public float deathTimer;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class Player_Timers : MonoBehaviour
         landingTimer = 0.0f;
         stunTimer = 0.0f;
         immuneTimer = 0.0f;
+        deathTimer = 0.0f;
     }
 
     void Update()
@@ -64,6 +66,7 @@ public class Player_Timers : MonoBehaviour
         DecrementTimer(ref landingTimer);
         DecrementTimer(ref stunTimer);
         DecrementTimer(ref immuneTimer);
+        DecrementTimer(ref deathTimer);
     }
 
     private void DecrementTimer(ref float timer)

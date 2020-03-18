@@ -113,6 +113,11 @@ public class Player_Animator : MonoBehaviour
         animator.SetBool("Dive Attack", state.diveHit);
     }
 
+    public void AnimatorDeath()
+    {
+        animator.SetBool("Death", state.death);
+    }
+
     public void SetFlip(bool flip) //Flip sprite horizontally if facing the opposite direction
     {
         ren.flipX = flip;

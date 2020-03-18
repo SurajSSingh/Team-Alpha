@@ -38,11 +38,13 @@ public class Player_Attributes : ScriptableObject
     public float wallJumpCooldown = 1.0f; //(*new) Time between when player can perform another wall jump
     public float wallJumpTime = 0.15f; //Time before player regains control after performing a wall jump
     public float landingTime = 0.6f; //Time before player regains control after landing from a dive
-    public float stunTime = 1.0f; //(needs change) Time before player regains control when colliding with enemy
-    public float immuneTime = 2.0f; //(*new / needs change) Time before player can be affected by further enemy collisions and collision damage
+    public float stunTime = 2.0f; //(needs change) Time before player regains control when colliding with enemy
+    public float immuneTime = 4.0f; //(*new / needs change) Time before player can be affected by further enemy collisions and collision damage
+    public float deathTime = 3.0f; //Time before player respawns after death
 
     //Physics
     public LayerMask collisionMask; //Collision mask for dash
+    public LayerMask diveCollisionMask; //Collision mask for dive
     public LayerMask slopeCollisionMask; //Collision mask for slopes
     public float rbDrag = 0.5f;
     public float rbMass = 1.5f;

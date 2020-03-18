@@ -10,6 +10,7 @@ public class Player_State : MonoBehaviour
     Player_Dash pDash;
     Player_Jump pJump;
     Player_Dive pDive;
+    Player_Collisions pCol;
     Player_Attack pAttack;
     Player_Wall_Actions wallActions;
     Speed_Manager speedManager;
@@ -52,6 +53,7 @@ public class Player_State : MonoBehaviour
     public bool attacked = false; //true when player collides with enemy
     public bool stunned = false; //true if player is not immune when attacked; no control while true
     public bool immune = false; //when true, player is immune to further enemy damage and collisions
+    public bool death = false; //when true, player withers away and loses a life
 
     //Directional States
     public Vector2 input; //Direction player wants to move
@@ -90,6 +92,7 @@ public class Player_State : MonoBehaviour
         pDash = GetComponent<Player_Dash>();
         pJump = GetComponent<Player_Jump>();
         pDive = GetComponent<Player_Dive>();
+        pCol = GetComponent<Player_Collisions>();
         pAttack = GetComponent<Player_Attack>();
         wallActions = GetComponent<Player_Wall_Actions>();
         speedManager = GetComponent<Speed_Manager>();
@@ -117,6 +120,7 @@ public class Player_State : MonoBehaviour
     {
         ReceiveValues();
         Momentum_State();
+        Immune_State();
         pJump.Unground(); //Delay for transition from grounded to airborne
         if (airborne)
         {
@@ -208,6 +212,7 @@ public class Player_State : MonoBehaviour
         else if (stunned)
         {
             Stunned_State();
+            pCol.ManageKnockback();
         }
         SendValues();
     }
@@ -338,6 +343,18 @@ public class Player_State : MonoBehaviour
         }
     }
 
+    private void Immune_State() //If immunity timer is up, removes immunity
+    {
+        if (timers.immuneTimer <= 0.0f)
+        {
+            immune = false;
+        }
+        else
+        {
+            immune = true;
+        }
+    }
+
     private void Slide_State() //Sets all mutually exclusive states and animations when wall sliding to false
     {
         control = true;
@@ -376,7 +393,6 @@ public class Player_State : MonoBehaviour
         wallSliding = false;
         wallClimbing = false;
         wallJumping = false;
-        animator.AnimatorStunned();
         animator.AnimatorJump();
         animator.AnimatorDoubleJump();
         animator.AnimatorAttack();

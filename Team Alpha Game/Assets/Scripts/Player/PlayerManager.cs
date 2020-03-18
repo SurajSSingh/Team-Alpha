@@ -9,6 +9,17 @@ public class FloatUnityEvent : UnityEvent<float> { };
 
 public class PlayerManager : MonoBehaviour
 {
+    Speed_Manager speedManager;
+    Player_State state;
+    Player_Animator animator;
+    Player_Timers timers;
+    Player_Attributes attributes;
+
+    GameObject player;
+
+    //Timer Values
+    private float deathTime;
+
     public static PlayerManager instance;
 
     public float currHealth = 250f;
@@ -21,21 +32,24 @@ public class PlayerManager : MonoBehaviour
 
     private bool checkingSpeed = true;
 
-    public LevelMusicScript levelMusic;
-
-    // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+        speedManager = player.GetComponent<Speed_Manager>();
+        state = player.GetComponent<Player_State>();
+        animator = player.GetComponent<Player_Animator>();
+        timers = player.GetComponent<Player_Timers>();
+        attributes = state.attributes;
+        deathTime = attributes.deathTime;
         if (instance == null)
             instance = this;
         else
             Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        levelMusic.UpdateHealth(currHealth);
+
     }
 
     public void updateHealth(float speed, bool inMist)
@@ -94,7 +108,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     currHealth += 1;
                     playerHealth.Invoke(currHealth);
-                } 
+                }
             }
             else if (speed > 10)
             {
@@ -123,9 +137,14 @@ public class PlayerManager : MonoBehaviour
 
             if (currHealth <= 0)
             {
-                respawner.GetComponent<Respawn_Manager>().Respawn();
-                lives -= 1;
-                //currHealth = 1000;
+                Death();
+            }
+            if (state.death)
+            {
+                if (timers.deathTimer <= 0.0f)
+                {
+                    respawner.GetComponent<Respawn_Manager>().Respawn();
+                }
             }
         }
         else if (lives <= 0)
@@ -144,5 +163,14 @@ public class PlayerManager : MonoBehaviour
     public void StopChecking()
     {
         checkingSpeed = false;
+    }
+
+    private void Death()
+    {
+        state.death = true;
+        state.control = false;
+        timers.deathTimer = deathTime;
+        animator.AnimatorDeath();
+        lives -= 1;
     }
 }
