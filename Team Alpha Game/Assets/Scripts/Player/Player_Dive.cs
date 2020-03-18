@@ -27,10 +27,15 @@ public class Player_Dive : MonoBehaviour
     private float landingTimer;
 
     //Movement Stats
+    private float moveSpeed;
+    private float jumpVelocity;
     private float diveSpeed;
 
     //Timer Values
     private float landingTime;
+
+    //Physics
+    private LayerMask diveCollisionMask;
 
     void Start()
     {
@@ -39,8 +44,11 @@ public class Player_Dive : MonoBehaviour
         timers = GetComponent<Player_Timers>();
         attributes = state.attributes;
         ReceiveValues();
+        moveSpeed = attributes.moveSpeed;
+        jumpVelocity = attributes.jumpVelocity;
         diveSpeed = attributes.diveSpeed;
         landingTime = attributes.landingTime;
+        diveCollisionMask = attributes.diveCollisionMask;
     }
     void Update()
     {
@@ -59,6 +67,7 @@ public class Player_Dive : MonoBehaviour
     {
         velocity.x = 0;
         velocity.y = diveSpeed;
+        CheckEnemyBelow(ref velocity);
     }
 
     public void ManageDive() //If player is stunned, cancel dive; else if player lands on ground, play landing animation
@@ -77,6 +86,32 @@ public class Player_Dive : MonoBehaviour
             animator.AnimatorGrounded();
             Land();
         }
+    }
+
+    public void Rebound(ref Vector3 velocity, float sign) //If player hit enemy during dive, rebound and leap off enemy
+    {
+        velocity.x = sign * moveSpeed * 1.5f;
+        velocity.y = jumpVelocity * 2.0f;
+        state.diveHit = false;
+        animator.AnimatorDiveAttack();
+    }
+
+    private void CheckEnemyBelow(ref Vector3 velocity) //Check if there is an enemy directly below player; if true, trigger dive attack
+    {
+        Bounds bounds = GetComponent<Collider2D>().bounds;
+        Vector2 rayOrigin = new Vector2(bounds.center.x, bounds.min.y);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, 4.0f, diveCollisionMask);
+        if (hit && hit.distance - 0.15f <= velocity.magnitude * Time.deltaTime)
+        {
+            DiveAttack(hit.collider.gameObject);
+        }
+    }
+
+    private void DiveAttack(GameObject enemy) //Trigger dive attack animation and inflict damage on enemy
+    {
+        state.diveHit = true;
+        animator.AnimatorDiveAttack();
+        state.diving = false;
     }
 
     private void StartDive()

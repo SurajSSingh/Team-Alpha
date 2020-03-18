@@ -6,6 +6,13 @@ using UnityEngine.Audio;
 
 public class Respawn_Manager : MonoBehaviour
 {
+    GameObject pc;
+    Speed_Manager speedManager;
+    Player_State state;
+    Player_Animator animator;
+    Player_Timers timers;
+    Player_Attributes attributes;
+    PlayerManager playerManager;
     [SerializeField] 
     private Player_Controller player;
     [SerializeField] 
@@ -26,35 +33,21 @@ public class Respawn_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerJump = player.jumping;
-        inSession = player.inSession;
+        pc = GameObject.Find("Player");
+        speedManager = pc.GetComponent<Speed_Manager>();
+        state = pc.GetComponent<Player_State>();
+        animator = pc.GetComponent<Player_Animator>();
+        timers = pc.GetComponent<Player_Timers>();
+        playerManager = pc.GetComponent<PlayerManager>();
+        attributes = state.attributes;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (inSession == true)
-        {
-            if (playerJump == true)
-            {
-                timer += Time.deltaTime;
-                if (timer >= 4)
-                    Respawn();
-            }
-        }
-        else if (rb.velocity.y <= -30)
-        {
-            Respawn();
-        }
-        else
-        {
-            timer = 0;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log(checkpoint);
         checkpoint = other.gameObject.transform.position;
         if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)))
         {
@@ -67,9 +60,12 @@ public class Respawn_Manager : MonoBehaviour
 
     public void Respawn()
     {
+        state.death = false;
+        animator.AnimatorDeath();
         rb.transform.position = checkpoint;
         rb.velocity = Vector3.zero;
-        timer = 0;
-        player.ResetDash();
+        playerManager.currHealth = 1000;
+        state.Reset_State();
+        timers.immuneTimer = 3.0f;
     }
 }

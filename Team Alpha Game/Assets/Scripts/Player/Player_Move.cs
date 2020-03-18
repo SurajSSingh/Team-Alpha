@@ -31,7 +31,7 @@ public class Player_Move : MonoBehaviour
         slopeCollisionMask = attributes.slopeCollisionMask;
     }
 
-    public void Sprint(ref Vector3 velocity, float inputX, bool onSlope)
+    public void Sprint(ref Vector3 velocity, float inputX, bool onSlope) //Multiplies speed by momentumFactor
     {
         velocity.x = inputX * moveSpeed * momentumFactor;
         if (onSlope)

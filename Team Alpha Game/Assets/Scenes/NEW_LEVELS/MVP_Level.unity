@@ -63434,7 +63434,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4852907747565776747, guid: a2e65a1cc1e99f149b0c8379fbc49e93, type: 3}
-    - {fileID: 1509365945823770202, guid: a2e65a1cc1e99f149b0c8379fbc49e93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e65a1cc1e99f149b0c8379fbc49e93, type: 3}
 --- !u!212 &634110030 stripped
 SpriteRenderer:
@@ -79244,6 +79243,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec49f2fa44010d4788430f239f602b5, type: 3}
 --- !u!1 &1561678519
@@ -82053,6 +82057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpBufferTimer: 0
   jumpTimer: 0
+  attackTimer: 0
   dashAttackTimer: 0
   displacementTimer: 0
   pivotTimer: 0
@@ -82065,8 +82070,10 @@ MonoBehaviour:
   wallClimbCooldownTimer: 0
   wallJumpTimer: 0
   wallJumpCooldownTimer: 0
+  landingTimer: 0
   stunTimer: 0
   immuneTimer: 0
+  deathTimer: 0
 --- !u!114 &1847973492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82096,6 +82103,7 @@ MonoBehaviour:
   wantToJump: 0
   attacking: 0
   diving: 0
+  landing: 0
   diveHit: 0
   pivoting: 0
   dashing: 0
@@ -82108,6 +82116,7 @@ MonoBehaviour:
   attacked: 0
   stunned: 0
   immune: 0
+  death: 0
   input: {x: 0, y: 0}
   sign: 0
   prevSign: 1

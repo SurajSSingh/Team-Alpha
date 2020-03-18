@@ -189,7 +189,7 @@ public class Player_Dash : MonoBehaviour
 
     private Vector2 GenerateRaycastOrigins(Vector2 direction)
     {
-        Bounds bounds = gameObject.GetComponent<Collider2D>().bounds;
+        Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 rayOrigin = Vector2.zero;
         if (direction.x == 0.0f && direction.y < 0.0f) //Down
         {
@@ -234,6 +234,7 @@ public class Player_Dash : MonoBehaviour
         dashReady = false;
         dashTimer = dashTime;
         momentumTimer = momentumTime;
+        dashCooldownTimer = dashCooldownTime;
     }
 
     private void ResetDash() //Resets dash cooldown timer and gives control back to player, ending the dash
@@ -241,7 +242,6 @@ public class Player_Dash : MonoBehaviour
         state.dashing = false;
         animator.AnimatorDash();
         state.control = true;
-        timers.dashCooldownTimer = dashCooldownTime;
         timers.momentumTimer = momentumTime;
         speedManager.velocity = speedManager.velocity / 4.0f;
     }

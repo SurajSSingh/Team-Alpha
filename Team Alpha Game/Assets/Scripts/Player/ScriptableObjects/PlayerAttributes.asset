@@ -27,6 +27,7 @@ MonoBehaviour:
   wallJumpVel: {x: 12, y: 8}
   jumpBufferTime: 0.25
   jumpTime: 0.3
+  attackTime: 0.75
   dashAttackTime: 0.5
   displacementTime: 0.2
   pivotTime: 0.5
@@ -38,8 +39,10 @@ MonoBehaviour:
   wallClimbTime: 0.3
   wallJumpCooldown: 1
   wallJumpTime: 0.15
-  stunTime: 1
-  immuneTime: 2
+  landingTime: 0.6
+  stunTime: 2
+  immuneTime: 4
+  deathTime: 3
   collisionMask:
     serializedVersion: 2
     m_Bits: 11776

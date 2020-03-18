@@ -15,6 +15,7 @@ public class Speed_Manager : MonoBehaviour
     Player_Jump pJump;
     Player_Dash pDash;
     Player_Dive pDive;
+    Player_Collisions pCol;
     Player_Attack pAttack;
     Player_Move move;
     PlayerManager playerManager;
@@ -49,6 +50,7 @@ public class Speed_Manager : MonoBehaviour
     private bool wallClimbing;
     private bool wallJumping;
     private bool stunned;
+    private bool death;
 
     //Directional States
     private Vector2 input;
@@ -95,6 +97,7 @@ public class Speed_Manager : MonoBehaviour
         pJump = GetComponent<Player_Jump>();
         pDash = GetComponent<Player_Dash>();
         pDive = GetComponent<Player_Dive>();
+        pCol = GetComponent<Player_Collisions>();
         pAttack = GetComponent<Player_Attack>();
         move = GetComponent<Player_Move>();
         playerManager = GetComponent<PlayerManager>();
@@ -234,6 +237,10 @@ public class Speed_Manager : MonoBehaviour
         {
             pAttack.Attack(ref velocity, sign);
         }
+        else if (stunned)
+        {
+            pCol.Knockback(ref velocity, enemyColSign);
+        }
         if (againstCeiling)
         {
             velocity.y = -3.0f;
@@ -253,6 +260,10 @@ public class Speed_Manager : MonoBehaviour
         if (doubleJumping)
         {
             doubleJumping = false;
+        }
+        if (death)
+        {
+            velocity = Vector2.zero;
         }
         SendValues();
         animator.AnimatorSpeedX(Mathf.Abs(velocity.x));
@@ -350,6 +361,7 @@ public class Speed_Manager : MonoBehaviour
         wallClimbing = state.wallClimbing;
         wallJumping = state.wallJumping;
         stunned = state.stunned;
+        death = state.death;
         input = state.input;
         sign = state.sign;
         prevSign = state.prevSign;
