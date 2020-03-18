@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public LevelMusicScript levelMusic;
+
     // Update is called once per frame
     void Update()
     {
@@ -48,5 +50,10 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void UpdateValue(float value)
+    {
+        levelMusic.ChangeVolume(value);
     }
 }

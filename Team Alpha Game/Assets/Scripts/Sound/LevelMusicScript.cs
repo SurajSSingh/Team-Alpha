@@ -69,6 +69,11 @@ public class LevelMusicScript : MonoBehaviour
         }
     }
 
+    public void ChangeVolume(float volume)
+    {
+        levelMusic.setParameterByName("Vol", volume);
+    }
+
     public void Stop()
     {
         FMODUnity.RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
