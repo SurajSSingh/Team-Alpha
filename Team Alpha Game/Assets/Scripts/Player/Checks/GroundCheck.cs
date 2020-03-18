@@ -46,9 +46,7 @@ public class GroundCheck : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
         {
             timers.displacementTimer = attributes.displacementTime;
-            state.descending = true;
-            state.jumping = false;
-            state.doubleJumping = false;
+            state.onGround = true;
             GetComponentInParent<Speed_Manager>().InstantChangeHealth(-10);
         }
     }
@@ -65,6 +63,7 @@ public class GroundCheck : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
         {
             timers.displacementTimer = attributes.displacementTime;
+            state.onGround = false;
         }
     }
 
@@ -90,8 +89,7 @@ public class GroundCheck : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
         {
             timers.displacementTimer = attributes.displacementTime;
-            state.descending = true;
-            state.onGround = false;
+            state.Grounded_State();
         }
     }
 }

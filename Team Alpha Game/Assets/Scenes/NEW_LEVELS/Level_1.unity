@@ -2647,8 +2647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -218.61, y: -20.11}
-  m_SizeDelta: {x: 1600, y: 300}
+  m_AnchoredPosition: {x: -213.58, y: -26.47}
+  m_SizeDelta: {x: 3145.755, y: 1245.407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &800314607
 MonoBehaviour:
@@ -2681,7 +2681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RUN
+  m_Text: KEEP RUNNING!
 --- !u!222 &800314608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42509,8 +42509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -199.73386, y: -37.11}
-  m_SizeDelta: {x: 2091.166, y: 300}
+  m_AnchoredPosition: {x: -211.09, y: -40.4}
+  m_SizeDelta: {x: 2490.074, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841841115
 MonoBehaviour:
@@ -42543,7 +42543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The mist consumes all
+  m_Text: The mist     consumes all
 --- !u!222 &1841841116
 CanvasRenderer:
   m_ObjectHideFlags: 0

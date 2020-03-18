@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 10
   moveSpeed: 6
   maxDescendAngle: 120
-  jumpVelocity: 50
+  jumpVelocity: 20
   reboundVelocity: 20
   dashSpeed: 25
   diveSpeed: -17.5
