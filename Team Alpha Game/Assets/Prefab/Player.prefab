@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1509365946045635126}
   - component: {fileID: 1509365946045635127}
   - component: {fileID: 1509365946045635124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4852907746803186454}
   - component: {fileID: 1509365945456505925}
   - component: {fileID: 1509365945456505922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightWallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 4852907746987993655}
   - component: {fileID: 1509365945823770202}
   - component: {fileID: 1509365945823770203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftWallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 4852907747397519802}
   - component: {fileID: 4852907747397519796}
   - component: {fileID: 4852907747397519797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}

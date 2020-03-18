@@ -26,6 +26,7 @@ public class Respawn_Manager : MonoBehaviour
 
     private Vector3 checkpoint = Vector3.zero;
     public Tilemap checkpoint_tiles;
+    public Tile inactive;
     public Tile active;
     public AudioClip activateCheckpoint;
 
@@ -54,7 +55,9 @@ public class Respawn_Manager : MonoBehaviour
         //    other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
         //}
         checkpoint = other.gameObject.transform.position;
-        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)) && other.gameObject.CompareTag("Player"))
+        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)) &&
+            checkpoint_tiles.GetTile(new Vector3Int((int)checkpoint.x, Mathf.FloorToInt(checkpoint.y), 0)) == inactive &&
+            other.gameObject.CompareTag("Player"))
         {
             checkpoint_tiles.SetTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0),active);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Music/Checkpoint",this.transform.position);

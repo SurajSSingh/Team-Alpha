@@ -67,7 +67,7 @@ public class GroundCheck : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
         {
             state.Grounded_State();
-            GetComponentInParent<Speed_Manager>().InstantChangeHealth(-10);
+            GetComponentInParent<Speed_Manager>().InstantChangeHealth(-1000);
         }
         if (other.gameObject.CompareTag("EnemyHead"))
         {

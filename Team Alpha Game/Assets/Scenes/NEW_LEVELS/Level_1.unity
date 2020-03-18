@@ -27172,6 +27172,7 @@ MonoBehaviour:
   inSession: 0
   timer: 0
   checkpoint_tiles: {fileID: 1049915388}
+  inactive: {fileID: 11400000, guid: 2b38e30d7d87345f6b9e6dd7de2c19d4, type: 2}
   active: {fileID: 11400000, guid: 7ee60ba400a43469bad609d512fd10ed, type: 2}
   activateCheckpoint: {fileID: 8300000, guid: 27ddd5c695948412392d33d2a70c3663, type: 3}
 --- !u!66 &1049915384
@@ -41738,11 +41739,6 @@ PrefabInstance:
     - target: {fileID: 4852907747565776743, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509365946968104987, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

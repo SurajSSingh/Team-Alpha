@@ -54,6 +54,10 @@ public class ScreenManager : MonoBehaviour
         {
             DiveComponent.sprite = emptyDive;
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetLevel();
+        }
     }
 
     public void CloseScreen(GameObject screen)
