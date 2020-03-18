@@ -56,12 +56,20 @@ public class Player_Collisions : MonoBehaviour
     {
         if (timers.stunTimer >= stunTime-0.5f && timers.stunTimer <= stunTime)
         {
-            velocity = Vector2.zero;
+            velocity.x = knockbackSpeed * 5.0f * enemyColSign;
+            velocity.y = knockbackSpeed/1.5f;
         }
-        else if (timers.stunTimer >= stunTime-1.0f && timers.stunTimer < stunTime - 0.5f)
+        else if (timers.stunTimer >= stunTime-1.0f && timers.stunTimer < stunTime - 0.5f && !onGround)
         {
             velocity.x = knockbackSpeed/2.0f * enemyColSign;
-            velocity.y = knockbackSpeed;
+            velocity.y = -knockbackSpeed;
+        }
+        else if (timers.stunTimer >= 0.0f && timers.stunTimer < 0.5f)
+        {
+            if (state.onGround)
+            {
+                animator.AnimatorGetup(true);
+            }
         }
     }
 
@@ -70,6 +78,8 @@ public class Player_Collisions : MonoBehaviour
         if (timers.stunTimer <= 0.0f)
         {
             state.stunned = false;
+            animator.AnimatorStunned();
+            animator.AnimatorGetup(false);
             state.control = true;
         }
     }

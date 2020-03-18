@@ -8,6 +8,8 @@ public class Player_Attack : MonoBehaviour
     Player_Animator animator;
     Player_Timers timers;
     Player_Attributes attributes;
+    WallCheck leftWallCheck;
+    WallCheck rightWallCheck;
 
     //Positional States
     private bool onGround;
@@ -28,6 +30,8 @@ public class Player_Attack : MonoBehaviour
         animator = GetComponent<Player_Animator>();
         timers = GetComponent<Player_Timers>();
         attributes = state.attributes;
+        leftWallCheck = gameObject.transform.GetChild(2).gameObject.GetComponent<WallCheck>();
+        rightWallCheck = gameObject.transform.GetChild(3).gameObject.GetComponent<WallCheck>();
         ReceiveValues();
         attackTime = attributes.attackTime;
     }
@@ -60,12 +64,16 @@ public class Player_Attack : MonoBehaviour
                 state.attacking = false;
                 animator.AnimatorAttack();
                 state.control = true;
+                leftWallCheck.attacking = false;
+                rightWallCheck.attacking = false;
             }
         }
         else if (state.stunned)
         {
             state.attacking = false;
             animator.AnimatorAttack();
+            leftWallCheck.attacking = false;
+            rightWallCheck.attacking = false;
         }
     }
 
@@ -74,6 +82,14 @@ public class Player_Attack : MonoBehaviour
         attacking = true;
         control = false;
         attackTimer = attackTime;
+        if (state.sign == 1.0f) //If facing right, set right wall to attack mode
+        {
+            rightWallCheck.attacking = true;
+        }
+        else
+        {
+            leftWallCheck.attacking = true;
+        }
     }
 
     private void ReceiveValues()

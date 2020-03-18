@@ -8,6 +8,7 @@ public class GroundCheck : MonoBehaviour
     Player_State state;
     Player_Timers timers;
     Player_Attributes attributes;
+    public bool attacking;
 
     void Start()
     {
@@ -15,31 +16,30 @@ public class GroundCheck : MonoBehaviour
         state = Player.GetComponent<Player_State>();
         timers = Player.GetComponent<Player_Timers>();
         attributes = state.attributes;
+        attacking = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        timers.displacementTimer = attributes.displacementTime;
         CheckOverlaps(other);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        timers.displacementTimer = attributes.displacementTime;
         if (other.gameObject.CompareTag("Ground"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.onGround = true;
         }
         if (other.gameObject.CompareTag("Quicksand"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.onGround = true;
             state.onQuicksand = true;
         }
-        if (other.gameObject.CompareTag("EnemyHead"))
-        {
-        }
         if (other.gameObject.CompareTag("Slope"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.onGround = true;
             state.onSlope = true;
         }
@@ -47,28 +47,31 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        timers.displacementTimer = attributes.displacementTime;
-        state.onGround = false;
-        state.onQuicksand = false;
-        state.onSlope = false;
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Quicksand") || other.gameObject.CompareTag("Slope"))
+        {
+            timers.displacementTimer = attributes.displacementTime;
+            state.onGround = false;
+            state.onQuicksand = false;
+            state.onSlope = false;
+        }
     }
 
     private void CheckOverlaps(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.Grounded_State();
         }
         if (other.gameObject.CompareTag("Quicksand"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.Grounded_State();
             state.onQuicksand = true;
         }
-        if (other.gameObject.CompareTag("EnemyHead"))
-        {
-        }
         if (other.gameObject.CompareTag("Slope"))
         {
+            timers.displacementTimer = attributes.displacementTime;
             state.Grounded_State();
             state.onSlope = true;
         }

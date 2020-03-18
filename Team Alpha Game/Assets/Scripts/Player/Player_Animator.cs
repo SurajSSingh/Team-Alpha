@@ -68,6 +68,11 @@ public class Player_Animator : MonoBehaviour
         animator.SetBool("Stunned", state.stunned);
     }
 
+    public void AnimatorGetup(bool set)
+    {
+        animator.SetBool("Get Up", set);
+    }
+
     public void AnimatorDash()
     {
         animator.SetBool("Dashing", state.dashing);

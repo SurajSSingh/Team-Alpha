@@ -27,7 +27,7 @@ public class Player_Attributes : ScriptableObject
     public float jumpTime = 0.3f; //Time before player can perform a second jump
     public float attackTime = 0.75f; //Time before player regains control during attack
     public float dashAttackTime = 0.5f; //(*new / needs change) Time before player regains control during dash attack
-    public float displacementTime = 0.2f; //(*new) Delay time before transitioning from grounded state to airborne
+    public float displacementTime = 0.15f; //(*new) Delay time before transitioning from grounded state to airborne
     public float pivotTime = 0.5f; //(*new / needs change) Time before player regains horizontal movement control
     public float dashCooldownTime = 4.0f; //(*new) Time before player can use dash again
     public float dashTime = 0.5f; // Time before player regains control while performing a dash

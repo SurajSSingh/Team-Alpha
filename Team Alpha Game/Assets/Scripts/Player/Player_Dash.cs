@@ -9,6 +9,8 @@ public class Player_Dash : MonoBehaviour
     Player_Timers timers;
     Player_Attributes attributes;
     Speed_Manager speedManager;
+    WallCheck leftWallCheck;
+    WallCheck rightWallCheck;
 
     //Velocity
     private Vector3 velocity;
@@ -56,6 +58,8 @@ public class Player_Dash : MonoBehaviour
         timers = GetComponent<Player_Timers>();
         attributes = state.attributes;
         speedManager = GetComponent<Speed_Manager>();
+        leftWallCheck = gameObject.transform.GetChild(2).gameObject.GetComponent<WallCheck>();
+        rightWallCheck = gameObject.transform.GetChild(3).gameObject.GetComponent<WallCheck>();
         velocity = speedManager.velocity;
         onWall = state.onWall;
         control = state.control;
@@ -105,15 +109,16 @@ public class Player_Dash : MonoBehaviour
 
     public void Dash(ref Vector3 velocity, Vector2 direction) //Adjusts dash speed based on angle and collisions in dash path
     {
+        Debug.Log(Time.deltaTime);
         AngleCheck(ref velocity, direction);
         if (direction != Vector2.zero)
         {
             Vector2 rayOrigin = GenerateRaycastOrigins(direction);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, 7.0f, collisionMask);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, direction, 0.8f, collisionMask);
             //If a collision is detected along the path of the dash, speed will be dampened to ensure player doesn't phase through object
             if (hit && hit.distance - 0.15f <= velocity.magnitude * Time.deltaTime * 1.65f)
             {
-                velocity = velocity / 3.0f;
+                velocity = Vector2.zero;
             }
         }
     }
@@ -162,12 +167,16 @@ public class Player_Dash : MonoBehaviour
                 state.dashAttacking = false;
                 animator.AnimatorDashAttack();
                 state.control = true;
+                leftWallCheck.attacking = false;
+                rightWallCheck.attacking = false;
             }
         }
         else
         {
             state.dashAttacking = false;
             animator.AnimatorDashAttack();
+            leftWallCheck.attacking = false;
+            rightWallCheck.attacking = false;
         }
     }
 
@@ -251,6 +260,14 @@ public class Player_Dash : MonoBehaviour
         dashAttacking = true;
         dashAttackTimer = dashAttackTime;
         dashing = false;
+        if (state.sign == 1.0f) //If facing right, set right wall to attack mode
+        {
+            rightWallCheck.attacking = true;
+        }
+        else
+        {
+            leftWallCheck.attacking = true;
+        }
     }
 
     private void ReceiveValues()
