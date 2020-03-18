@@ -387,6 +387,6 @@ public class Speed_Manager : MonoBehaviour
 
     public void InstantChangeHealth(float health)
     {
-        PlayerManager.instance.updateHealth(health, inMist);
+        PlayerManager.instance.ChangeHealth(health);
     }
 }

@@ -41741,16 +41741,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4852907746803186452, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlayerCP
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852907746987993653, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlayerCP
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e65a1cc1e99f149b0c8379fbc49e93, type: 3}
 --- !u!4 &1293574137 stripped
@@ -44961,7 +44951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2133768177
 Transform:
   m_ObjectHideFlags: 0
@@ -45028,8 +45018,8 @@ MonoBehaviour:
   - {fileID: 1661055602}
   mistSpeed:
   - 2
-  - 6
-  - 6
+  - 4
+  - 4
   mistscale:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

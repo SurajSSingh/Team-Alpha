@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1509365945456505922}
   m_Layer: 8
   m_Name: RightWallCheck
-  m_TagString: Untagged
+  m_TagString: PlayerCP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 1509365945823770203}
   m_Layer: 8
   m_Name: LeftWallCheck
-  m_TagString: Untagged
+  m_TagString: PlayerCP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

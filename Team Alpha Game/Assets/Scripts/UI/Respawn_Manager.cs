@@ -59,11 +59,9 @@ public class Respawn_Manager : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerCP") &&
             checkpoint_tiles.GetTile(position) == inactive)
         {
-            Debug.Log("Im In");
             checkpoint_tiles.SetTile(position, active);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Music/Checkpoint",this.transform.position);
-            //AudioSource.PlayClipAtPoint(activateCheckpoint,checkpoint);
-            other.gameObject.GetComponentInParent<Speed_Manager>().InstantChangeHealth(20);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint",this.transform.position);
+            other.gameObject.GetComponentInParent<Speed_Manager>().InstantChangeHealth(50);
         }
         checkpoint.y += 0.1f;
 
