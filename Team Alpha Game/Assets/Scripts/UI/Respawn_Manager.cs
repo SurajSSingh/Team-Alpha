@@ -55,15 +55,31 @@ public class Respawn_Manager : MonoBehaviour
         //    other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
         //}
         checkpoint = other.gameObject.transform.position;
-        //checkpoint.y += 0.1f;
-        Debug.Log(other);
+        
         Vector3Int position = checkpoint_tiles.GetComponentInParent<Grid>().WorldToCell(checkpoint);
-        if (other.gameObject.CompareTag("Player") &&
-            checkpoint_tiles.GetTile(position) == inactive)
+        Debug.Log(position);
+        if (other.gameObject.CompareTag("Player"))
         {
-            checkpoint_tiles.SetTile(position, active);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint",this.transform.position);
-            other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+            if (checkpoint_tiles.GetTile(position) == inactive)
+            {
+                checkpoint_tiles.SetTile(position, active);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint", this.transform.position);
+                other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+            }
+            else if (checkpoint_tiles.GetTile(position + new Vector3Int(-1, 0, 0)) == inactive)
+            {
+                checkpoint_tiles.SetTile(position + new Vector3Int(-1, 0, 0), active);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint", this.transform.position);
+                other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+            }
+            else if (checkpoint_tiles.GetTile(position + new Vector3Int(1, 0, 0)) == inactive)
+            {
+                checkpoint_tiles.SetTile(position + new Vector3Int(1, 0, 0), active);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Checkpoint", this.transform.position);
+                other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+            }
+
+
         }
         
 

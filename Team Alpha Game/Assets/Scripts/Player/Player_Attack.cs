@@ -79,6 +79,7 @@ public class Player_Attack : MonoBehaviour
 
     private void StartAttack()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Jump_02", this.transform.position);
         attacking = true;
         control = false;
         attackTimer = attackTime;

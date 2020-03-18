@@ -21,7 +21,7 @@ MonoBehaviour:
   dashSpeed: 25
   diveSpeed: -17.5
   momentumFactor: 1.8
-  knockbackSpeed: 8
+  knockbackSpeed: 12
   wallSlideSpeed: -3
   wallClimbVel: {x: 36, y: 18}
   wallJumpVel: {x: 24, y: 16}
