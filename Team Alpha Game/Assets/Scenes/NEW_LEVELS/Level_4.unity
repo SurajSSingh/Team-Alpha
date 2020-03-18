@@ -6068,7 +6068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168272223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -245.94487, y: -14.185669, z: 55.673172}
+  m_LocalPosition: {x: -74.84487, y: -14.185669, z: 55.673172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1559653921}
@@ -15905,7 +15905,7 @@ PrefabInstance:
     - target: {fileID: 4852907747565776743, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 101.1
       objectReference: {fileID: 0}
     - target: {fileID: 4852907747565776743, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
         type: 3}
@@ -15968,6 +15968,12 @@ Transform:
 --- !u!1 &931971990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4852907747565776744, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
+    type: 3}
+  m_PrefabInstance: {fileID: 931971988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &931972005 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4852907747565776741, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
     type: 3}
   m_PrefabInstance: {fileID: 931971988}
   m_PrefabAsset: {fileID: 0}
@@ -16331,7 +16337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044627094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -245.94487, y: -14.185669, z: 55.673172}
+  m_LocalPosition: {x: -74.84487, y: -14.185669, z: 55.673172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1559959152}
@@ -16512,7 +16518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111817242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 123.99, y: 22.08, z: -1511.397}
+  m_LocalPosition: {x: 123, y: 22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1843914128}
@@ -18249,7 +18255,7 @@ PrefabInstance:
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994160, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -18717,7 +18723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344445298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -245.94487, y: -14.185669, z: 55.673172}
+  m_LocalPosition: {x: -74.84487, y: -14.185669, z: 55.673172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490509296}
@@ -19278,12 +19284,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 587815470}
-  rb: {fileID: 587815469}
+  rb: {fileID: 931972005}
   playerJump: 0
   inSession: 0
   timer: 0
   checkpoint_tiles: {fileID: 1383739509}
-  inactive: {fileID: 0}
+  inactive: {fileID: 11400000, guid: 2b38e30d7d87345f6b9e6dd7de2c19d4, type: 2}
   active: {fileID: 11400000, guid: 7ee60ba400a43469bad609d512fd10ed, type: 2}
   activateCheckpoint: {fileID: 8300000, guid: 9500d95d61edc4f16b67d570dc00bb5f, type: 3}
 --- !u!66 &1383739505
@@ -97890,6 +97896,7 @@ GameObject:
   - component: {fileID: 2085852083}
   - component: {fileID: 2085852084}
   - component: {fileID: 2085852085}
+  - component: {fileID: 2085852086}
   m_Layer: 0
   m_Name: EndObject
   m_TagString: Untagged
@@ -97971,7 +97978,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -97987,6 +97994,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7157142, y: 1.8471631}
   m_EdgeRadius: 0
+--- !u!114 &2085852086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085852082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4620ffa6636a044b0a59b89a2d909c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1843914127}
+  endObject: {fileID: 2085852082}
+  mover: {fileID: 638418196}
 --- !u!1 &2104673825
 GameObject:
   m_ObjectHideFlags: 0

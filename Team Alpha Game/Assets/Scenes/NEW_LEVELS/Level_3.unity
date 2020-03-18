@@ -8494,6 +8494,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e65a1cc1e99f149b0c8379fbc49e93, type: 3}
+--- !u!50 &1191752377 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4852907747565776741, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
+    type: 3}
+  m_PrefabInstance: {fileID: 1191752376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1205435633
 GameObject:
   m_ObjectHideFlags: 0
@@ -9788,12 +9794,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1912340200}
-  rb: {fileID: 1912340202}
+  rb: {fileID: 1191752377}
   playerJump: 0
   inSession: 0
   timer: 0
   checkpoint_tiles: {fileID: 1656949677}
-  inactive: {fileID: 0}
+  inactive: {fileID: 11400000, guid: 2b38e30d7d87345f6b9e6dd7de2c19d4, type: 2}
   active: {fileID: 11400000, guid: 7ee60ba400a43469bad609d512fd10ed, type: 2}
   activateCheckpoint: {fileID: 8300000, guid: 27ddd5c695948412392d33d2a70c3663, type: 3}
 --- !u!66 &1656949673
