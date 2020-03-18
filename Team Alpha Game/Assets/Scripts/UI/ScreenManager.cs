@@ -39,8 +39,8 @@ public class ScreenManager : MonoBehaviour
     void Update()
     {
         livesText.text = "Lives: " + PlayerManager.instance.lives.ToString();
-        bool dashReady = player.GetComponent<Player_Controller>().dashReady;
-        bool diveReady = player.GetComponent<Player_Controller>().diving;
+        bool dashReady = player.GetComponent<Player_State>().dashReady;
+        bool diveReady = player.GetComponent<Player_State>().diving;
         if (dashReady)
         {
             DashComponent.sprite = dashImage;

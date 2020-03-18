@@ -6753,7 +6753,7 @@ PrefabInstance:
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994160, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -10315,6 +10315,7 @@ MonoBehaviour:
   inSession: 0
   timer: 0
   checkpoint_tiles: {fileID: 1656949677}
+  inactive: {fileID: 0}
   active: {fileID: 11400000, guid: 7ee60ba400a43469bad609d512fd10ed, type: 2}
   activateCheckpoint: {fileID: 8300000, guid: 27ddd5c695948412392d33d2a70c3663, type: 3}
 --- !u!66 &1656949673

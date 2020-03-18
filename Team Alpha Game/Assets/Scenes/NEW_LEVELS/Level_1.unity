@@ -42859,6 +42859,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1988082308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4852907747565776744, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
+    type: 3}
+  m_PrefabInstance: {fileID: 1293574136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005831809
 GameObject:
   m_ObjectHideFlags: 0
@@ -43566,7 +43572,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 412212448}
+      objectReference: {fileID: 1988082308}
     - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: levelMusic

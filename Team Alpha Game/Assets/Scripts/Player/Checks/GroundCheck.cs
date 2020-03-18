@@ -37,11 +37,17 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("EnemyHead"))
         {
+
         }
         if (other.gameObject.CompareTag("Slope"))
         {
             state.onGround = true;
             state.onSlope = true;
+        }
+        if (other.gameObject.CompareTag("Spikes"))
+        {
+            state.Grounded_State();
+            GetComponentInParent<Speed_Manager>().InstantChangeHealth(-1000);
         }
     }
 
@@ -64,13 +70,9 @@ public class GroundCheck : MonoBehaviour
             state.Grounded_State();
             state.onQuicksand = true;
         }
-        if (other.gameObject.CompareTag("Spikes"))
-        {
-            state.Grounded_State();
-            GetComponentInParent<Speed_Manager>().InstantChangeHealth(-1000);
-        }
         if (other.gameObject.CompareTag("EnemyHead"))
         {
+
         }
         if (other.gameObject.CompareTag("Slope"))
         {

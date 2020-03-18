@@ -5369,7 +5369,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 673633581}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &42042124
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13795,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 0}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &645513606
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,7 +14622,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 1920736571}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &705232633
 GameObject:
   m_ObjectHideFlags: 0
@@ -15949,7 +15949,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 36076804}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &891454045
 GameObject:
   m_ObjectHideFlags: 0
@@ -16092,6 +16092,12 @@ PrefabInstance:
 --- !u!4 &931971989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4852907747565776743, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
+    type: 3}
+  m_PrefabInstance: {fileID: 931971988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &931971990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4852907747565776744, guid: a2e65a1cc1e99f149b0c8379fbc49e93,
     type: 3}
   m_PrefabInstance: {fileID: 931971988}
   m_PrefabAsset: {fileID: 0}
@@ -16611,7 +16617,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 866241518}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &1111817242
 GameObject:
   m_ObjectHideFlags: 0
@@ -16815,7 +16821,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 638418196}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &1170780893
 GameObject:
   m_ObjectHideFlags: 0
@@ -18563,7 +18569,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 1150238696}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1001 &1326730500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18579,7 +18585,7 @@ PrefabInstance:
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994160, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -18710,7 +18716,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 587815468}
+      objectReference: {fileID: 931971990}
     - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: levelMusic
@@ -18719,7 +18725,7 @@ PrefabInstance:
     - target: {fileID: 6448045842635344817, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842397486067, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -19613,6 +19619,7 @@ MonoBehaviour:
   inSession: 0
   timer: 0
   checkpoint_tiles: {fileID: 1383739509}
+  inactive: {fileID: 0}
   active: {fileID: 11400000, guid: 7ee60ba400a43469bad609d512fd10ed, type: 2}
   activateCheckpoint: {fileID: 8300000, guid: 9500d95d61edc4f16b67d570dc00bb5f, type: 3}
 --- !u!66 &1383739505
@@ -87820,7 +87827,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 1325531256}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &1566888246
 GameObject:
   m_ObjectHideFlags: 0
@@ -88900,7 +88907,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 1081835492}
   starter: 1
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!4 &1639693754
 Transform:
   m_ObjectHideFlags: 0
@@ -93071,7 +93078,7 @@ MonoBehaviour:
   tolerance: 0.1
   passOnMist: {fileID: 1560441743}
   starter: 0
-  player: {fileID: 0}
+  player: {fileID: 931971990}
 --- !u!1 &1934787440
 GameObject:
   m_ObjectHideFlags: 0
@@ -99553,7 +99560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4391793543871114282
 MonoBehaviour:
   m_ObjectHideFlags: 0
