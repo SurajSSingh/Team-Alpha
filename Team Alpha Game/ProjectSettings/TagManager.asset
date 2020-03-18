@@ -15,6 +15,7 @@ TagManager:
   - OutTrigger
   - Mist
   - Spikes
+  - PlayerCP
   layers:
   - Default
   - TransparentFX

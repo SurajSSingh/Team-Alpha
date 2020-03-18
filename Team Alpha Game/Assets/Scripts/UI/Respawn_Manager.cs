@@ -55,14 +55,15 @@ public class Respawn_Manager : MonoBehaviour
         //    other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
         //}
         checkpoint = other.gameObject.transform.position;
-        if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)) &&
-            checkpoint_tiles.GetTile(new Vector3Int((int)checkpoint.x, Mathf.FloorToInt(checkpoint.y), 0)) == inactive &&
-            other.gameObject.CompareTag("Player"))
+        Vector3Int position = checkpoint_tiles.GetComponentInParent<Grid>().WorldToCell(checkpoint);
+        if (other.gameObject.CompareTag("PlayerCP") &&
+            checkpoint_tiles.GetTile(position) == inactive)
         {
-            checkpoint_tiles.SetTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0),active);
+            Debug.Log("Im In");
+            checkpoint_tiles.SetTile(position, active);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Music/Checkpoint",this.transform.position);
             //AudioSource.PlayClipAtPoint(activateCheckpoint,checkpoint);
-            other.gameObject.GetComponent<Speed_Manager>().InstantChangeHealth(50);
+            other.gameObject.GetComponentInParent<Speed_Manager>().InstantChangeHealth(20);
         }
         checkpoint.y += 0.1f;
 
