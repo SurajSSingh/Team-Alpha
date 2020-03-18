@@ -69,7 +69,7 @@ public class Player_Jump : MonoBehaviour
             {
                 wantToJump = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetAxisRaw("Jump") == 1.0f)
             {
                 wantToJump = true;
                 jumpBufferTimer = jumpBufferTime;
