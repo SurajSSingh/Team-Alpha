@@ -16,15 +16,15 @@ MonoBehaviour:
   damage: 10
   moveSpeed: 6
   maxDescendAngle: 120
-  jumpVelocity: 16
+  jumpVelocity: 50
   reboundVelocity: 20
   dashSpeed: 25
   diveSpeed: -17.5
   momentumFactor: 1.8
   knockbackSpeed: 8
   wallSlideSpeed: -3
-  wallClimbVel: {x: 32, y: 6}
-  wallJumpVel: {x: 12, y: 8}
+  wallClimbVel: {x: 36, y: 18}
+  wallJumpVel: {x: 24, y: 16}
   jumpBufferTime: 0.25
   jumpTime: 0.3
   attackTime: 0.75

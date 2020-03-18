@@ -315,7 +315,7 @@ public class Speed_Manager : MonoBehaviour
         {
             velocity.x = terminalVel.x * dirX;
         }
-        if (Mathf.Abs(velocity.y) > airTerminalVel.y)
+        if (-velocity.y > airTerminalVel.y)
         {
             velocity.y = terminalVel.y * dirY;
         }
