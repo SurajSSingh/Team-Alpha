@@ -23,11 +23,16 @@ public class MovingMist : MonoBehaviour
             started = starter;
             if(passOnMist != null)
             {
-                passOnMist.gameObject.SetActive(false);
+                passOnMist.ForcedWaypoint(false);
+                
             }
             if (started)
             {
                 NextWaypoint();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
             }
         }
         else
@@ -83,11 +88,23 @@ public class MovingMist : MonoBehaviour
         }
     }
 
+    void ForcedWaypoint(bool start)
+    {
+        if (start)
+        {
+            currentWP = 1;
+        }
+        else
+        {
+            currentWP = 0;
+        }
+    }
+
     public void StartFog()
     {
         this.gameObject.SetActive(true);
         started = true;
-        NextWaypoint();
+        ForcedWaypoint(true);
         Debug.Log(currentWP);
     }
 }
