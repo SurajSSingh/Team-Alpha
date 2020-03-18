@@ -28,10 +28,13 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject respawner;
 
-    public int lives = 3;
+    public int lives = 1;
 
     private bool checkingSpeed = true;
 
+    public LevelMusicScript levelMusic;
+
+    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
@@ -49,7 +52,7 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-
+        levelMusic.UpdateHealth(currHealth);
     }
 
     public void updateHealth(float speed, bool inMist)
@@ -59,7 +62,11 @@ public class PlayerManager : MonoBehaviour
             if (inMist)
             {
                 currHealth -= 5;
-                Debug.Log("HURT");
+                levelMusic.UpdateMist(true);
+            }
+            else
+            {
+                levelMusic.UpdateMist(false);
             }
             if (speed < 0.1)
             {
@@ -104,7 +111,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     currHealth += 1;
                     playerHealth.Invoke(currHealth);
-                } 
+                }
             }
             else if (speed > 10)
             {
@@ -145,9 +152,15 @@ public class PlayerManager : MonoBehaviour
         }
         else if (lives <= 0)
         {
+            currHealth = 0;
             ScreenManager.instance.GameLose();
         }
 
+    }
+
+    public void ChangeHealth(float value)
+    {
+        currHealth += value;
     }
 
     public void StopChecking()

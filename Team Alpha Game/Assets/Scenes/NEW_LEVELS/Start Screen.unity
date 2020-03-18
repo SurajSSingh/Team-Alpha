@@ -494,6 +494,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46264373}
   m_CullTransparentMesh: 0
+--- !u!1 &96362179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96362180}
+  - component: {fileID: 96362181}
+  - component: {fileID: 96362182}
+  m_Layer: 0
+  m_Name: MusicBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96362180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96362179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96362181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96362179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Intro
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &96362182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96362179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31227955fc1884eecb8e0a5cee13f6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepScenes:
+  - Start Screen
+  - Prologue
 --- !u!1 &157529758
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,14 +983,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &288963376
-AudioListener:
+--- !u!114 &288963376
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288963375}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!20 &288963377
 Camera:
   m_ObjectHideFlags: 0
@@ -1242,7 +1317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d5208ce8b323ac44a3fa41953b050f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8954043781d2f5644bfe45b3d7f75b65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1400,12 +1475,12 @@ PrefabInstance:
     - target: {fileID: 1994668261716290289, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the fourth level.
+      value: '4: Heart of Morrigan'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -1612,8 +1687,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0044555664, y: -173.4}
-  m_SizeDelta: {x: 0, y: 346.8}
+  m_AnchoredPosition: {x: -0.0044555664, y: -134.1}
+  m_SizeDelta: {x: 0, y: 268.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501008897
 MonoBehaviour:
@@ -1646,10 +1721,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Immortal Font made by Apostrophic Labs\r\nhttps://www.1001freefonts.com/immortal.font\r\n\r\nPieces
-    of Eight Font made by Steve Ferrera\r\nhttps://www.1001freefonts.com/pieces-of-eight.font\r\n\r\nDash
-    Icon made by Lorc under CC BY 3.0\r\nhttps://game-icons.net/1x1/lorc/sprint.html\r\n\r\nDive
-    Icon made by sbed under CC BY 3.0\r\nhttps://game-icons.net/1x1/sbed/pounce.html\r\n"
+  m_Text: "Team Alpha:\r\nSuraj Singh (Programmer and Audio Engineer)\r\n\r\nAlexis
+    Padilla (Designer and Programmer)\r\n\r\nDishanth Shankar Reddy (Artist and Designer)\r\n\r\nMin
+    Choi (Programmer, Designer)\r\n\r\nThird Party Assets:\r\nImmortal Font made by
+    Apostrophic Labs\r\nhttps://www.1001freefonts.com/immortal.font\r\n\r\nPieces
+    of Eight Font made by Steve Ferrera\r\nhttps://www.1001freefonts.com/pieces-of-eight.font\r\n\r\nMade
+    with FMOD Studio by Firelight Technologies Pty Ltd.\r\n"
 --- !u!222 &501008898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2021,12 +2098,12 @@ PrefabInstance:
     - target: {fileID: 1994668261716290289, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the second level.
+      value: '2: Hallownest Forest'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -2642,8 +2719,8 @@ RectTransform:
   m_Father: {fileID: 157529759}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.55585825}
-  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchorMin: {x: 0, y: 0.49184382}
+  m_AnchorMax: {x: 1, y: 0.99972516}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2896,12 +2973,12 @@ PrefabInstance:
     - target: {fileID: 1994668261716290289, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the third level.
+      value: '3: Swamp of the Forgotten'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cbc80c800cf74942a4c7abc5ff5e513, type: 3}
@@ -3481,6 +3558,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1589460505}
+  - component: {fileID: 1589460507}
+  - component: {fileID: 1589460506}
   m_Layer: 5
   m_Name: LevelSelect
   m_TagString: Untagged
@@ -3510,6 +3589,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: -50.160004}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1589460506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589460504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Scene
+  TriggerEvent: 12
+  value: 0
+--- !u!114 &1589460507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589460504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Scene
+  TriggerEvent: 11
+  value: 1
 --- !u!1 &1606653010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,8 +4184,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1099398333}
   m_HandleRect: {fileID: 1099398332}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.4441417
+  m_Value: 0.9994415
+  m_Size: 0.50788134
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4746,17 +4857,17 @@ PrefabInstance:
     - target: {fileID: 1994668261716290289, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_Text
-      value: This is the first level.
+      value: "1:  Hallownest Forest (Tutorial)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 45
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1994668261273990374, guid: 1cbc80c800cf74942a4c7abc5ff5e513,
         type: 3}

@@ -867,4 +867,9 @@ public class Player_Controller : MonoBehaviour
             inMist = false;
         }
     }
+
+    public void ChangeHealth(float value)
+    {
+        PlayerManager.instance.ChangeHealth(value);
+    }
 }

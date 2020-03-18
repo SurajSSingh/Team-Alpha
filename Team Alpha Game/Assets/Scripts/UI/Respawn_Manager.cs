@@ -13,15 +13,15 @@ public class Respawn_Manager : MonoBehaviour
     Player_Timers timers;
     Player_Attributes attributes;
     PlayerManager playerManager;
-    [SerializeField] 
+    [SerializeField]
     private Player_Controller player;
-    [SerializeField] 
+    [SerializeField]
     private Rigidbody2D rb;
-    [SerializeField] 
+    [SerializeField]
     private bool playerJump;
-    [SerializeField] 
+    [SerializeField]
     private bool inSession;
-    [SerializeField] 
+    [SerializeField]
     private float timer = 0.0f;
 
     private Vector3 checkpoint = Vector3.zero;
@@ -48,6 +48,11 @@ public class Respawn_Manager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //Debug.Log(checkpoint);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Player_Controller>().ChangeHealth(50);
+        }
         checkpoint = other.gameObject.transform.position;
         if (checkpoint_tiles.HasTile(new Vector3Int((int)checkpoint.x,Mathf.FloorToInt(checkpoint.y),0)))
         {
