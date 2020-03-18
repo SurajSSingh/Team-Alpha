@@ -45,7 +45,7 @@ public class GroundCheck : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Spikes"))
         {
-            state.Grounded_State();
+            state.onGround = true;
             GetComponentInParent<Speed_Manager>().InstantChangeHealth(-10);
         }
     }
