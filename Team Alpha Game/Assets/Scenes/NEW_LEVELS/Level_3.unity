@@ -208,7 +208,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.75666666, y: 0.7555555, z: 0}
+  m_ChunkCullingBounds: {x: 0.91375005, y: 0.9125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -795,6 +795,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 38
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &168606408 stripped
@@ -1192,6 +1197,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &311389669 stripped
@@ -1478,6 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 371055073}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &371055067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5625,7 +5636,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.75666666, y: 0.7555555, z: 0}
+  m_ChunkCullingBounds: {x: 0.91375005, y: 0.9125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -6206,6 +6217,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &628165800 stripped
@@ -6522,6 +6538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 841681438}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &841681432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6981,7 +6998,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1912340198}
+      objectReference: {fileID: 1681853654}
     - target: {fileID: 6448045842901994161, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: levelMusic
@@ -9096,6 +9113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 1367030793}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &1367030787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9641,6 +9659,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &1470635126 stripped
@@ -9702,6 +9725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 1475879372}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &1475879366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9966,6 +9990,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &1509529325 stripped
@@ -14611,6 +14640,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1681853652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1681853654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4081979527143282358, guid: 61bd3e8e53cae4aab864c642188fb5cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1681853652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1692557369
 GameObject:
   m_ObjectHideFlags: 0
@@ -14771,6 +14806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 1763202530}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &1763202524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15011,6 +15047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 1808622114}
   deathSound: {fileID: 8300000, guid: ab54293eeb43e4f899a307031c325342, type: 3}
+  player: {fileID: 0}
 --- !u!114 &1808622108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18431,6 +18468,11 @@ PrefabInstance:
       propertyPath: spawnPoint.y
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6355460554997144700, guid: d20464625c8f907459faaa0d7eb63c52,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1681853654}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20464625c8f907459faaa0d7eb63c52, type: 3}
 --- !u!4 &2053016881 stripped
