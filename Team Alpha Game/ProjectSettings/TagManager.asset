@@ -16,6 +16,7 @@ TagManager:
   - Mist
   - Spikes
   - PlayerCP
+  - Slide
   layers:
   - Default
   - TransparentFX

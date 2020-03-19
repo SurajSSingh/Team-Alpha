@@ -19,6 +19,7 @@ public class Level4_Climax : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Speed", this.transform.position);
             trigger.SetActive(true);
             endObject.SetActive(false);
             mover.gameObject.SetActive(true);

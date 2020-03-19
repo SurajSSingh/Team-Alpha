@@ -275,6 +275,10 @@ public class Player_State : MonoBehaviour
         onQuicksand = false;
         animator.AnimatorAirborne();
         animator.AnimatorGrounded();
+        if (jumpCount < 0 && doubleJump)
+        {
+            jumpCount = 1;
+        }
     }
 
     public void Grounded_State() //Sets all mutually exclusive states and animations when grounded to false

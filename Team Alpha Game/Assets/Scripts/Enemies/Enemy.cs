@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer ren;
     private bool attacked;
     public AudioClip deathSound;
-    GameObject player;
+    public GameObject player;
     GroundCheck groundCheck;
     WallCheck leftWallCheck;
     WallCheck rightWallCheck;

@@ -110,6 +110,7 @@ public class Player_Dash : MonoBehaviour
     public void Dash(ref Vector3 velocity, Vector2 direction) //Adjusts dash speed based on angle and collisions in dash path
     {
         Debug.Log(Time.deltaTime);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Abilities_Dash", this.transform.position);
         AngleCheck(ref velocity, direction);
         if (direction != Vector2.zero)
         {

@@ -90,6 +90,7 @@ public class Player_Jump : MonoBehaviour
 
     public void DoubleJump()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Jump_01", this.transform.position);
         state.jumping = true;
         state.wantToJump = false;
         state.jumpCount -= 1;

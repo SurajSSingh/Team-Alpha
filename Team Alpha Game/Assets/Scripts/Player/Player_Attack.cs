@@ -40,7 +40,7 @@ public class Player_Attack : MonoBehaviour
         ReceiveValues();
         if (control)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && onGround) //Player is grounded and presses Z key
+            if (Input.GetAxisRaw("Fire3") == 1.0f && onGround) //Player is grounded and presses Z key
             {
                 StartAttack();
             }
@@ -79,6 +79,7 @@ public class Player_Attack : MonoBehaviour
 
     private void StartAttack()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/Jump_02", this.transform.position);
         attacking = true;
         control = false;
         attackTimer = attackTime;

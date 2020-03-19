@@ -113,7 +113,7 @@ public class Speed_Manager : MonoBehaviour
         pivotTime = attributes.pivotTime;
         momentumTime = attributes.momentumTime;
         wallStickCooldown = attributes.wallStickCooldown;
-        terminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 1.5f);
+        terminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 2.5f);
         airTerminalVel = new Vector2(dashSpeed / 3.0f, dashSpeed);
         slopeCollisionMask = attributes.slopeCollisionMask;
         gravity = attributes.gravity;
@@ -315,7 +315,7 @@ public class Speed_Manager : MonoBehaviour
         {
             velocity.x = terminalVel.x * dirX;
         }
-        if (Mathf.Abs(velocity.y) > airTerminalVel.y)
+        if (-velocity.y > airTerminalVel.y)
         {
             velocity.y = terminalVel.y * dirY;
         }
