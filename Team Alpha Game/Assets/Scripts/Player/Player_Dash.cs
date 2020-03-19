@@ -208,12 +208,10 @@ public class Player_Dash : MonoBehaviour
         else if (direction.x < 0.0f && direction.y == 0.0f) //Left
         {
             rayOrigin = new Vector2(bounds.min.x, bounds.center.y);
-            Debug.DrawRay(rayOrigin, Vector2.left, Color.red);
         }
         else if (direction.x > 0.0f && direction.y == 0.0f) //Right
         {
             rayOrigin = new Vector2(bounds.max.x, bounds.center.y);
-            Debug.DrawRay(rayOrigin, Vector2.right, Color.red);
         }
         else if (direction.x < 0.0f && direction.y > 0.0f) //UpLeft
         {

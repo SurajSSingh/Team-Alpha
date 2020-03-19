@@ -10,9 +10,9 @@ public class Player_Timers : MonoBehaviour
     public float dashAttackTimer;
     public float displacementTimer;
     public float pivotTimer;
-    public float diveWindUpTimer;
     public float dashCooldownTimer;
     public float dashTimer;
+    public float diveAttackTimer;
     public float momentumTimer;
     public float wallStickTimer;
     public float wallClimbTimer;
@@ -32,9 +32,9 @@ public class Player_Timers : MonoBehaviour
         dashAttackTimer = 0.0f;
         displacementTimer = 0.0f;
         pivotTimer = 0.0f;
-        diveWindUpTimer = 0.0f;
         dashCooldownTimer = 0.0f;
         dashTimer = 0.0f;
+        diveAttackTimer = 0.0f;
         momentumTimer = 0.0f;
         wallStickTimer = 0.0f;
         wallClimbTimer = 0.0f;
@@ -55,9 +55,9 @@ public class Player_Timers : MonoBehaviour
         DecrementTimer(ref dashAttackTimer);
         DecrementTimer(ref displacementTimer);
         DecrementTimer(ref pivotTimer);
-        DecrementTimer(ref diveWindUpTimer);
         DecrementTimer(ref dashCooldownTimer);
         DecrementTimer(ref dashTimer);
+        DecrementTimer(ref diveAttackTimer);
         DecrementTimer(ref wallStickTimer);
         DecrementTimer(ref wallClimbTimer);
         DecrementTimer(ref wallClimbCooldownTimer);

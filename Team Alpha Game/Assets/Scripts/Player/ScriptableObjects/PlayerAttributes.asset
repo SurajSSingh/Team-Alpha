@@ -23,8 +23,8 @@ MonoBehaviour:
   momentumFactor: 1.8
   knockbackSpeed: 12
   wallSlideSpeed: -3
-  wallClimbVel: {x: 36, y: 18}
-  wallJumpVel: {x: 24, y: 16}
+  wallClimbVel: {x: 1.5, y: 8}
+  wallJumpVel: {x: 12, y: 10}
   jumpBufferTime: 0.2
   jumpTime: 0.4
   attackTime: 0.75
@@ -33,6 +33,7 @@ MonoBehaviour:
   pivotTime: 0.5
   dashCooldownTime: 4
   dashTime: 0.5
+  diveAttackTime: 0.4
   momentumTime: 2.5
   wallStickCooldown: 0.3
   wallClimbCooldown: 1

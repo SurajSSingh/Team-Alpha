@@ -167,11 +167,11 @@ public class Player_State : MonoBehaviour
             {
                 wallActions.WallSlide();
             }
-            if (wallSliding)
-            {
-                Slide_State();
-                wallActions.ManageWallSlide();
-            }
+        }
+        if (wallSliding)
+        {
+            Slide_State();
+            wallActions.ManageWallSlide();
         }
         if (againstCeiling)
         {
@@ -203,7 +203,14 @@ public class Player_State : MonoBehaviour
         }
         else if (diving)
         {
-            pDive.ManageDive();
+            if (diveHit)
+            {
+                pDive.ManageDiveAttack();
+            }
+            else
+            {
+                pDive.ManageDive();
+            }
         }
         else if (landing)
         {

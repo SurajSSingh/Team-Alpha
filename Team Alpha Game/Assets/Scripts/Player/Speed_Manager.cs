@@ -64,6 +64,7 @@ public class Speed_Manager : MonoBehaviour
 
     //Timers
     private float pivotTimer;
+    private float diveAttackTimer;
     private float momentumTimer;
     private float wallStickTimer;
 
@@ -77,6 +78,7 @@ public class Speed_Manager : MonoBehaviour
 
     //Timer Values
     private float pivotTime;
+    private float diveAttackTime;
     private float momentumTime;
     private float wallStickCooldown;
 
@@ -111,6 +113,7 @@ public class Speed_Manager : MonoBehaviour
         momentumFactor = attributes.momentumFactor;
         wallSlideSpeed = attributes.wallSlideSpeed;
         pivotTime = attributes.pivotTime;
+        diveAttackTime = attributes.diveAttackTime;
         momentumTime = attributes.momentumTime;
         wallStickCooldown = attributes.wallStickCooldown;
         terminalVel = new Vector2(dashSpeed / 2.0f, dashSpeed / 2.5f);
@@ -229,11 +232,11 @@ public class Speed_Manager : MonoBehaviour
         {
             move.Pivot(ref velocity, pivotSign, pivotTimer);
         }
-        else if (diving)
+        else if (diving && !diveHit)
         {
             pDive.Dive(ref velocity);
         }
-        else if (diveHit)
+        else if (diveHit && diveAttackTimer <= 0.0f)
         {
             pDive.Rebound(ref velocity, sign);
         }
@@ -375,6 +378,7 @@ public class Speed_Manager : MonoBehaviour
         jumpDirX = state.jumpDirX;
         enemyColSign = state.enemyColSign;
         pivotTimer = timers.pivotTimer;
+        diveAttackTimer = timers.diveAttackTimer;
         momentumTimer = timers.momentumTimer;
         wallStickTimer = timers.wallStickTimer;
     }

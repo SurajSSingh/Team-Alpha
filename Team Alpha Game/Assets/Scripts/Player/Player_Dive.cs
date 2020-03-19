@@ -27,6 +27,7 @@ public class Player_Dive : MonoBehaviour
 
     //Timers
     private float landingTimer;
+    private float diveAttackTimer;
 
     //Movement Stats
     private float moveSpeed;
@@ -35,6 +36,7 @@ public class Player_Dive : MonoBehaviour
 
     //Timer Values
     private float landingTime;
+    private float diveAttackTime;
 
     //Physics
     private LayerMask diveCollisionMask;
@@ -51,6 +53,7 @@ public class Player_Dive : MonoBehaviour
         jumpVelocity = attributes.jumpVelocity;
         diveSpeed = attributes.diveSpeed;
         landingTime = attributes.landingTime;
+        diveAttackTime = attributes.diveAttackTime;
         diveCollisionMask = attributes.diveCollisionMask;
     }
     void Update()
@@ -92,6 +95,18 @@ public class Player_Dive : MonoBehaviour
         }
     }
 
+    public void ManageDiveAttack()
+    {
+        if (timers.diveAttackTimer <= 0.0f)
+        {
+            state.diving = false;
+            state.diveHit = false;
+            state.control = true;
+            animator.AnimatorDive();
+            animator.AnimatorDiveAttack();
+        }
+    }
+
     public void Rebound(ref Vector3 velocity, float sign) //If player hit enemy during dive, rebound and leap off enemy
     {
         if (sign == 0.0f)
@@ -100,11 +115,6 @@ public class Player_Dive : MonoBehaviour
         }
         velocity.x = sign * moveSpeed * 1.8f;
         velocity.y = jumpVelocity * 0.75f;
-        state.diveHit = false;
-        timers.immuneTimer = 1.0f;
-        state.immune = true;
-        state.control = true;
-        animator.AnimatorDiveAttack();
         groundCheck.attacking = false;
     }
 
@@ -127,9 +137,11 @@ public class Player_Dive : MonoBehaviour
     private void DiveAttack() //Trigger dive attack animation and inflict damage on enemy
     {
         state.diveHit = true;
-        state.diving = false;
-        animator.AnimatorDive();
+        state.immune = true;
+        timers.diveAttackTimer = diveAttackTime;
+        timers.immuneTimer = 1.0f;
         animator.AnimatorDiveAttack();
+        groundCheck.attacking = true;
     }
 
     private void StartDive()
@@ -137,9 +149,9 @@ public class Player_Dive : MonoBehaviour
         diving = true;
         control = false;
         jumping = false;
-        immune = true;
+        jumping = false;
         doubleJumping = false;
-        groundCheck.attacking = true;
+        state.immune = true;
     }
 
     public void ManageLanding()
@@ -172,6 +184,7 @@ public class Player_Dive : MonoBehaviour
         immune = state.immune;
         dive = state.dive;
         landingTimer = timers.landingTimer;
+        diveAttackTimer = timers.diveAttackTimer;
     }
 
     private void SendValues()

@@ -19,18 +19,19 @@ public class Player_Attributes : ScriptableObject
     public float momentumFactor = 1.8f; //Speed multiplier for sprinting
     public float knockbackSpeed = 8.0f; //Speed at which player is knocked back when colliding with enemy
     public float wallSlideSpeed = -3.0f; //Speed at which player descends while wall sliding
-    public Vector2 wallClimbVel = new Vector2(32.0f, 10.0f); //(*used to be wallClimb) Speed when performing wall climb
-    public Vector2 wallJumpVel = new Vector2(12.0f, 8.0f); //(*used to be wallJump) Speed when performing wall jump
+    public Vector2 wallClimbVel = new Vector2(1.5f, 8.0f); //(*used to be wallClimb) Speed when performing wall climb
+    public Vector2 wallJumpVel = new Vector2(12.0f, 10.0f); //(*used to be wallJump) Speed when performing wall jump
 
     //Timer Values
-    public float jumpBufferTime = 0.25f; //(*new) Time before wantToJump buffer expires
-    public float jumpTime = 0.3f; //Time before player can perform a second jump
+    public float jumpBufferTime = 0.2f; //(*new) Time before wantToJump buffer expires
+    public float jumpTime = 0.4f; //Time before player can perform a second jump
     public float attackTime = 0.75f; //Time before player regains control during attack
     public float dashAttackTime = 0.5f; //(*new / needs change) Time before player regains control during dash attack
-    public float displacementTime = 0.15f; //(*new) Delay time before transitioning from grounded state to airborne
+    public float displacementTime = 0.05f; //(*new) Delay time before transitioning from grounded state to airborne
     public float pivotTime = 0.5f; //(*new / needs change) Time before player regains horizontal movement control
     public float dashCooldownTime = 4.0f; //(*new) Time before player can use dash again
     public float dashTime = 0.5f; // Time before player regains control while performing a dash
+    public float diveAttackTime = 0.4f; // Time before player performs a rebound after a dive attack
     public float momentumTime = 2.5f; //(*new) Duration that the player must move in the same direction to begin sprinting
     public float wallStickCooldown = 0.3f; //(*new) Time between when player detaches from wall and can attach to a wall again
     public float wallClimbCooldown = 1.0f; //(*new) Time between when player can perform another wall climb

@@ -88315,12 +88315,12 @@ PrefabInstance:
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
-      value: 72.5
+      value: 76.5
       objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.y
-      value: -39.5
+      value: -38.455
       objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327944, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
@@ -93664,12 +93664,12 @@ PrefabInstance:
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.y
-      value: -39.5
+      value: -38.455
       objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327944, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
