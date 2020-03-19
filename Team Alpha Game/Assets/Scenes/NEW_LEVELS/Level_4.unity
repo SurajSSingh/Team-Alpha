@@ -12881,11 +12881,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
@@ -12901,6 +12896,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 541214807}
+    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c97ace442714b04f9e3356969b5813c, type: 3}
 --- !u!4 &412716883 stripped
@@ -13715,12 +13715,12 @@ PrefabInstance:
     - target: {fileID: 8001981152190929359, guid: 61bd3e8e53cae4aab864c642188fb5cc,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.75
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8001981152190929359, guid: 61bd3e8e53cae4aab864c642188fb5cc,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.04
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8001981152190929359, guid: 61bd3e8e53cae4aab864c642188fb5cc,
         type: 3}
@@ -14913,7 +14913,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.88199997, y: 0.7555555, z: 0}
+  m_ChunkCullingBounds: {x: 0.91375005, y: 0.9125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -16498,11 +16498,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
@@ -16518,6 +16513,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 541214807}
+    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c97ace442714b04f9e3356969b5813c, type: 3}
 --- !u!4 &783063278 stripped
@@ -18123,9 +18123,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-
-  m_ChunkCullingBounds: {x: 0.75666666, y: 0.7555555, z: 0}
-
+  m_ChunkCullingBounds: {x: 0.91375005, y: 0.9125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -28711,11 +28709,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
@@ -28731,6 +28724,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 541214807}
+    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c97ace442714b04f9e3356969b5813c, type: 3}
 --- !u!4 &1416823880 stripped
@@ -88219,11 +88217,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1517419305721327945, guid: 4c97ace442714b04f9e3356969b5813c,
         type: 3}
       propertyPath: spawnPoint.x
@@ -88239,6 +88232,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 541214807}
+    - target: {fileID: 1517419305721327940, guid: 4c97ace442714b04f9e3356969b5813c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c97ace442714b04f9e3356969b5813c, type: 3}
 --- !u!4 &1462687223 stripped

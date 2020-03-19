@@ -8,6 +8,7 @@ public class GroundCheck : MonoBehaviour
     Player_State state;
     Player_Timers timers;
     Player_Attributes attributes;
+    Player_Collisions collisions;
     public bool attacking;
 
     void Start()
@@ -16,6 +17,7 @@ public class GroundCheck : MonoBehaviour
         state = Player.GetComponent<Player_State>();
         timers = Player.GetComponent<Player_Timers>();
         attributes = state.attributes;
+        collisions = Player.GetComponent<Player_Collisions>();
         attacking = false;
     }
 
@@ -47,6 +49,15 @@ public class GroundCheck : MonoBehaviour
         {
             timers.displacementTimer = attributes.displacementTime;
             state.onGround = true;
+            if (state.sign == 0.0f)
+            {
+                state.enemyColSign = -1.0f;
+            }
+            else
+            {
+                state.enemyColSign = -state.sign;
+            }
+            collisions.StartKnockback();
             GetComponentInParent<Speed_Manager>().InstantChangeHealth(-10);
         }
     }

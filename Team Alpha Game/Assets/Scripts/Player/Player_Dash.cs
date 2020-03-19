@@ -201,29 +201,19 @@ public class Player_Dash : MonoBehaviour
     {
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 rayOrigin = Vector2.zero;
-        if (direction.x == 0.0f && direction.y < 0.0f) //Down
+        if (direction.x == 0.0f && direction.y > 0.0f) //Up
         {
             rayOrigin = new Vector2(bounds.center.x, bounds.max.y);
-        }
-        else if (direction.x == 0.0f && direction.y > 0.0f) //Up
-        {
-            rayOrigin = new Vector2(bounds.center.x, bounds.min.y);
         }
         else if (direction.x < 0.0f && direction.y == 0.0f) //Left
         {
             rayOrigin = new Vector2(bounds.min.x, bounds.center.y);
+            Debug.DrawRay(rayOrigin, Vector2.left, Color.red);
         }
         else if (direction.x > 0.0f && direction.y == 0.0f) //Right
         {
             rayOrigin = new Vector2(bounds.max.x, bounds.center.y);
-        }
-        else if (direction.x < 0.0f && direction.y < 0.0f) //DownLeft
-        {
-            rayOrigin = new Vector2(bounds.min.x, bounds.min.y);
-        }
-        else if (direction.x > 0.0f && direction.y < 0.0f) //DownRight
-        {
-            rayOrigin = new Vector2(bounds.max.x, bounds.min.y);
+            Debug.DrawRay(rayOrigin, Vector2.right, Color.red);
         }
         else if (direction.x < 0.0f && direction.y > 0.0f) //UpLeft
         {

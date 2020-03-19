@@ -50,20 +50,18 @@ public class Player_Collisions : MonoBehaviour
                 StartKnockback();
             }
         }
-        if (other.gameObject.CompareTag("Spikes"))
-        {
-            if (state.sign == 0.0f)
-            {
-                state.enemyColSign = -1.0f;
-            }
-            else
-            {
-                state.enemyColSign = -state.sign;
-            }
-            StartKnockback();
-        }
     }
-    
+
+    public void StartKnockback()
+    {
+        state.stunned = true;
+        state.immune = true;
+        state.control = false;
+        animator.AnimatorStunned();
+        timers.stunTimer = stunTime;
+        timers.immuneTimer = immuneTime;
+    }
+
     public void Knockback(ref Vector3 velocity, float enemyColSign)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/EnemyRebound", this.transform.position);
@@ -95,15 +93,5 @@ public class Player_Collisions : MonoBehaviour
             animator.AnimatorGetup(false);
             state.control = true;
         }
-    }
-
-    private void StartKnockback()
-    {
-        state.stunned = true;
-        state.immune = true;
-        state.control = false;
-        animator.AnimatorStunned();
-        timers.stunTimer = stunTime;
-        timers.immuneTimer = immuneTime;
     }
 }

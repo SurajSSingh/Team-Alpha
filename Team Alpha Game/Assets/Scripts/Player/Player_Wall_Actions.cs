@@ -102,7 +102,7 @@ public class Player_Wall_Actions : MonoBehaviour
 
     public void ManageWallSlide()
     {
-        if (state.sign == state.wallSign || state.stunned || state.onGround)
+        if (state.sign == state.wallSign || state.stunned || state.onGround || !state.onWall || state.airborne)
         {
             DetachFromWall();
         }
@@ -199,7 +199,6 @@ public class Player_Wall_Actions : MonoBehaviour
 
     public void DetachFromWall()
     {
-        
         state.wallSliding = false;
         animator.AnimatorWallSlide();
         state.wantToJump = false;

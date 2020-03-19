@@ -20,7 +20,7 @@ public class CollisionCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerAttack"))
+        if (other.gameObject.CompareTag("PlayerAttack") || other.gameObject.CompareTag("PlayerCP"))
         {
             FindDamageSource(other);
         }
@@ -28,7 +28,7 @@ public class CollisionCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerAttack"))
+        if (other.gameObject.CompareTag("PlayerAttack") || other.gameObject.CompareTag("PlayerCP"))
         {
             FindDamageSource(other);
         }

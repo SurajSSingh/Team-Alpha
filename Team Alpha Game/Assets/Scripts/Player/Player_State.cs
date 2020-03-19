@@ -154,7 +154,7 @@ public class Player_State : MonoBehaviour
             {
                 Sprint();
             }
-            if (wantToJump) //Player inputted space up to 0.25 seconds ago
+            if (wantToJump && timers.jumpTimer <= 0.0f) //Player inputted space up to 0.25 seconds ago
             {
                 pJump.Jump();
             }
@@ -448,7 +448,6 @@ public class Player_State : MonoBehaviour
     private void SendValues()
     {
         speedManager.velocity = velocity;
-        timers.jumpTimer = jumpTimer;
         timers.displacementTimer = displacementTimer;
         timers.momentumTimer = momentumTimer;
     }

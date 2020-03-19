@@ -183,7 +183,7 @@ public class Speed_Manager : MonoBehaviour
                 }
                 if (doubleJumping) //Second jump
                 {
-                    velocity.y = jumpVelocity * 2.0f;
+                    velocity.y = jumpVelocity;
                 }
                 if (velocity.y <= 0.0f) //Fast descending
                 {
