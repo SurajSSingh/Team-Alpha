@@ -16828,8 +16828,35 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1806290232670901702, guid: 977df1404c9f1f348b2cc3aa5a194e3d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 794244355}
+    - target: {fileID: 1806290232670901702, guid: 977df1404c9f1f348b2cc3aa5a194e3d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806290232670901702, guid: 977df1404c9f1f348b2cc3aa5a194e3d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977df1404c9f1f348b2cc3aa5a194e3d, type: 3}
+--- !u!114 &794244355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1806290231814032884, guid: 977df1404c9f1f348b2cc3aa5a194e3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 794244354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856575123eee11e48962c0a4a9636f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &799584018
 GameObject:
   m_ObjectHideFlags: 0
