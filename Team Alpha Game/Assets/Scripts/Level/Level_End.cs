@@ -5,16 +5,15 @@ using UnityEngine;
 public class Level_End : MonoBehaviour
 {
 
-    public GameObject respawner;
-    // Update is called once per frame
-    void Update()
+    public ScreenManager respawner;
+    private void Start()
     {
-        
+        respawner = GameObject.Find("Game UI").GetComponent<ScreenManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Debug.Log(other);
-        respawner.GetComponent<Respawn_Manager>().Respawn();
+        respawner.ResetLevel();
     }
 }

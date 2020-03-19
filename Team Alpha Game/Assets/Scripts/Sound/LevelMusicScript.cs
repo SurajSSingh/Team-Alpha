@@ -76,6 +76,9 @@ public class LevelMusicScript : MonoBehaviour
 
     public void Stop()
     {
-        FMODUnity.RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        Debug.Log("Stop Music");
+        FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+        playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        levelMusic.release();
     }
 }

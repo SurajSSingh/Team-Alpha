@@ -56,6 +56,7 @@ public class ScreenManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            levelMusic.Stop();
             ResetLevel();
         }
     }

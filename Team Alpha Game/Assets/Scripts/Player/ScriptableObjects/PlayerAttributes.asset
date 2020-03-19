@@ -36,9 +36,9 @@ MonoBehaviour:
   diveAttackTime: 0.4
   momentumTime: 2.5
   wallStickCooldown: 0.3
-  wallClimbCooldown: 1
+  wallClimbCooldown: 0.5
   wallClimbTime: 0.3
-  wallJumpCooldown: 1
+  wallJumpCooldown: 0.5
   wallJumpTime: 0.15
   landingTime: 0.6
   stunTime: 2

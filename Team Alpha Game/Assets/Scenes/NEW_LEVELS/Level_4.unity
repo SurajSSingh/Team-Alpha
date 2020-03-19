@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78b18156a877488ab3e70217a9a98b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawner: {fileID: 1383739503}
+  respawner: {fileID: 0}
 --- !u!4 &42042127
 Transform:
   m_ObjectHideFlags: 0
@@ -13989,7 +13989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 1608913156}
   endObject: {fileID: 557223196}
-  mover: {fileID: 0}
+  mover: {fileID: 422009800}
 --- !u!61 &557223199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19623,7 +19623,7 @@ PrefabInstance:
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
       propertyPath: m_Name
-      value: Game UI
+      value: Game UI_OLD
       objectReference: {fileID: 0}
     - target: {fileID: 6448045842901994172, guid: 8ec49f2fa44010d4788430f239f602b5,
         type: 3}
@@ -100487,7 +100487,7 @@ GameObject:
   - component: {fileID: 4391793543871114282}
   - component: {fileID: 7318005737436533203}
   m_Layer: 5
-  m_Name: Game UI (1)
+  m_Name: Game UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
