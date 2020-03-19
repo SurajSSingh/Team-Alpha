@@ -18141,7 +18141,7 @@ GameObject:
   - component: {fileID: 1215943578}
   m_Layer: 10
   m_Name: Start_Slope
-  m_TagString: Untagged
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
