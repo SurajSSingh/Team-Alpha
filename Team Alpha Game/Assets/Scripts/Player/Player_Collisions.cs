@@ -50,6 +50,18 @@ public class Player_Collisions : MonoBehaviour
                 StartKnockback();
             }
         }
+        if (other.gameObject.CompareTag("Spikes"))
+        {
+            if (state.sign == 0.0f)
+            {
+                state.enemyColSign = -1.0f;
+            }
+            else
+            {
+                state.enemyColSign = -state.sign;
+            }
+            StartKnockback();
+        }
     }
     
     public void Knockback(ref Vector3 velocity, float enemyColSign)
