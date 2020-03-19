@@ -7,7 +7,7 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fee4cf9e608 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7f9900fc2008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,180 +18,10 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = ../Withered_Away_M&SE/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fee49bd2608 : node = 0x7fee2a571490
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fee49bada38.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fee49bd2608
-[LOG] SystemI::createSoundInternal             :     Create name='../Withered_Away_M&SE/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSound                     : filename = ../Withered_Away_M&SE/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5445664
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 140480
-[LOG] SystemI::createSound                     :     setdata soundi = 0x7fee49bae2c8 : node = 0x7fee49b0bdb0
-[LOG] SystemI::createSound                     :     add node to async list : head = 0x7fee49bada38.  list count = 0
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fee2a5715a0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Heartbeat_Edit_Beats_Full', format=2, channels=1, frequency=48000, lengthbytes=154304, lengthpcm=1536000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.750031.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fee49bd2608
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fee49bae2c8
-[LOG] SystemI::createSoundInternal             :     Create name='../Withered_Away_M&SE/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5445664
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 140480
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fee49b0bec0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MIST', format=2, channels=1, frequency=48000, lengthbytes=117952, lengthpcm=1536000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.754822.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fee49bae2c8
-[LOG] SoundI::getSubSound                      : sound 0x7fee49bd2608.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0x7fee49bae2c8.  Subsound index 0 / 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fee402b4c08
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fee402b4c08
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 5445664
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 140480
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x70000e70896c
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x147eaaf64
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x147eab01b
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x147eab048
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x147eab0ea
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x7fee2c1cd658
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jump_01', format=2, channels=2, frequency=48000, lengthbytes=12064, lengthpcm=71331, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.228476.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 5445664
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 140480
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x70000e70896c
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x147eaaf64
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x147eab01b
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x147eab048
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x147eab0ea
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x7fee2c136d68
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jump_02', format=2, channels=2, frequency=48000, lengthbytes=12256, lengthpcm=71331, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.212057.
-[LOG] SoundI::release                          :  (0x7fee2c1d5f38)
-[LOG] SoundI::release                          :     Jump_01 (0x7fee2c1d64c8)
-[LOG] SoundI::release                          :  (0x7fee2c1cfa38)
-[LOG] SoundI::release                          :     Jump_02 (0x7fee2c1cfba8)
-[LOG] SoundI::release                          :  (0x7fee2c1a4378)
-[LOG] SoundI::release                          :     Flute Solo_3 (0x7fee2c1a44e8)
-[LOG] SoundI::release                          :  (0x7fee2c17f558)
-[LOG] SoundI::release                          :     Steinway Grand Piano_5 (0x7fee2c17f6c8)
-[LOG] SoundI::release                          :  (0x7fee2adc5368)
-[LOG] SoundI::release                          :     Flute Solo_4 (0x7fee2adc54d8)
-[LOG] SoundI::release                          :  (0x7fee2af80a98)
-[LOG] SoundI::release                          :     Steinway Grand Piano_6 (0x7fee2af80c08)
-[LOG] SoundI::release                          :  (0x7fee2c1aa538)
-[LOG] SoundI::release                          :     Bass-04 (0x7fee2c1aa6a8)
-[LOG] SoundI::release                          :  (0x7fee2af84498)
-[LOG] SoundI::release                          :     Bass-01 (0x7fee2af7ae48)
-[LOG] SoundI::release                          :  (0x7fee2c14e7b8)
-[LOG] SoundI::release                          :     Flute Solo_6 (0x7fee2c14e928)
-[LOG] SoundI::release                          :  (0x7fee2c19a398)
-[LOG] SoundI::release                          :     Flute Solo_5 (0x7fee2c19a508)
-[LOG] SoundI::release                          :  (0x7fee2a55ea68)
-[LOG] SoundI::release                          :     String Ensemble_7 (0x7fee2a589118)
-[LOG] SoundI::release                          :  (0x7fee2c1450f8)
-[LOG] SoundI::release                          :     String Ensemble_8 (0x7fee2c15a238)
-[LOG] SoundI::release                          :  (0x7fee2af2d958)
-[LOG] SoundI::release                          :     String Ensemble_10 (0x7fee2ad2a888)
-[LOG] SoundI::release                          :  (0x7fee2af59038)
-[LOG] SoundI::release                          :     Bass-03 (0x7fee2af591a8)
-[LOG] SoundI::release                          :  (0x7fee2adc5d18)
-[LOG] SoundI::release                          :     Bass-06 (0x7fee2ad6f088)
-[LOG] SoundI::release                          :  (0x7fee2c186998)
-[LOG] SoundI::release                          :     Steinway Grand Piano_2 (0x7fee2c1538a8)
-[LOG] SoundI::release                          :  (0x7fee2c1a0458)
-[LOG] SoundI::release                          :     Flute Solo_16 (0x7fee2c1a05c8)
-[LOG] SoundI::release                          :  (0x7fee2c19ed38)
-[LOG] SoundI::release                          :     Flute Solo_1 (0x7fee2c19eea8)
-[LOG] SoundI::release                          :  (0x7fee2af59628)
-[LOG] SoundI::release                          :     Flute Solo_9 (0x7fee2af80118)
-[LOG] SoundI::release                          :  (0x7fee2c15b448)
-[LOG] SoundI::release                          :     Flute Solo_11 (0x7fee2c138ad8)
-[LOG] SoundI::release                          :  (0x7fee2c19e248)
-[LOG] SoundI::release                          :     Flute Solo_14 (0x7fee2c19e3b8)
-[LOG] SoundI::release                          :  (0x7fee2c1a1538)
-[LOG] SoundI::release                          :     Flute Solo (0x7fee2c1a16a8)
-[LOG] SoundI::release                          :  (0x7fee2c1a0f48)
-[LOG] SoundI::release                          :     Bass-02 (0x7fee2c1a10b8)
-[LOG] SoundI::release                          :  (0x7fee2af8bc98)
-[LOG] SoundI::release                          :     Bass-05 (0x7fee2af8be08)
-[LOG] SoundI::release                          :  (0x7fee2af81fc8)
-[LOG] SoundI::release                          :     Flute Solo_12 (0x7fee2af82138)
-[LOG] SoundI::release                          :  (0x7fee2af8c288)
-[LOG] SoundI::release                          :     Flute Solo_13 (0x7fee2af771e8)
-[LOG] SoundI::release                          :  (0x7fee2c155b18)
-[LOG] SoundI::release                          :     Flute Solo_7 (0x7fee2c120c68)
-[LOG] SoundI::release                          :  (0x7fee2c1a3888)
-[LOG] SoundI::release                          :     Flute Solo_8 (0x7fee2c1a39f8)
-[LOG] SoundI::release                          :  (0x7fee2ad6f3c8)
-[LOG] SoundI::release                          :     Flute Solo_10 (0x7fee2ad09f48)
-[LOG] SoundI::release                          :  (0x7fee2af837e8)
-[LOG] SoundI::release                          :     String Ensemble_12 (0x7fee2af83958)
-[LOG] SoundI::release                          :  (0x7fee2c17d4a8)
-[LOG] SoundI::release                          :     String Ensemble_13 (0x7fee2c17d618)
-[LOG] SoundI::release                          :  (0x7fee2c15eb18)
-[LOG] SoundI::release                          :     String Ensemble_1 (0x7fee2c1491b8)
-[LOG] SoundI::release                          :  (0x7fee4a3c9308)
-[LOG] SoundI::release                          :     String Ensemble_9 (0x7fee4a30be48)
-[LOG] SoundI::release                          :  (0x7fee2a8daf58)
-[LOG] SoundI::release                          :     String Ensemble_11 (0x7fee2a8f7f68)
-[LOG] SoundI::release                          :  (0x7fee2c1a2028)
-[LOG] SoundI::release                          :     String Ensemble_14 (0x7fee2c1a2198)
-[LOG] SoundI::release                          :  (0x7fee2af82b38)
-[LOG] SoundI::release                          :     String Ensemble (0x7fee2af82ca8)
-[LOG] SoundI::release                          : MIST (0x7fee49bae2c8)
-[LOG] SoundI::release                          :     MIST (0x7fee402d0438)
-[LOG] SoundI::release                          :     MIST (0x7fee402b4c08)
-[LOG] SoundI::release                          : Heartbeat_Edit_Beats_Full (0x7fee49bd2608)
-[LOG] SoundI::release                          :     Heartbeat_Edit_Beats_Full (0x7fee2c1cc3f8)
-[LOG] SoundI::release                          :     Heartbeat_Edit_Beats_Full (0x7fee2c1cc588)
-[LOG] SoundI::release                          :  (0x7fee2c1a2c58)
-[LOG] SoundI::release                          :     Steinway Grand Piano_4 (0x7fee2c1a2dc8)
-[LOG] SoundI::release                          :  (0x7fee2c17c9b8)
-[LOG] SoundI::release                          :     Steinway Grand Piano_15 (0x7fee2c17cb28)
-[LOG] SoundI::release                          :  (0x7fee2af8b1a8)
-[LOG] SoundI::release                          :     Flute Solo_2 (0x7fee2af8b318)
-[LOG] SoundI::release                          :  (0x7fee2af7b348)
-[LOG] SoundI::release                          :     Transition (0x7fee2af7b4b8)
-[LOG] SoundI::release                          :  (0x7fee2c19f828)
-[LOG] SoundI::release                          :     Steinway Grand Piano_3 (0x7fee2c19f998)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

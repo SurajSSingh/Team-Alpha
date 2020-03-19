@@ -54,6 +54,7 @@ public class Player_Collisions : MonoBehaviour
 
     public void StartKnockback()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/EnemyRebound", this.transform.position);
         state.stunned = true;
         state.immune = true;
         state.control = false;
@@ -64,11 +65,10 @@ public class Player_Collisions : MonoBehaviour
 
     public void Knockback(ref Vector3 velocity, float enemyColSign)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/MusicSingle/EnemyRebound", this.transform.position);
         if (timers.stunTimer >= stunTime-0.5f && timers.stunTimer <= stunTime)
         {
-            velocity.x = knockbackSpeed * 5.0f * enemyColSign;
-            velocity.y = knockbackSpeed/1.5f;
+            velocity.x = knockbackSpeed * 10.0f * enemyColSign;
+            velocity.y = knockbackSpeed;
         }
         else if (timers.stunTimer >= stunTime-1.0f && timers.stunTimer < stunTime - 0.5f && !onGround)
         {
