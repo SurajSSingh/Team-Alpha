@@ -1418,7 +1418,7 @@ Transform:
   m_Children:
   - {fileID: 1559653921}
   m_Father: {fileID: 1490509296}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &168272225
 MonoBehaviour:
@@ -17601,6 +17601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 1044627095}
+  camera: {fileID: 1344445303}
 --- !u!114 &1013501382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17760,7 +17761,7 @@ Transform:
   m_Children:
   - {fileID: 1559959152}
   m_Father: {fileID: 1490509296}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1044627097
 MonoBehaviour:
@@ -18867,6 +18868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 1044627095}
+  camera: {fileID: 1344445303}
 --- !u!114 &1236536880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20124,11 +20126,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344445298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -246.14487, y: -15.98567, z: 55.673172}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1490509296}
-  m_RootOrder: 0
+  m_Father: {fileID: 541214806}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1344445300
 MonoBehaviour:
@@ -20149,7 +20151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344445298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -88628,7 +88630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1490509296
 Transform:
   m_ObjectHideFlags: 0
@@ -88640,7 +88642,6 @@ Transform:
   m_LocalPosition: {x: 175.94487, y: 33.38567, z: -65.67317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1344445299}
   - {fileID: 168272224}
   - {fileID: 1044627096}
   m_Father: {fileID: 0}

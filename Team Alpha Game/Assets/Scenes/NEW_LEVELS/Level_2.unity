@@ -429,11 +429,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246091182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -256.64487, y: -2.685669, z: 55.673172}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2136622083}
-  m_RootOrder: 0
+  m_Father: {fileID: 1167407100}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &246091184
 MonoBehaviour:
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246091182}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 1511725890}
+  camera: {fileID: 246091187}
 --- !u!114 &356036505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36968,6 +36969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 1511725890}
+  camera: {fileID: 246091187}
 --- !u!114 &731407802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38445,6 +38447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 1511725890}
+  camera: {fileID: 246091187}
 --- !u!114 &1366811822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38764,7 +38767,7 @@ Transform:
   m_Children:
   - {fileID: 1541125112}
   m_Father: {fileID: 2136622083}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1511725889
 MonoBehaviour:
@@ -38780,7 +38783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ChannelMask: 1
   m_Gain: 1
-  m_Use2DDistance: 0
+  m_Use2DDistance: 1
 --- !u!114 &1511725890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41979,7 +41982,7 @@ Transform:
   m_Children:
   - {fileID: 872274785}
   m_Father: {fileID: 2136622083}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2043591211
 MonoBehaviour:
@@ -41995,7 +41998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ChannelMask: 1
   m_Gain: 1
-  m_Use2DDistance: 0
+  m_Use2DDistance: 1
 --- !u!114 &2043591212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42284,7 +42287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2136622083
 Transform:
   m_ObjectHideFlags: 0
@@ -42296,7 +42299,6 @@ Transform:
   m_LocalPosition: {x: 175.94487, y: 33.38567, z: -65.67317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 246091183}
   - {fileID: 2043591210}
   - {fileID: 1511725888}
   m_Father: {fileID: 0}
